@@ -1,0 +1,19 @@
+<li class="reviews__slide splide__slide">
+	<ul class="reviews__slide--list">
+		@@loop("_reviews-slide-item.html", [
+			{},
+			{},
+			{},
+		])
+	</ul>
+	<div class="reviews__video">
+		<video src="video/reviews-video.mp4" controls playsinline></video>
+		<div class="reviews__video--preview">
+			<picture>
+				<source srcset="img/index/reviews/reviews-video-preview.avif" type="image/avif">
+				<source srcset="img/index/reviews/reviews-video-preview.webp" type="image/webp">
+				<img src="img/index/reviews/reviews-video-preview.jpg" alt="" width="0" height="0" loading="lazy">
+			</picture>
+		</div>
+	</div>
+</li>

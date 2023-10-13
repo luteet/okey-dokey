@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__body">
+				<div class="header__logo">
+					<a href="index.html" class="header__logo--link">
+						<img src="img/logo.svg" alt="Logo" width="90" height="90" loading="lazy" class="header__logo--img">
+					</a>
+				</div>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="./#tariffs">
+									Тарифы
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html">
+									О нас
+								</a>
+							</li>
+							<li>
+								<a href="./#our-teachers">
+									Галерея преподавателей
+								</a>
+							</li>
+							<li>
+								<a href="programs.html">
+									Программы
+								</a>
+							</li>
+							<li>
+								<a href="./#reviews">
+									Отзывы
+								</a>
+							</li>
+							<li>
+								<a href="blog.html">
+									Блог
+								</a>
+							</li>
+							<li>
+								<a href="./#faq">
+									Вопрос-ответ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="header__lang visible-on-mob">
+					<button class="header__lang--target" type="button">
+						Рус
+						<svg width="7" height="5" viewBox="0 0 7 5">
+							<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+						</svg>
+					</button>
+					<ul class="header__lang--list">
+						<li>
+							<a href="#">
+								En
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__account visible-on-mob">
+					<a href="#" class="header__account--btn" title="Аккаунт">
+						<svg width="22" height="22" viewBox="0 0 22 22">
+							<use xlink:href="img/sprites.svg#avatar"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__add visible-on-desktop">
+					<div class="header__tel">
+						<button class="header__tel--target" type="button">
+							<svg width="21" height="21" viewBox="0 0 13 13">
+								<use xlink:href="img/sprites.svg#tel"></use>
+							</svg>
+							<svg width="7" height="5" viewBox="0 0 7 5">
+								<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+							</svg>
+						</button>
+						<div class="header__tel--block">
+							<ul class="header__tel--list">
+								<li>
+									<a href="tel:+380671111111">
+										+380 (67) - 111 - 11 - 11
+									</a>
+								</li>
+								<li>
+									<a href="tel:+380981111111">
+										+380 (98) - 111 - 11 - 11
+									</a>
+								</li>
+							</ul>
+							<a href="#" class="header__tel--btn btn _min-2 _transparent">
+								Связаться со мной
+							</a>
+						</div>
+					</div>
+					<div class="header__lang">
+						<button class="header__lang--target" type="button">
+							Рус
+							<svg width="7" height="5" viewBox="0 0 7 5">
+								<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+							</svg>
+						</button>
+						<ul class="header__lang--list">
+							<li>
+								<a href="#">
+									En
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header__account">
+						<a href="#" class="header__account--btn" title="Аккаунт">
+							<svg width="22" height="22" viewBox="0 0 22 22">
+								<use xlink:href="img/sprites.svg#avatar"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<p>
+						<span></span>
+						<span></span>
+						<span></span>
+					</p>
+				</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="breadcrumbs-wrapper container">
+				<div class="breadcrumbs">
+					<a href="#" class="breadcrumbs__link">
+						Главная
+					</a>
+					<span class="breadcrumbs__separator"></span>
+					<span class="breadcrumbs__current">Блог</span>
+				</div>
+			</div>
+			<section class="single container">
+				<div class="single__background" aria-hidden="true">
+					<div class="single__background--item"></div>
+					<div class="single__background--item">
+						<img src="img/blog/post-decor-pattern.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+					<div class="single__background--item">
+						<img src="img/blog/blog-list-decor-1.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+				</div>
+				<div class="single__header">
+					<h1 class="single__header-title section-title">
+						Блог
+					</h1>
+					<div class="single__share">
+						<span>Поделиться:</span>
+						<a href="#" class="single__share--social">
+							<img src="img/social/instagram.svg" width="22" height="22" loading="lazy" alt="">
+						</a>
+						<a href="#" class="single__share--social">
+							<img src="img/social/telegram.svg" width="22" height="22" loading="lazy" alt="">
+						</a>
+						<button type="button" class="single__share--link copy-btn" data-clipboard-text="Copied text" data-success-copied-message="Скопировано!">
+							Копировать
+						</button>
+					</div>
+				</div>
+				<div class="single__hero-image image-aspect-ratio">
+					<picture>
+						<source srcset="img/blog/post-hero-image.avif" type="image/avif">
+						<source srcset="img/blog/post-hero-image.webp" type="image/webp">
+						<img src="img/blog/post-hero-image.jpg" alt="" width="1200" height="427" loading="lazy">
+					</picture>
+				</div>
+				<h2 class="single__title title">
+					Как начать изучать английский после перерыва: <br> 5 советов, которые помогут
+				</h2>
+				<time class="single__date" datetime="26-09-2023">
+					<svg width="13" height="13" viewBox="0 0 13 13">
+						<use xlink:href="img/sprites.svg#calendar-2"></use>
+					</svg>
+					<span>26.09.2023</span>
+				</time>
+				<div class="single__content">
+					<p>
+						В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+					</p>
+					<ul>
+						<li>
+							Первые попытки после паузы часто кажутся кошмарными, поэтому хочется снова сдаться и забыть о своей затее. Но это очень просто. Предлагаем советы, которые помогут вернуть английский в свою жизнь и добиться результатов.
+						</li>
+						<li>
+							Без мотивации всегда сложно. В процессе обучения важно помнить, зачем вам английский и какие возможности он дает. <br>
+							К примеру, вы планируете поступить за границу, чаще путешествовать, найти новую работу, получить повышение, смотреть новинки кино в оригинале и прочее.
+						</li>
+						<li>
+							Первые попытки после паузы часто кажутся кошмарными, поэтому хочется снова сдаться и забыть о своей затее. Но это очень просто. Предлагаем советы, которые помогут вернуть английский в свою жизнь и добиться результатов.
+						</li>
+					</ul>
+					<div class="single__content--block">
+						<h3>Как начать изучать английский после перерыва: <br>
+							5 советов, которые помогут
+						</h3>
+						<p>В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. </p>
+						<p>Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.</p>
+						<p>А именно, сложноподчиненное предложение, где одна из частей начинается с if. Эта тема достаточно сложна, ведь типов условных предложений существует целых четыре, однако самое важное, что нужно запомнить: никогда в части из if не может стоять будущее время (с использованием will).</p>
+						<p>Советуем разобраться с Conditional sentences поподробнее, чтобы блеснуть своими знаниями на любом тестировании поанглийскому.</p>
+					</div>
+					<figure>
+						<picture>
+							<source srcset="img/blog/post-image.avif" type="image/avif">
+							<source srcset="img/blog/post-image.webp" type="image/webp">
+							<img src="img/blog/post-image.jpg" alt="" width="1200" height="427" loading="lazy">
+						</picture>
+					</figure>
+					<ul type="disc">
+						<li>
+							Первые попытки после паузы часто кажутся кошмарными, поэтому хочется снова сдаться и забыть о своей затее. Но это очень просто. Предлагаем советы, которые помогут вернуть английский в свою жизнь и добиться результатов.
+						</li>
+						<li>
+							Без мотивации всегда сложно. В процессе обучения важно помнить, зачем вам английский и какие возможности он дает. <br>
+							К примеру, вы планируете поступить за границу, чаще путешествовать, найти новую работу, получить повышение, смотреть новинки кино в оригинале и прочее.
+						</li>
+						<li>
+							Первые попытки после паузы часто кажутся кошмарными, поэтому хочется снова сдаться и забыть о своей затее. Но это очень просто. Предлагаем советы, которые помогут вернуть английский в свою жизнь и добиться результатов.
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="leave-application container _large">
+				<div class="leave-application__background" aria-hidden="true">
+					<div class="leave-application__background--decor">
+						<img src="img/index/application/application-pattern.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+				</div>
+				<div class="leave-application__container">
+					<h2 class="leave-application__title section-title _large">
+						Заполнить заявку
+					</h2>
+					<div class="leave-application__text">
+						<p>
+							Познакомимся, определим уровень владения языка и покажем, как проходит обучение
+						</p>
+					</div>
+					<form method="post" class="leave-application__form">
+						<label>
+							<span>Введите Ваше имя</span>
+							<input type="text" name="name" placeholder="Имя" required>
+						</label>
+						<label>
+							<span>Введите Ваш телефон</span>
+							<input type="tel" name="tel" placeholder="+38 (___) ___-__-__" required>
+						</label>
+						<div class="leave-application__form--footer">
+							<button class="leave-application__form--submit circle-btn" type="submit">
+								Записать
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+			<section class="related-articles container">
+				<h2 class="related-articles__title section-title">
+					Похожие статьи
+				</h2>
+				<div class="related-articles__slider splide">
+					<div class="related-articles__track splide__track">
+						<ul class="related-articles__list splide__list">
+							<li class="related-articles__card splide__slide blog__card">
+								<a href="single.html" class="blog__card--body">
+									<div class="blog__card--image image-aspect-ratio">
+										<picture>
+											<source srcset="img/blog/blog-post-image-1.avif" type="image/avif">
+											<source srcset="img/blog/blog-post-image-1.webp" type="image/webp">
+											<img src="img/blog/blog-post-image-1.jpg" alt="" width="370" height="237" loading="lazy">
+										</picture>
+									</div>
+									<time class="blog__card--date" datetime="26-09-2023">
+										<svg width="13" height="13" viewBox="0 0 13 13">
+											<use xlink:href="img/sprites.svg#calendar-2"></use>
+										</svg>
+										<span>26.09.2023</span>
+									</time>
+									<h2 class="blog__card--title">
+										Как начать изучать английский после перерыва:5 советов, которые помогут
+									</h2>
+									<div class="blog__card--text">
+										<p>
+											В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="related-articles__card splide__slide blog__card">
+								<a href="single.html" class="blog__card--body">
+									<div class="blog__card--image image-aspect-ratio">
+										<picture>
+											<source srcset="img/blog/blog-post-image-2.avif" type="image/avif">
+											<source srcset="img/blog/blog-post-image-2.webp" type="image/webp">
+											<img src="img/blog/blog-post-image-2.jpg" alt="" width="370" height="237" loading="lazy">
+										</picture>
+									</div>
+									<time class="blog__card--date" datetime="26-09-2023">
+										<svg width="13" height="13" viewBox="0 0 13 13">
+											<use xlink:href="img/sprites.svg#calendar-2"></use>
+										</svg>
+										<span>26.09.2023</span>
+									</time>
+									<h2 class="blog__card--title">
+										Как начать изучать английский после перерыва:5 советов, которые помогут
+									</h2>
+									<div class="blog__card--text">
+										<p>
+											В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="related-articles__card splide__slide blog__card">
+								<a href="single.html" class="blog__card--body">
+									<div class="blog__card--image image-aspect-ratio">
+										<picture>
+											<source srcset="img/blog/blog-post-image-1.avif" type="image/avif">
+											<source srcset="img/blog/blog-post-image-1.webp" type="image/webp">
+											<img src="img/blog/blog-post-image-1.jpg" alt="" width="370" height="237" loading="lazy">
+										</picture>
+									</div>
+									<time class="blog__card--date" datetime="26-09-2023">
+										<svg width="13" height="13" viewBox="0 0 13 13">
+											<use xlink:href="img/sprites.svg#calendar-2"></use>
+										</svg>
+										<span>26.09.2023</span>
+									</time>
+									<h2 class="blog__card--title">
+										Как начать изучать английский после перерыва:5 советов, которые помогут
+									</h2>
+									<div class="blog__card--text">
+										<p>
+											В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="related-articles__card splide__slide blog__card">
+								<a href="single.html" class="blog__card--body">
+									<div class="blog__card--image image-aspect-ratio">
+										<picture>
+											<source srcset="img/blog/blog-post-image-2.avif" type="image/avif">
+											<source srcset="img/blog/blog-post-image-2.webp" type="image/webp">
+											<img src="img/blog/blog-post-image-2.jpg" alt="" width="370" height="237" loading="lazy">
+										</picture>
+									</div>
+									<time class="blog__card--date" datetime="26-09-2023">
+										<svg width="13" height="13" viewBox="0 0 13 13">
+											<use xlink:href="img/sprites.svg#calendar-2"></use>
+										</svg>
+										<span>26.09.2023</span>
+									</time>
+									<h2 class="blog__card--title">
+										Как начать изучать английский после перерыва:5 советов, которые помогут
+									</h2>
+									<div class="blog__card--text">
+										<p>
+											В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="related-articles__card splide__slide blog__card">
+								<a href="single.html" class="blog__card--body">
+									<div class="blog__card--image image-aspect-ratio">
+										<picture>
+											<source srcset="img/blog/blog-post-image-1.avif" type="image/avif">
+											<source srcset="img/blog/blog-post-image-1.webp" type="image/webp">
+											<img src="img/blog/blog-post-image-1.jpg" alt="" width="370" height="237" loading="lazy">
+										</picture>
+									</div>
+									<time class="blog__card--date" datetime="26-09-2023">
+										<svg width="13" height="13" viewBox="0 0 13 13">
+											<use xlink:href="img/sprites.svg#calendar-2"></use>
+										</svg>
+										<span>26.09.2023</span>
+									</time>
+									<h2 class="blog__card--title">
+										Как начать изучать английский после перерыва:5 советов, которые помогут
+									</h2>
+									<div class="blog__card--text">
+										<p>
+											В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="related-articles__card splide__slide blog__card">
+								<a href="single.html" class="blog__card--body">
+									<div class="blog__card--image image-aspect-ratio">
+										<picture>
+											<source srcset="img/blog/blog-post-image-1.avif" type="image/avif">
+											<source srcset="img/blog/blog-post-image-1.webp" type="image/webp">
+											<img src="img/blog/blog-post-image-1.jpg" alt="" width="370" height="237" loading="lazy">
+										</picture>
+									</div>
+									<time class="blog__card--date" datetime="26-09-2023">
+										<svg width="13" height="13" viewBox="0 0 13 13">
+											<use xlink:href="img/sprites.svg#calendar-2"></use>
+										</svg>
+										<span>26.09.2023</span>
+									</time>
+									<h2 class="blog__card--title">
+										Как начать изучать английский после перерыва:5 советов, которые помогут
+									</h2>
+									<div class="blog__card--text">
+										<p>
+											В изучении английского нередко случаются перерывы, иногда они бывают слишком продолжительными. Причины разные: не удавалось справиться с грамматикой, не подошел учитель, неудобная локация курсов и другие.
+										</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="related-articles__controls splide__arrows">
+						<button class="related-articles__arrow splide__arrow splide__arrow--prev arrow-btn" type="button">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</button>
+						<button class="related-articles__arrow splide__arrow splide__arrow--next arrow-btn" type="button">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer container _large">
+			<div class="footer__body">
+				<div class="footer__container">
+					<a href="index.html" class="footer__logo">
+						<img src="img/logo.svg" width="90" height="90" loading="lazy" alt="Logo" class="footer__logo--img">
+					</a>
+					<nav class="footer__nav">
+						<ul>
+							<li>
+								<a href="#">
+									Контакты
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Копирайтинг
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Договор оферты
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Патент
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="footer__contacts">
+						<li>
+							<a href="tel:+380671232323">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 13 13">
+										<use xlink:href="img/sprites.svg#tel"></use>
+									</svg>
+								</i>
+								<span>
+									+38 (067) - 123 - 23 - 23
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="tel:+380681232323">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 13 13">
+										<use xlink:href="img/sprites.svg#tel"></use>
+									</svg>
+								</i>
+								<span>
+									+38 (068) - 123 - 23 - 23
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="15" height="15" viewBox="0 0 15 15">
+										<use xlink:href="img/sprites.svg#map-point"></use>
+									</svg>
+								</i>
+								<span>
+									г.Днепр, ул.Глаголева 21
+								</span>
+							</a>
+						</li>
+					</ul>
+					<form method="post" class="footer__feedback">
+						<h3>
+							Учителям
+						</h3>
+						<p>
+							Если хотите стать частью нашей дружной команды заполните анкету
+						</p>
+						<label>
+							<input type="tel" name="tel" placeholder="Номер телефона" required>
+						</label>
+						<button class="btn _min-2" type="submit">
+							Связаться
+						</button>
+					</form>
+					<div class="footer__add">
+						<div class="footer__add--block">
+							<h3>Способы оплаты:</h3>
+							<ul>
+								<li>
+									<picture>
+										<source srcset="img/footer/visa.avif" type="image/avif">
+										<source srcset="img/footer/visa.webp" type="image/webp">
+										<img src="img/footer/visa.png" alt="" width="32" height="10" loading="lazy">
+									</picture>
+								</li>
+								<li>
+									<picture>
+										<source srcset="img/footer/mastercard.avif" type="image/avif">
+										<source srcset="img/footer/mastercard.webp" type="image/webp">
+										<img src="img/footer/mastercard.png" alt="" width="32" height="20" loading="lazy">
+									</picture>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__add--block">
+							<h3>Мы в социальных сетях:</h3>
+							<ul>
+								<li>
+									<a href="#" title="Instagram">
+										<img src="img/social/instagram.svg" alt="" width="18" height="18" loading="lazy">
+									</a>
+								</li>
+								<li>
+									<a href="#" title="Facebook">
+										<img src="img/social/facebook.svg" alt="" width="18" height="18" loading="lazy">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__privacy">
+					<ul>
+						<li>
+							<a href="#">
+								Политика конфиденциальности
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
+
+</body>
+
+</html>

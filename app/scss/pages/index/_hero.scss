@@ -1,0 +1,286 @@
+@use 'sass:math';
+
+.hero {
+
+	z-index: auto;
+	/* min-height: 100vh;
+	min-height: 100svh; */
+
+	padding-top: 24px;
+
+	@include _992 {
+		padding-top: 110px; padding-bottom: 140px;
+	}
+
+	// .hero__background
+
+	&__background {
+
+		position: absolute;
+		left: 0; top: calc(0px - var(--height-header,0px) );
+		width: 100%; height: calc(100% + var(--height-header,0px));
+		z-index: 2;
+
+		// .hero__background--decor
+
+		&--decor {
+			position: absolute;
+
+			&:nth-child(1) {
+				position: absolute;
+				left: calc(50% - #{math.div($container, 2)}px); top: 30%;
+				transform: translate(-130%,-20%);
+			}
+
+			&:nth-child(2) {
+				position: absolute;
+				left: calc(50% - #{math.div($container, 2)}px); bottom: 0%;
+				transform: translate(-135%,50%);
+			}
+
+			&:nth-child(3) {
+				position: absolute;
+				right: 0; top: 0%;
+				transform: translate(10%,-20%);
+			}
+
+			&:nth-child(4) {
+				position: absolute;
+				left: 100%; top: 0;
+				transform: translate(-100%,100%);
+				@media (min-width: 1350px) {
+					transform: translate(-100%,28%);
+				}
+				z-index: -3;
+				@media (min-width: 1600px) {
+					transform: translate(-120%,28%);	
+				}
+				img {
+					width: 507px; height: auto;
+					@media (min-width: 1350px) {
+						width: 807px;
+					}
+				}
+			}
+		}
+
+		&--eye {
+			position: absolute;
+			border-radius: 50%;
+			overflow: hidden;
+
+			width: 136px; height: 136px;
+			@media (min-width: 1350px) {
+				width: 206px; height: 206px;
+			}
+
+			.eye-area {
+				position: absolute;
+				left: 25px; top: 25px;
+				width: calc(100% - 50px); height: calc(100% - 50px);
+				@media (min-width: 1350px) {
+					left: 40px; top: 40px;
+					width: calc(100% - 80px); height: calc(100% - 80px);
+				}
+				border-radius: 50%;
+				overflow: hidden;
+			}
+
+			.eye-element {
+				position: absolute;
+				left: calc(50% - 21px); top: calc(50% - 21px);
+				transform: translate3d(-15px, -15px,0);
+				width: 42px; height: 42px;
+				@media (min-width: 1350px) {
+					left: calc(50% - 31.5px); top: calc(50% - 31.5px);
+					width: 63px; height: 63px;
+				}
+				border-radius: 50%;
+				background: var(--black);
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%; height: 100%;
+				border-radius: 50%;
+				border: 25px solid var(--primary);
+				@media (min-width: 1350px) {
+					border: 40px solid var(--primary);
+				}
+				z-index: 2;
+			}
+			
+			&:nth-child(1) {
+				left: 32%; top: 24%;
+			}
+
+			&:nth-child(2) {
+				left: 61%; top: 11%;
+			}
+		}
+	}
+
+	// .hero__content
+
+	&__content {
+	}
+
+	&__content--decor {
+		&:nth-child(1) {
+			display: flex;
+			
+			justify-content: flex-start;
+			//padding-left: 50%;
+
+			position: absolute;
+			left: max(var(--container-padding),calc(50% - #{math.div($container, 2)}px)); top: 24px;
+			transform: translate(-29%,-63.6%);
+			@include _992 {
+				top: 110px;
+				width: 1132px; height: 1132px;
+				padding-top: 836px;
+				transform: translate(-50%,-82.6%);
+				justify-content: flex-end;
+			}
+			width: 275px; height: 275px;
+			background: var(--primary);
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0; top: 0;
+				width: calc(100% + 1px); height: calc(100% + 1px);
+				border-radius: 50%;
+				user-select: none; pointer-events: none;
+				border: 2px solid var(--white);
+			}
+			border-radius: 50%;
+			z-index: -1;
+			opacity: 1;
+			color: var(--white);
+			overflow: hidden;
+
+			user-select: none;
+			pointer-events: none;
+
+			span {
+				display: block;
+				transform: translate(calc(119px + 1px - var(--container-padding) * 2), calc(63.25% + 1px));
+				
+				width: calc(100vw - var(--container-padding) * 2); flex: 0 0 calc(100vw - var(--container-padding) * 2);
+				@include _992 {
+					transform: translate(calc(28% + 1px), calc(33% + 1px));
+					max-width: 786px;
+					width: 100%;
+					
+				}
+			}
+		}
+	}
+
+	// .hero__title
+
+	&__title {
+		width: 100%;
+		@include _992 {
+			max-width: 786px;
+		}
+		min-height: 4ch;
+
+		position: relative;
+		z-index: -2;
+	}
+
+	// .hero__text
+
+	&__text {
+		padding-top: 33px;
+
+		font-size: 1.125rem;
+		
+		@include _550 {
+			font-size: 1.25rem;
+		}
+		
+		@include _768 {
+			font-size: 1.35rem;
+		}
+
+		@include _992 {
+			padding-top: 26px;
+			font-size: 1.5rem;
+			line-height: 166.67%;
+		}
+
+		line-height: 155%;
+		color: var(--text-color-1);
+
+		max-width: 438px;
+
+		u {
+			color: var(--accent);
+			font-weight: 600;
+			text-decoration-skip-ink: none;
+			text-underline-offset: 5px;
+			text-decoration-thickness: 3px;
+		}
+
+	}
+
+	// .hero__btn
+
+	&__btn {
+		margin-top: 55px;
+		@include _992 {
+			margin-top: 70px;
+			max-width: 325px;
+		}
+
+		max-width: 217px;
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		border-bottom: 5px solid var(--accent);
+		fill: var(--accent);
+
+		color: var(--accent);
+		font-size: 1.125rem;
+		
+		@include _550 {
+			font-size: 1.25rem;
+		}
+		
+		@include _768 {
+			font-size: 1.35rem;
+		}
+
+		@include _992 {
+			font-size: 1.5rem;
+		}
+		font-weight: 700;
+		line-height: 100%;
+
+		transition: color .3s ease, border-color .3s ease;
+
+		svg {
+			margin-bottom: -5px; margin-right: -1px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--accent-hover);
+				border-color: var(--accent-hover);
+			}
+			
+			&:active {
+				color: var(--accent-active);
+				border-color: var(--accent-active);
+				//fill: var(--accent-active);
+			}
+		}
+	}
+}

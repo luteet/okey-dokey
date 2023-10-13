@@ -1,0 +1,159 @@
+.our-teachers {
+
+	@include _992 {
+		padding-top: 120px;
+	}
+
+	padding-top: 60px;
+
+	// .our-teachers__title
+
+	&__title {
+		text-align: center;
+	}
+
+	// .our-teachers__slider
+
+	&__slider {
+		background: var(--light);
+		border-radius: 35px;
+		padding: 20px 42px;
+
+		
+
+		@include _768 {
+			border-radius: 75px;
+			padding: 50px 70px;
+
+			margin-top: 50px;
+		}
+
+		margin-top: 16px;
+		
+		@include _992 {
+			padding: 50px 107px;
+			border-radius: 150px;
+		}
+	}
+
+	// .our-teachers__track
+
+	&__track {
+		//-webkit-mask: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 1%, rgba(255,255,255,1) 99%, rgba(0,0,0,0) 100%);
+	}
+
+	// .our-teachers__list
+
+	&__list {
+	}
+
+	// .our-teachers__card
+
+	&__card {
+
+		// .our-teachers__card--avatar
+
+		&--avatar {
+			width: 100%; padding-top: 100%;
+			position: relative;
+
+			img {
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%; height: 100%;
+				border-radius: 50%;
+				border: 5px solid var(--primary);
+				background: var(--light-2);
+			}
+		}
+
+		// .our-teachers__card--name
+
+		&--name {
+			padding-top: 20px;
+
+			color: var(--text-color-2);
+			font-size: 1.25rem;
+			@include _550 {
+				font-size: 1.3rem;
+			}
+			
+			@include _768 {
+				font-size: 1.5rem;
+			}
+			
+			@include _992 {
+				font-size: 1.625rem;
+			}
+			font-weight: 600;
+			line-height: 128.846%;
+		}
+
+		// .our-teachers__card--info
+
+		&--info {
+			padding-top: 14px;
+
+			li:not(:first-child) {
+				margin-top: 10px;
+			}
+
+			li {
+				display: flex;
+
+				span {
+					padding-top: 5px;
+					font-size: 0.9375rem;
+					@include _550 {
+						font-size: 1rem;
+					}
+					line-height: 137%;
+				}
+			}
+
+			i {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				width: 22px; height: 22px; flex: 0 0 22px;
+				svg {
+					width: 65%; height: 65%;
+				}
+				@include _550 {
+					width: 31px; height: 31px; flex: 0 0 31px;
+				}
+				border-radius: 50%;
+				border: 1px solid var(--primary);
+				background: var(--white);
+				
+				margin-right: 9px;
+			}
+		}
+	}
+
+	// .our-teachers__nav
+
+	&__nav {
+	}
+
+	// .our-teachers__arrow
+
+	&__arrow {
+		&.splide__arrow--prev {
+			left: 0;
+			transform: translate(-25%,-50%);
+			@media (min-width: #{$containerLarge+40}px) {
+				transform: translate(-50%,-50%);
+			}
+		}
+
+		&.splide__arrow--next {
+			right: 0;
+			transform: translate(25%,-50%);
+			@media (min-width: #{$containerLarge+40}px) {
+				transform: translate(50%,-50%);
+			}
+		}
+	}
+}

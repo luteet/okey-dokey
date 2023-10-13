@@ -1,0 +1,57 @@
+.breadcrumbs-wrapper {
+	
+}
+
+.breadcrumbs {
+
+	font-size: 0.75rem;
+	
+	@include _768 {
+		font-size: 0.875rem;	
+	}
+	
+	@include _992 {
+		padding-left: 100px;
+
+		font-size: 1rem;
+	}
+
+	padding-top: 12px;
+
+	
+
+	// .breadcrumbs__link
+
+	&__link {
+		color: var(--black);
+
+		@media (any-hover: hover) {
+			transition: .15s ease;
+			&:hover {
+				color: var(--accent);
+			}
+			
+			&:active {
+				color: var(--accent-active);
+			}
+		}
+	}
+
+	// .breadcrumbs__separator
+
+	&__separator {
+		display: inline-block;
+		&::before {
+			content: '';
+			width: 1px; height: 11px;
+			background: var(--black);
+			display: inline-block;
+			margin: 0 5px;
+		}
+	}
+
+	// .breadcrumbs__current
+
+	&__current {
+	}
+}

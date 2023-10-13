@@ -1,0 +1,126 @@
+
+@font-face {
+	@include font-include('Solomon Sans', 200, swap, normal, 'SolomonSans-Thin');
+}
+
+@font-face {
+	@include font-include('Solomon Sans', 300, swap, normal, 'SolomonSans-Light');
+}
+
+@font-face {
+	@include font-include('Solomon Sans', 400, swap, normal, 'SolomonSans-Regular');
+}
+
+@font-face {
+	@include font-include('Solomon Sans', 500, swap, normal, 'SolomonSans-Medium');
+}
+
+@font-face {
+	@include font-include('Solomon Sans', 600, swap, normal, 'SolomonSans-SemiBold');
+}
+
+@font-face {
+	@include font-include('Solomon Sans', 700, swap, normal, 'SolomonSans-Bold');
+}
+
+@font-face {
+	@include font-include('Solomon Sans', 900, swap, normal, 'SolomonSans-Black');
+}
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 900;
+	font-weight: 900;
+	line-height: 103.125%;
+
+	font-size: 2.8125rem;  // 45px
+
+	@include _550 {
+		font-size: 3.5rem; // 56px
+	}
+
+	@include _768 {
+		font-size: 4.5rem;  // 72px
+	}
+
+	@include _992 {
+		font-size: 6rem;  // 96px
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 600;
+	line-height: 120%;
+
+	font-size: 1.125rem; // 18px
+
+	@include _550 {
+		font-size: 1.25rem; // 20px
+	}
+
+	@include _768 {
+		font-size: 2rem; // 32px
+	}
+
+	@include _992 {
+		font-size: 2.5rem; // 40px
+	}
+
+}
+
+.section-title {
+
+	font-family: var(--title-font);
+	font-weight: 900;
+	line-height: 100%;
+
+	font-size: 2.1875rem; // 35px
+	&._large {
+		font-size: 1.875rem; // 30px
+	}
+
+	&._super-large {
+		font-size: 5rem; // 80px
+	}
+
+	@include _550 {
+		font-size: 2.5rem; // 40px
+		&._large {
+			font-size: 2.5rem; // 40px
+		}
+
+		&._super-large {
+			font-size: 5rem; // 80px
+		}
+	}
+	
+	@include _768 {
+		font-size: 3.125rem; // 50px
+		&._large {
+			font-size: 3.4375rem; // 55px
+		}
+
+		&._super-large {
+			font-size: 5rem; // 80px
+		}
+	}
+	
+	@include _992 {
+		font-size: 3.4375rem; // 55px
+		line-height: 118%;
+		&._large {
+			font-size: 4.0625rem; // 65px
+		}
+
+		&._super-large {
+			font-size: 5rem; // 80px
+		}
+	}
+
+}
+
+.txt-center {
+	text-align: center;
+}
