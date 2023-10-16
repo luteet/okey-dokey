@@ -42,6 +42,10 @@
 				position: absolute;
 				right: 0; top: 0%;
 				transform: translate(10%,-20%);
+				display: none;
+				@media (min-width: 1650px) {
+					display: block;
+				}
 			}
 
 			&:nth-child(4) {
@@ -53,7 +57,8 @@
 				}
 				z-index: -3;
 				@media (min-width: 1600px) {
-					transform: translate(-120%,28%);	
+					transform: translate(-120%,28%);
+					left: calc(50% + 850px);
 				}
 				img {
 					width: 507px; height: auto;
