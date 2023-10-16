@@ -1,0 +1,35 @@
+@@include("html/_header.html")
+
+	<main class="main">
+		<section class="login container">
+			<div class="login__background" aria-hidden="true">
+				<div class="login__background--item">
+					<img src="img/login/login-decor-1.svg" width="0" height="0" loading="lazy" alt="">
+				</div>
+				<div class="login__background--item">
+					<img src="img/login/login-decor-2.svg" width="0" height="0" loading="lazy" alt="">
+				</div>
+			</div>
+			<form method="post" class="login__body">
+				<div class="login__header">
+					<h2>Вход</h2>
+				</div>
+				<label>
+					<span>E-mail</span>
+					<input type="email" name="email" required placeholder="E-mail">
+				</label>
+				<label>
+					<span>Пароль</span>
+					<input type="password" name="password" required placeholder="Пароль">
+				</label>
+				<button class="btn" type="submit">
+					Войти
+				</button>
+				<a href="#">
+					Забыли пароль?
+				</a>
+			</form>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

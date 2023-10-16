@@ -1,0 +1,121 @@
+@@include("html/_header-student.html")
+
+	<main class="main">
+		<section class="student-profile">
+			@@include("html/account/_student-profile-hero.html")
+			<article class="student-profile__info">
+				<div class="student-profile__info--header">
+					<h2 class="student-profile__info--title account-block__title">
+						Мой прогресс
+					</h2>
+					<a href="#" class="student-profile__info--edit account-block__edit-btn">
+						<svg width="22" height="22" viewBox="0 0 22 22">
+							<use xlink:href="img/sprites.svg#edit"></use>
+						</svg>
+					</a>
+				</div>
+				<form method="post" class="student-profile__info--form">
+					<label>
+						<span>ФИО</span>
+						<span>
+							<svg width="19" height="20" viewBox="0 0 19 20">
+								<use xlink:href="img/sprites.svg#avatar-2"></use>
+							</svg>
+							<input type="text" name="student-name" placeholder="Введите имя" required readonly value="Винниченко Ирина Леонидовна">
+						</span>
+					</label>
+					<label>
+						<span>Возраст ребенка</span>
+						<span>
+							<svg width="21" height="21" viewBox="0 0 21 21">
+								<use xlink:href="img/sprites.svg#date-of-birth"></use>
+							</svg>
+							<input type="text" name="date-of-birth" placeholder="Введите возрас" required readonly value="7 лет">
+						</span>
+					</label>
+					<label>
+						<span>Город проживания</span>
+						<span>
+							<svg width="19" height="19" viewBox="0 0 15 15">
+								<use xlink:href="img/sprites.svg#map-point"></use>
+							</svg>
+							<input type="text" name="city" placeholder="Введите название города" required readonly value="Винница">
+						</span>
+					</label>
+				</form>
+			</article>
+			<article class="student-profile__info">
+				<div class="student-profile__info--header">
+					<h2 class="student-profile__info--title account-block__title">
+						Данные родителя
+					</h2>
+					<a href="#" class="student-profile__info--edit account-block__edit-btn">
+						<svg width="22" height="22" viewBox="0 0 22 22">
+							<use xlink:href="img/sprites.svg#edit"></use>
+						</svg>
+					</a>
+				</div>
+				<form method="post" class="student-profile__info--form">
+					<label>
+						<span>ФИО</span>
+						<span>
+							<svg width="19" height="20" viewBox="0 0 19 20">
+								<use xlink:href="img/sprites.svg#avatar-2"></use>
+							</svg>
+							<input type="text" name="parent-name" placeholder="Введите имя" required readonly value="Винниченко Людмила Леонидовна">
+						</span>
+					</label>
+					<label>
+						<span>Телефон</span>
+						<span>
+							<svg width="21" height="21" viewBox="0 0 13 13">
+								<use xlink:href="img/sprites.svg#tel"></use>
+							</svg>
+							<input type="tel" name="tel" placeholder="Введите номер телефон" required readonly value="+38 (063) - 111 - 12 - 12">
+						</span>
+					</label>
+					<label>
+						<span>E-mail</span>
+						<span>
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#email"></use>
+							</svg>
+							<input type="email" name="email" placeholder="Введите email" required readonly value="@gmail.com">
+						</span>
+					</label>
+				</form>
+			</article>
+			<article class="student-profile__courses-taken">
+				<h2 class="student-profile__courses-taken--title account-block__decor-title">
+					<span>Пройденные курсы</span>
+				</h2>
+				<ul class="student-profile__courses-taken--list">
+					@@loop("html/account/_student-profile-course-taken.html", [
+
+						{
+							"class": " is-active",
+						},
+						{
+							"class": "",
+						},
+						{
+							"class": "",
+						},
+
+						{
+							"class": "",
+						},
+						{
+							"class": "",
+						},
+						{
+							"class": "",
+						},
+
+					])
+				</ul>
+			</article>
+		</section>
+	</main>
+
+@@include("html/_footer-account.html")

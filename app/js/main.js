@@ -4,6 +4,8 @@ const
 	html = document.querySelector('html'),
 	menu = document.querySelectorAll('.header__burger, .header__nav, body'),
 	burger = document.querySelector('.header__burger'),
+	headerAccount = document.querySelector('.header-account'),
+	aside = document.querySelector('.aside'),
 	header = document.querySelector('.header');
 
 
@@ -41,6 +43,7 @@ function Popup(arg) {
 					html.style.setProperty('--popup-padding', window.innerWidth - body.offsetWidth + 'px');
 					body.classList.add('_popup-active');
 
+					removeHash();
 					if (saveID) history.pushState('', "", id);
 
 					setTimeout(() => {
@@ -157,7 +160,9 @@ function Popup(arg) {
 	}
 }
 
-const popup = new Popup();
+const popup = new Popup({
+	saveID: true,
+});
 
 popup.init()
 
@@ -221,6 +226,9 @@ imageAspectRatio.forEach(imageAspectRatio => {
 
 // =-=-=-=-=-=-=-=-=-=- <click events> -=-=-=-=-=-=-=-=-=-=-
 
+const accountChatMain = document.querySelector('.account-chat__main'),
+accountChatAside = document.querySelector('.account-chat__aside');
+
 body.addEventListener('click', function (event) {
 
 	function $(elem) {
@@ -250,6 +258,17 @@ body.addEventListener('click', function (event) {
 	} else if(!$('.header__lang') && document.querySelector('.header__lang--target.is-active')) {
 
 		document.querySelector('.header__lang--target.is-active').classList.remove('is-active');
+
+	}
+
+	const headerAccountLangTarget = $(".header-account__lang--target")
+	if(headerAccountLangTarget && getDeviceType() != "desktop") {
+	
+		headerAccountLangTarget.classList.toggle('is-active');
+	
+	} else if(!$('.header-account__lang') && document.querySelector('.header-account__lang--target.is-active')) {
+
+		document.querySelector('.header-account__lang--target.is-active').classList.remove('is-active');
 
 	}
 	
@@ -325,6 +344,147 @@ body.addEventListener('click', function (event) {
 
 	
 	
+	// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	let scrollTo = $('.scroll-to');
+	if(scrollTo) {
+		event.preventDefault();
+		let section;
+	
+		section = document.querySelector(scrollTo.getAttribute('href'))
+	
+		menu.forEach(elem => {
+			elem.classList.remove('_mob-menu-active')
+		})
+	
+		if(section) {
+			section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+		} else {
+			body.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+		}
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <header-account-notification> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const headerAccountNotificationTarget = $(".header-account__notification--target")
+	if(headerAccountNotificationTarget) {
+	
+		headerAccountNotificationTarget.classList.add('is-active');
+	
+	} else if(!$('.header-account__notification') && document.querySelector('.header-account__notification--target.is-active')) {
+		document.querySelector('.header-account__notification--target.is-active').classList.remove('is-active');
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </header-account-notification> -=-=-=-=-=-=-=-=-=-=-=-=
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <header-account-notification> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const headerAccountProfileTarget = $(".header-account__profile--target")
+	if(headerAccountProfileTarget) {
+	
+		headerAccountProfileTarget.classList.add('is-active');
+	
+	} else if(!$('.header-account__profile') && document.querySelector('.header-account__profile--target.is-active')) {
+		document.querySelector('.header-account__profile--target.is-active').classList.remove('is-active');
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </header-account-notification> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <aside> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const headerAccountOpenAsideBtn = $(".header-account__open-aside--btn")
+	if(headerAccountOpenAsideBtn) {
+	
+		aside.classList.add('is-active');
+	
+	}
+
+	const asideClose = $(".aside__close")
+	if(asideClose) {
+	
+		aside.classList.remove('is-active');
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </aside> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <account-block-accordion> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const accountBlockAccordionTarget = $(".account-block__accordion-target")
+	if(accountBlockAccordionTarget) {
+	
+		accountBlockAccordionTarget.classList.toggle('is-active')
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </account-block-accordion> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <account-chat-aside-item> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const accountChatAsideTtem = $(".account-chat__aside-item")
+	if(accountChatAsideTtem && accountChatMain) {
+	
+		event.preventDefault();
+		const activeItem = accountChatAsideTtem.closest('ul').querySelector('.is-active');
+		if(activeItem) activeItem.classList.remove('is-active');
+
+		accountChatAsideTtem.classList.add('is-active')
+		if(windowSize >= 1300) {
+			accountChatMain.classList.remove('fade-in');
+			accountChatMain.classList.add('fade-out');
+			setTimeout(() => {
+				accountChatMain.classList.remove('fade-out');
+				accountChatMain.classList.add('fade-in');
+			},500)
+		} else {
+			accountChatAside.classList.add('is-loading');
+			setTimeout(() => {
+				accountChatMain.classList.remove('fade-out');
+				accountChatMain.classList.add('fade-in');
+				accountChatAside.classList.remove('is-loading');
+
+				window.scrollTo({
+					left: 0,
+					top: getCoords(accountChatMain).top - 30,
+					behavior: "smooth",
+				})
+				
+			},300)
+		}
+		
+	
+	}
+
+	const accountChatForward = $('.account-chat__forward')
+	if(accountChatForward && accountChatMain) {
+
+		event.preventDefault()
+		const activeItem = document.querySelector('.account-chat__aside-item.is-active');
+		if(activeItem) activeItem.classList.remove('is-active');
+		
+		accountChatMain.classList.remove('fade-in');
+		accountChatMain.classList.add('fade-out');
+
+		window.scrollTo({
+			left: 0,
+			top: getCoords(accountChatAside).top - 30,
+			behavior: "smooth",
+		})
+
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </account-chat-aside-item> -=-=-=-=-=-=-=-=-=-=-=-=
 
 })
 
@@ -373,7 +533,11 @@ let windowSize = 0;
 
 function resize() {
 
-	html.style.setProperty("--height-header", header.offsetHeight + "px");
+	if(header) {
+		html.style.setProperty("--height-header", header.offsetHeight + "px");
+	} else if(headerAccount) {
+		html.style.setProperty("--height-header", headerAccount.offsetHeight + "px");
+	}
 	html.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
 	if(windowSize != window.innerWidth) {
 		html.style.setProperty("--svh", window.innerHeight * 0.01 + "px");
@@ -524,6 +688,28 @@ if(document.querySelector('.related-articles__slider')) {
 
 }
 
+if(document.querySelector('.student-awards__slider')) {
+
+	document.querySelectorAll('.student-awards__slider').forEach(sliderEl => {
+		
+		const slider = new Splide(sliderEl, {
+
+			
+			autoWidth: true,
+			gap: 6,
+			
+			speed: 500,
+			easing: "ease",
+			type: "loop",
+			pagination: false,
+	
+		});
+	
+		slider.mount();
+	})
+
+}
+
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
@@ -560,4 +746,27 @@ copyBtn.forEach(copyBtn => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </clipboard> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <input-file> -=-=-=-=-=-=-=-=-=-=-=-=
+
+document.querySelectorAll('.account-chat__file').forEach(file => {	
+	if(file.querySelector('input')) {
+		file.querySelector('input').addEventListener('change', function (event) {
+			let text = '';
+			Array.from(event.target.files).forEach((fileEl, index) => {
+				if(index != 0) {
+					text = ', ' + fileEl.name;
+				} else {
+					text = fileEl.name;
+				}
+				
+			})
+
+			file.querySelector('span').querySelector('span').textContent = text;
+		})
+	}
+})
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </input-file> -=-=-=-=-=-=-=-=-=-=-=-=
 

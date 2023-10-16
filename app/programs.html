@@ -1,0 +1,85 @@
+@@include("html/_header.html")
+
+	<main class="main">
+		<div class="breadcrumbs-wrapper container">
+			<div class="breadcrumbs">
+				<a href="#" class="breadcrumbs__link">
+					Главная
+				</a>
+				<span class="breadcrumbs__separator"></span>
+				<span class="breadcrumbs__current">Программы</span>
+			</div>
+		</div>
+		<section class="programs container">
+			<div class="programs__background" aria-hidden="true">
+				<div class="programs__background--item">
+					<img src="img/index/faq/faq-decor-2.svg" width="0" height="0" loading="lazy" alt="">
+				</div>
+				<div class="programs__background--item">
+					<img src="img/index/faq/faq-decor-1.svg" width="0" height="0" loading="lazy" alt="">
+				</div>
+			</div>
+			<div class="programs__hero">
+				<h2 class="programs__title section-title _start">
+					Программы
+				</h2>
+				<h3 class="programs__subtitle">
+					Преимущества наших программ
+				</h3>
+				<ul class="programs__hero-list">
+					<li class="programs__hero-item">
+						<div class="programs__hero-item--icon">
+							<img src="img/programs/programs-list-icon-1.svg" width="31" height="31" loading="lazy" alt="">
+						</div>
+						<div class="programs__hero-item--content">
+							<h4>Новые друзья</h4>
+							<p>
+								Посещая групповые уроки, студенты заводят новые знакомства, общаются друг с другом, работают в команде и воспроизводят ситуации из реальной жизни.
+							</p>
+						</div>
+					</li>
+					<li class="programs__hero-item">
+						<div class="programs__hero-item--icon">
+							<img src="img/programs/programs-list-icon-2.svg" width="31" height="31" loading="lazy" alt="">
+						</div>
+						<div class="programs__hero-item--content">
+							<h4>Регулярность занятий</h4>
+							<p>
+								Занятия в группе нельзя перенести или отменить, поэтому не удастся «схалтурить», а придется отрабатывать уроки, что приведет к более быстрому результату.
+							</p>
+						</div>
+					</li>
+					<li class="programs__hero-item">
+						<div class="programs__hero-item--icon">
+							<img src="img/programs/programs-list-icon-3.svg" width="31" height="31" loading="lazy" alt="">
+						</div>
+						<div class="programs__hero-item--content">
+							<h4>Много общения</h4>
+							<p>
+								Ты общаешься не только с преподавателем, но и с другими студентами, поэтому легче преодолеть языковой барьер, к тому же студенты участвуют в дискуссиях.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class="programs__list">
+				@@loop("html/_programs-card.html", [
+					{},
+					{},
+					{},
+					{},
+					{},
+					{},
+				])
+			</ul>
+			<div class="programs__footer">
+				<a href="#" class="programs__load-more circle-btn _accent">
+					Смотреть <br> еще
+				</a>
+			</div>
+		</section>
+		@@include("html/_leave-application.html")
+		@@include("html/_reviews.html")
+	</main>
+
+@@include("html/_footer.html")

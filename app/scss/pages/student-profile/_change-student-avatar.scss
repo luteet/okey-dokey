@@ -1,0 +1,168 @@
+.change-student-avatar {
+
+	@include _768 {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		gap: 0 20px;
+	}
+
+	@include _container {
+		gap: 0 41px;
+	}
+
+	// .change-student-avatar__title
+
+	&__title {
+		padding-top: 28px;
+		text-align: center;
+
+		grid-column: 2 span;
+	}
+
+	// .change-student-avatar__header
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+
+		grid-column: 2 span;
+
+		padding-top: 13px;
+		@include _768 {
+			padding-top: 30px;
+
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-direction: row;
+		}
+	}
+
+	&__block {
+		margin-top: 21px;
+		@include _768 {
+			margin-top: 14px;
+		}
+		&._full {
+			margin-top: 50px; margin-bottom: 14px;
+			@include _768 {
+				margin-top: 35px; margin-bottom: 14px;
+			}
+			grid-column: 2 span;
+		}
+	}
+
+	// .change-student-avatar__hero
+
+	&__hero {
+
+		padding: 21px 22px;
+		background: #F9F9F9;
+		border-radius: 20px;
+
+		display: grid;
+		grid-template-columns: 80px auto;
+		gap: 0 11px;
+
+		@include _768 {
+			display: block;
+		}
+
+		// .change-student-avatar__hero--avatar
+
+		&--avatar {
+			grid-column: 1; grid-row: 1/3;
+
+			@include _768 {
+				width: 160px; height: 160px;
+			}
+
+			margin-left: auto; margin-right: auto;
+			
+			@media (min-width: 1650px) {
+				margin-left: 0; margin-right: 0;
+			}
+
+			width: 69px; height: 69px;
+			border: 2px solid var(--primary);
+			border-radius: 10px;
+
+			position: relative;
+			z-index: 2;
+
+			overflow: hidden;
+
+			img {
+				position: absolute;
+				left: 8px; top: 8px;
+				width: calc(100% - 16px); height: calc(100% - 16px);
+				object-fit: contain;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0; top: 0;
+				width: 75%; height: 75%;
+				border-radius: 50%;
+				background: #F1F1F1;
+				z-index: -1;
+				transform: translate(15%,-20%);
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 9px; bottom: 15%;
+				width: 45%; height: 45%;
+				border-radius: 50%;
+				background: var(--primary);
+				z-index: -1;
+				//transform: translate(15%,-20%);
+			}
+		}
+
+		// .change-student-avatar__hero--name
+
+		&--name {
+			@include _768 {
+				margin-top: 14px;
+				font-size: 1.125rem;
+			}
+
+			align-self: self-end;
+
+			font-size: 1rem;
+			line-height: normal;
+			font-weight: 600;
+		}
+
+		// .change-student-avatar__hero--status
+
+		&--status {
+			color: #534D4D;
+			@include _768 {
+				font-size: 0.9375rem;
+			}
+			font-size: 0.875rem;
+			line-height: 160%;
+
+			display: block;
+		}
+	}
+
+	// .change-student-avatar__btn
+
+	&__btn {
+		margin-top: 20px;
+		@include _768 {
+			margin-top: 0;
+		}
+	}
+
+	// .change-student-avatar__nav
+
+	&__nav {
+		margin-top: 18px;
+		grid-column: 2 span;
+	}
+}

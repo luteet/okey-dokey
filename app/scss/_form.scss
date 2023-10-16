@@ -76,3 +76,56 @@ input, textarea {
 .ss-option {
 	transition: background .2s ease, color .2s ease;	
 }
+
+.checkbox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	cursor: pointer;
+
+	&__input {
+		position: absolute;
+		width: 1px; height: 1px;
+		margin: -1px; padding: 0;
+		border: 0;
+		
+		white-space: nowrap;
+		clip-path: inset(100%);
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+	}
+
+	&__input:checked + &__element svg {
+		opacity: 1;
+	}
+
+	&__element {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 30px; height: 30px; flex: 0 0 30px;
+		margin-right: 11px;
+
+		background: var(--white);
+		color: var(--primary);
+
+		svg {
+			width: 12px; height: 12px;
+			transition: opacity .3s ease;
+			opacity: 0;
+		}
+
+		border-radius: 7px;
+	}
+
+	&__text {
+		user-select: none;
+		color: var(--white);
+		font-size: 1rem;
+		@include _992 {
+			font-size: 1.125rem;
+		}
+	}
+}

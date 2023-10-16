@@ -1,0 +1,310 @@
+@@include("html/_header-student.html")
+
+	<main class="main">
+		<section class="change-student-avatar">
+			<h2 class="change-student-avatar__title section-title visible-on-mob">
+				Профиль
+			</h2>
+			<div class="change-student-avatar__header">
+				<div class="change-student-avatar__hero">
+					<div class="change-student-avatar__hero--avatar">
+						<picture>
+							<source srcset="img/student-account/student-account-avatar.avif" type="image/avif">
+							<source srcset="img/student-account/student-account-avatar.webp" type="image/webp">
+							<img src="img/student-account/student-account-avatar.png" alt="" width="184" height="184" loading="lazy">
+						</picture>
+					</div>
+					<h3 class="change-student-avatar__hero--name">Ирина Винченко</h3>
+					<span class="change-student-avatar__hero--status">Ученик</span>
+				</div>
+				<button class="change-student-avatar__btn btn _min _alt" type="button">
+					Сохранить изменения
+				</button>
+			</div>
+			<div class="change-student-avatar__nav change-avatar__nav visible-on-mob">
+				<ul class="change-avatar__nav--list">
+					<li class="change-avatar__nav--item">
+						<a href="#change-skin-block" class="change-avatar__nav--btn scroll-to">
+							Кожа
+						</a>
+					</li>
+					<li class="change-avatar__nav--item">
+						<a href="#change-hair-block" class="change-avatar__nav--btn scroll-to">
+							Цвет волос
+						</a>
+					</li>
+					<li class="change-avatar__nav--item">
+						<a href="#change-hats-block" class="change-avatar__nav--btn">
+							Шапки
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="change-student-avatar__block change-avatar__block change-avatar__color" id="change-skin-block">
+				<h3>Цвет кожи</h3>
+				<ul class="change-avatar__color--list">
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+					<li style="--color: #FFC29F;">
+						<label>
+							<input type="radio" name="skin-color" value="color-1">
+							<span></span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="change-student-avatar__block change-avatar__block change-avatar__items" id="change-hair-block">
+				<h3>Цвет волос</h2>
+				<ul class="change-avatar__items--list">
+					<li>
+						<label>
+							<input type="radio" name="hair-color" value="hair-color-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hair-color" value="hair-color-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-2.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-2.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-2.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hair-color" value="hair-color-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="change-student-avatar__block change-avatar__block change-avatar__items" id="change-hats-block">
+				<h3>Шапки</h3>
+				<ul class="change-avatar__items--list">
+					<li>
+						<label>
+							<input type="radio" name="hats" value="hat-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hats" value="hat-2">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-2.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-2.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-2.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hats" value="hat-3">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="change-student-avatar__block _full">
+				<h3 class="create-student-avatar__block--title account-block__decor-title">
+					<span>Недавно преобретенные</span>
+				</h3>
+			</div>
+			<div class="change-student-avatar__block change-avatar__block change-avatar__items">
+				<h3>Цвет волос</h2>
+				<ul class="change-avatar__items--list">
+					<li>
+						<label>
+							<input type="radio" name="hair-color" value="hair-color-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hair-color" value="hair-color-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-2.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-2.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-2.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hair-color" value="hair-color-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="change-student-avatar__block change-avatar__block change-avatar__items">
+				<h3>Шапки</h3>
+				<ul class="change-avatar__items--list">
+					<li>
+						<label>
+							<input type="radio" name="hats" value="hat-1">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hats" value="hat-2">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-2.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-2.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-2.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+					<li>
+						<label>
+							<input type="radio" name="hats" value="hat-3">
+							<span>
+								<picture>
+									<source srcset="img/student-account/student-design-item-1.avif" type="image/avif">
+									<source srcset="img/student-account/student-design-item-1.webp" type="image/webp">
+									<img src="img/student-account/student-design-item-1.png" alt="" loading="lazy" width="58" height="57">
+								</picture>
+							</span>
+							<span>
+								Надеть
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer-account.html")

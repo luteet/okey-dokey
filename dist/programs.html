@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__body">
+				<div class="header__logo">
+					<a href="index.html" class="header__logo--link">
+						<img src="img/logo.svg" alt="Logo" width="90" height="90" loading="lazy" class="header__logo--img">
+					</a>
+				</div>
+				<nav class="header__nav">
+					<div class="header__nav--body">
+						<ul class="header__nav--list">
+							<li>
+								<a href="./#tariffs">
+									Тарифы
+								</a>
+							</li>
+							<li>
+								<a href="about-us.html">
+									О нас
+								</a>
+							</li>
+							<li>
+								<a href="./#our-teachers">
+									Галерея преподавателей
+								</a>
+							</li>
+							<li>
+								<a href="programs.html">
+									Программы
+								</a>
+							</li>
+							<li>
+								<a href="./#reviews">
+									Отзывы
+								</a>
+							</li>
+							<li>
+								<a href="blog.html">
+									Блог
+								</a>
+							</li>
+							<li>
+								<a href="./#faq">
+									Вопрос-ответ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="header__lang visible-on-mob">
+					<button class="header__lang--target" type="button">
+						Рус
+						<svg width="7" height="5" viewBox="0 0 7 5">
+							<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+						</svg>
+					</button>
+					<ul class="header__lang--list">
+						<li>
+							<a href="#">
+								En
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__account visible-on-mob">
+					<a href="#" class="header__account--btn" title="Аккаунт">
+						<svg width="22" height="22" viewBox="0 0 22 22">
+							<use xlink:href="img/sprites.svg#avatar"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__add visible-on-desktop">
+					<div class="header__tel">
+						<button class="header__tel--target" type="button">
+							<svg width="21" height="21" viewBox="0 0 13 13">
+								<use xlink:href="img/sprites.svg#tel"></use>
+							</svg>
+							<svg width="7" height="5" viewBox="0 0 7 5">
+								<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+							</svg>
+						</button>
+						<div class="header__tel--block">
+							<ul class="header__tel--list">
+								<li>
+									<a href="tel:+380671111111">
+										+380 (67) - 111 - 11 - 11
+									</a>
+								</li>
+								<li>
+									<a href="tel:+380981111111">
+										+380 (98) - 111 - 11 - 11
+									</a>
+								</li>
+							</ul>
+							<a href="#feedback-popup" class="header__tel--btn btn _min-2 _transparent open-popup">
+								Связаться со мной
+							</a>
+						</div>
+					</div>
+					<div class="header__lang">
+						<button class="header__lang--target" type="button">
+							Рус
+							<svg width="7" height="5" viewBox="0 0 7 5">
+								<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+							</svg>
+						</button>
+						<ul class="header__lang--list">
+							<li>
+								<a href="#">
+									En
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header__account">
+						<a href="#" class="header__account--btn" title="Аккаунт">
+							<svg width="22" height="22" viewBox="0 0 22 22">
+								<use xlink:href="img/sprites.svg#avatar"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<button class="header__burger" type="button" aria-label="Menu">
+					<p>
+						<span></span>
+						<span></span>
+						<span></span>
+					</p>
+				</button>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="breadcrumbs-wrapper container">
+				<div class="breadcrumbs">
+					<a href="#" class="breadcrumbs__link">
+						Главная
+					</a>
+					<span class="breadcrumbs__separator"></span>
+					<span class="breadcrumbs__current">Программы</span>
+				</div>
+			</div>
+			<section class="programs container">
+				<div class="programs__background" aria-hidden="true">
+					<div class="programs__background--item">
+						<img src="img/index/faq/faq-decor-2.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+					<div class="programs__background--item">
+						<img src="img/index/faq/faq-decor-1.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+				</div>
+				<div class="programs__hero">
+					<h2 class="programs__title section-title _start">
+						Программы
+					</h2>
+					<h3 class="programs__subtitle">
+						Преимущества наших программ
+					</h3>
+					<ul class="programs__hero-list">
+						<li class="programs__hero-item">
+							<div class="programs__hero-item--icon">
+								<img src="img/programs/programs-list-icon-1.svg" width="31" height="31" loading="lazy" alt="">
+							</div>
+							<div class="programs__hero-item--content">
+								<h4>Новые друзья</h4>
+								<p>
+									Посещая групповые уроки, студенты заводят новые знакомства, общаются друг с другом, работают в команде и воспроизводят ситуации из реальной жизни.
+								</p>
+							</div>
+						</li>
+						<li class="programs__hero-item">
+							<div class="programs__hero-item--icon">
+								<img src="img/programs/programs-list-icon-2.svg" width="31" height="31" loading="lazy" alt="">
+							</div>
+							<div class="programs__hero-item--content">
+								<h4>Регулярность занятий</h4>
+								<p>
+									Занятия в группе нельзя перенести или отменить, поэтому не удастся «схалтурить», а придется отрабатывать уроки, что приведет к более быстрому результату.
+								</p>
+							</div>
+						</li>
+						<li class="programs__hero-item">
+							<div class="programs__hero-item--icon">
+								<img src="img/programs/programs-list-icon-3.svg" width="31" height="31" loading="lazy" alt="">
+							</div>
+							<div class="programs__hero-item--content">
+								<h4>Много общения</h4>
+								<p>
+									Ты общаешься не только с преподавателем, но и с другими студентами, поэтому легче преодолеть языковой барьер, к тому же студенты участвуют в дискуссиях.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<ul class="programs__list">
+					<li class="programs__card programs-card">
+						<div class="programs-card__background" aria-hidden="true">
+							<div class="programs-card__background--decor">
+								<img src="img/card-decor-image.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+							<div class="programs-card__background--decor">
+								<img src="img/index/programs/programs-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+						</div>
+						<div class="programs-card__content">
+							<h3>
+								I can sing English
+							</h3>
+							<p>
+								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+							</p>
+							<p>
+								на латинице с начала XVI века.
+							</p>
+							<p>
+								В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул
+							</p>
+							<div class="programs-card__interviews">
+								<h4>
+									Интервью учеников
+								</h4>
+								<ul>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="programs-card__submit btn _min">
+								Записаться
+							</a>
+						</div>
+					</li>
+					<li class="programs__card programs-card">
+						<div class="programs-card__background" aria-hidden="true">
+							<div class="programs-card__background--decor">
+								<img src="img/card-decor-image.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+							<div class="programs-card__background--decor">
+								<img src="img/index/programs/programs-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+						</div>
+						<div class="programs-card__content">
+							<h3>
+								I can sing English
+							</h3>
+							<p>
+								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+							</p>
+							<p>
+								на латинице с начала XVI века.
+							</p>
+							<p>
+								В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул
+							</p>
+							<div class="programs-card__interviews">
+								<h4>
+									Интервью учеников
+								</h4>
+								<ul>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="programs-card__submit btn _min">
+								Записаться
+							</a>
+						</div>
+					</li>
+					<li class="programs__card programs-card">
+						<div class="programs-card__background" aria-hidden="true">
+							<div class="programs-card__background--decor">
+								<img src="img/card-decor-image.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+							<div class="programs-card__background--decor">
+								<img src="img/index/programs/programs-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+						</div>
+						<div class="programs-card__content">
+							<h3>
+								I can sing English
+							</h3>
+							<p>
+								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+							</p>
+							<p>
+								на латинице с начала XVI века.
+							</p>
+							<p>
+								В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул
+							</p>
+							<div class="programs-card__interviews">
+								<h4>
+									Интервью учеников
+								</h4>
+								<ul>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="programs-card__submit btn _min">
+								Записаться
+							</a>
+						</div>
+					</li>
+					<li class="programs__card programs-card">
+						<div class="programs-card__background" aria-hidden="true">
+							<div class="programs-card__background--decor">
+								<img src="img/card-decor-image.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+							<div class="programs-card__background--decor">
+								<img src="img/index/programs/programs-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+						</div>
+						<div class="programs-card__content">
+							<h3>
+								I can sing English
+							</h3>
+							<p>
+								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+							</p>
+							<p>
+								на латинице с начала XVI века.
+							</p>
+							<p>
+								В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул
+							</p>
+							<div class="programs-card__interviews">
+								<h4>
+									Интервью учеников
+								</h4>
+								<ul>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="programs-card__submit btn _min">
+								Записаться
+							</a>
+						</div>
+					</li>
+					<li class="programs__card programs-card">
+						<div class="programs-card__background" aria-hidden="true">
+							<div class="programs-card__background--decor">
+								<img src="img/card-decor-image.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+							<div class="programs-card__background--decor">
+								<img src="img/index/programs/programs-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+						</div>
+						<div class="programs-card__content">
+							<h3>
+								I can sing English
+							</h3>
+							<p>
+								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+							</p>
+							<p>
+								на латинице с начала XVI века.
+							</p>
+							<p>
+								В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул
+							</p>
+							<div class="programs-card__interviews">
+								<h4>
+									Интервью учеников
+								</h4>
+								<ul>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="programs-card__submit btn _min">
+								Записаться
+							</a>
+						</div>
+					</li>
+					<li class="programs__card programs-card">
+						<div class="programs-card__background" aria-hidden="true">
+							<div class="programs-card__background--decor">
+								<img src="img/card-decor-image.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+							<div class="programs-card__background--decor">
+								<img src="img/index/programs/programs-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+							</div>
+						</div>
+						<div class="programs-card__content">
+							<h3>
+								I can sing English
+							</h3>
+							<p>
+								Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+							</p>
+							<p>
+								на латинице с начала XVI века.
+							</p>
+							<p>
+								В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул
+							</p>
+							<div class="programs-card__interviews">
+								<h4>
+									Интервью учеников
+								</h4>
+								<ul>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<picture>
+												<source srcset="img/index/programs/programs-video-preview-1.avif" type="image/avif">
+												<source srcset="img/index/programs/programs-video-preview-1.webp" type="image/webp">
+												<img src="img/index/programs/programs-video-preview-1.jpg" alt="" width="100" height="100" loading="lazy">
+											</picture>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="programs-card__submit btn _min">
+								Записаться
+							</a>
+						</div>
+					</li>
+				</ul>
+				<div class="programs__footer">
+					<a href="#" class="programs__load-more circle-btn _accent">
+						Смотреть <br> еще
+					</a>
+				</div>
+			</section>
+			<section class="leave-application container _large">
+				<div class="leave-application__background" aria-hidden="true">
+					<div class="leave-application__background--decor">
+						<img src="img/index/application/application-pattern.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+				</div>
+				<div class="leave-application__container">
+					<h2 class="leave-application__title section-title _large">
+						Заполнить заявку
+					</h2>
+					<div class="leave-application__text">
+						<p>
+							Познакомимся, определим уровень владения языка и покажем, как проходит обучение
+						</p>
+					</div>
+					<form method="post" class="leave-application__form">
+						<label>
+							<span>Введите Ваше имя</span>
+							<input type="text" name="name" placeholder="Имя" required>
+						</label>
+						<label>
+							<span>Введите Ваш телефон</span>
+							<input type="tel" name="tel" placeholder="+38 (___) ___-__-__" required>
+						</label>
+						<div class="leave-application__form--footer">
+							<button class="leave-application__form--submit circle-btn" type="submit">
+								Записать
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+			<section class="reviews container _large" id="reviews">
+				<h2 class="reviews__title section-title">
+					Отзывы
+				</h2>
+				<div class="reviews__slider splide visible-on-desktop">
+					<div class="reviews__track splide__track">
+						<ul class="reviews__list splide__list">
+							<li class="reviews__slide splide__slide">
+								<ul class="reviews__slide--list">
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="reviews__video">
+									<video src="video/reviews-video.mp4" controls playsinline></video>
+									<div class="reviews__video--preview">
+										<picture>
+											<source srcset="img/index/reviews/reviews-video-preview.avif" type="image/avif">
+											<source srcset="img/index/reviews/reviews-video-preview.webp" type="image/webp">
+											<img src="img/index/reviews/reviews-video-preview.jpg" alt="" width="0" height="0" loading="lazy">
+										</picture>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__slide splide__slide">
+								<ul class="reviews__slide--list">
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="reviews__video">
+									<video src="video/reviews-video.mp4" controls playsinline></video>
+									<div class="reviews__video--preview">
+										<picture>
+											<source srcset="img/index/reviews/reviews-video-preview.avif" type="image/avif">
+											<source srcset="img/index/reviews/reviews-video-preview.webp" type="image/webp">
+											<img src="img/index/reviews/reviews-video-preview.jpg" alt="" width="0" height="0" loading="lazy">
+										</picture>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__slide splide__slide">
+								<ul class="reviews__slide--list">
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+									<li class="reviews__slide--item reviews__item">
+										<div class="reviews__item--background" aria-hidden="true">
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor"></div>
+											<div class="reviews__item--background-decor">
+												<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+											</div>
+										</div>
+										<div class="reviews__item--avatar">
+											<picture>
+												<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+												<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+												<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+											</picture>
+										</div>
+										<div class="reviews__item--info">
+											<div class="reviews__item--header">
+												<h3 class="reviews__item--name">
+													Алена
+												</h3>
+												<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+											</div>
+											<ul class="reviews__item--rating">
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+												<li>
+													<svg width="15" height="15" viewBox="0 0 15 15">
+														<use xlink:href="img/sprites.svg#star"></use>
+													</svg>
+												</li>
+											</ul>
+											<div class="reviews__item--text">
+												<p>
+													Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+												</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="reviews__video">
+									<video src="video/reviews-video.mp4" controls playsinline></video>
+									<div class="reviews__video--preview">
+										<picture>
+											<source srcset="img/index/reviews/reviews-video-preview.avif" type="image/avif">
+											<source srcset="img/index/reviews/reviews-video-preview.webp" type="image/webp">
+											<img src="img/index/reviews/reviews-video-preview.jpg" alt="" width="0" height="0" loading="lazy">
+										</picture>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="reviews__arrows splide__arrows">
+						<button class="reviews__arrow splide__arrow splide__arrow--prev arrow-btn" type="button">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</button>
+						<button class="reviews__arrow splide__arrow splide__arrow--next arrow-btn" type="button">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="reviews__slider-mob splide visible-on-mob">
+					<div class="reviews__slider-mob--track splide__track">
+						<ul class="reviews__slider-mob--list splide__list">
+							<li class="reviews__slider-mob--slide splide__slide reviews__item">
+								<div class="reviews__item--background" aria-hidden="true">
+									<div class="reviews__item--background-decor"></div>
+									<div class="reviews__item--background-decor"></div>
+									<div class="reviews__item--background-decor">
+										<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+									</div>
+								</div>
+								<div class="reviews__item--avatar">
+									<picture>
+										<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+										<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+										<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+									</picture>
+								</div>
+								<div class="reviews__item--info">
+									<div class="reviews__item--header">
+										<h3 class="reviews__item--name">
+											Алена
+										</h3>
+										<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+									</div>
+									<ul class="reviews__item--rating">
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+									</ul>
+									<div class="reviews__item--text">
+										<p>
+											Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__slider-mob--slide splide__slide reviews__item">
+								<div class="reviews__item--background" aria-hidden="true">
+									<div class="reviews__item--background-decor"></div>
+									<div class="reviews__item--background-decor"></div>
+									<div class="reviews__item--background-decor">
+										<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+									</div>
+								</div>
+								<div class="reviews__item--avatar">
+									<picture>
+										<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+										<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+										<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+									</picture>
+								</div>
+								<div class="reviews__item--info">
+									<div class="reviews__item--header">
+										<h3 class="reviews__item--name">
+											Алена
+										</h3>
+										<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+									</div>
+									<ul class="reviews__item--rating">
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+									</ul>
+									<div class="reviews__item--text">
+										<p>
+											Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__slider-mob--slide splide__slide reviews__item">
+								<div class="reviews__item--background" aria-hidden="true">
+									<div class="reviews__item--background-decor"></div>
+									<div class="reviews__item--background-decor"></div>
+									<div class="reviews__item--background-decor">
+										<img src="img/index/reviews/reviews-card-decor.svg" width="0" height="0" loading="lazy" alt="">
+									</div>
+								</div>
+								<div class="reviews__item--avatar">
+									<picture>
+										<source srcset="img/index/reviews/reviews-avatar.avif" type="image/avif">
+										<source srcset="img/index/reviews/reviews-avatar.webp" type="image/webp">
+										<img src="img/index/reviews/reviews-avatar.jpg" alt="" width="97" height="115" loading="lazy">
+									</picture>
+								</div>
+								<div class="reviews__item--info">
+									<div class="reviews__item--header">
+										<h3 class="reviews__item--name">
+											Алена
+										</h3>
+										<time class="reviews__item--date" datetime="26-09-2023">26.09.2023</time>
+									</div>
+									<ul class="reviews__item--rating">
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+										<li>
+											<svg width="15" height="15" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#star"></use>
+											</svg>
+										</li>
+									</ul>
+									<div class="reviews__item--text">
+										<p>
+											Спасибо большое создателям такой прекрастной школы, я на уроки летела пулей, так как было очень интересно и познавательно.Всем советую обучить именно в этой школе.
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="reviews__footer">
+					<a href="#" class="reviews__btn circle-btn _accent">
+						Смотреть <br> еще
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer container _large">
+			<div class="footer__body">
+				<div class="footer__container">
+					<a href="index.html" class="footer__logo">
+						<img src="img/logo.svg" width="90" height="90" loading="lazy" alt="Logo" class="footer__logo--img">
+					</a>
+					<nav class="footer__nav">
+						<ul>
+							<li>
+								<a href="#">
+									Контакты
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Копирайтинг
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Договор оферты
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Патент
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="footer__contacts">
+						<li>
+							<a href="tel:+380671232323">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 13 13">
+										<use xlink:href="img/sprites.svg#tel"></use>
+									</svg>
+								</i>
+								<span>
+									+38 (067) - 123 - 23 - 23
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="tel:+380681232323">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 13 13">
+										<use xlink:href="img/sprites.svg#tel"></use>
+									</svg>
+								</i>
+								<span>
+									+38 (068) - 123 - 23 - 23
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="15" height="15" viewBox="0 0 15 15">
+										<use xlink:href="img/sprites.svg#map-point"></use>
+									</svg>
+								</i>
+								<span>
+									г.Днепр, ул.Глаголева 21
+								</span>
+							</a>
+						</li>
+					</ul>
+					<form method="post" class="footer__feedback">
+						<h3>
+							Учителям
+						</h3>
+						<p>
+							Если хотите стать частью нашей дружной команды заполните анкету
+						</p>
+						<label>
+							<input type="tel" name="tel" placeholder="Номер телефона" required>
+						</label>
+						<button class="btn _min-2" type="submit">
+							Связаться
+						</button>
+					</form>
+					<div class="footer__add">
+						<div class="footer__add--block">
+							<h3>Способы оплаты:</h3>
+							<ul>
+								<li>
+									<picture>
+										<source srcset="img/footer/visa.avif" type="image/avif">
+										<source srcset="img/footer/visa.webp" type="image/webp">
+										<img src="img/footer/visa.png" alt="" width="32" height="10" loading="lazy">
+									</picture>
+								</li>
+								<li>
+									<picture>
+										<source srcset="img/footer/mastercard.avif" type="image/avif">
+										<source srcset="img/footer/mastercard.webp" type="image/webp">
+										<img src="img/footer/mastercard.png" alt="" width="32" height="20" loading="lazy">
+									</picture>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__add--block">
+							<h3>Мы в социальных сетях:</h3>
+							<ul>
+								<li>
+									<a href="#" title="Instagram">
+										<img src="img/social/instagram.svg" alt="" width="18" height="18" loading="lazy">
+									</a>
+								</li>
+								<li>
+									<a href="#" title="Facebook">
+										<img src="img/social/facebook.svg" alt="" width="18" height="18" loading="lazy">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__privacy">
+					<ul>
+						<li>
+							<a href="#">
+								Политика конфиденциальности
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="feedback-popup popup" id="feedback-popup" style="display: none;">
+		<div class="feedback-popup__wrapper popup-wrapper">
+			<div class="feedback-popup__bg popup-bg popup-close"></div>
+			<div class="feedback-popup__body popup-body">
+				<button type="button" class="feedback-popup__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="18" height="16" viewBox="0 0 18 16">
+						<use xlink:href="img/sprites.svg#close-3"></use>
+					</svg>
+				</button>
+				<h2 class="feedback-popup__title">
+					Оставьте свои контакты и наш менеджер свяжется с Вами в течение 10 минут
+				</h2>
+				<form method="post" class="feedback-popup__form">
+					<label>
+						<span>Ваше имя</span>
+						<input type="text" name="name" placeholder="Имя" required>
+					</label>
+					<label>
+						<span>Ваш телефон</span>
+						<input type="tel" name="tel" placeholder="+38 (___) ___-__-__" required>
+					</label>
+					<button class="btn" type="submit">
+						Отправить
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
+
+</body>
+
+</html>

@@ -33,6 +33,7 @@
     "gulp-zip": "^4.2.0",
     "normalize.css": "^8.0.1",
     "sass": "^1.45.0",
+    "simplebar": "^6.2.5",
     "slim-select": "^2.6.0"
   }
 }

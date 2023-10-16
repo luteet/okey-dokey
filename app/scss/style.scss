@@ -5,11 +5,15 @@
 @import 'global';
 @import 'font';
 @import 'form';
-//@import 'popup';
+@import 'popup';
 
 @import 'components/header';
 @import 'components/breadcrumbs';
 @import 'components/pagination';
+@import 'components/change-avatar';
+@import 'components/aside-account';
+@import 'components/header-account';
+@import 'components/account';
 
 @import 'pages/index/hero';
 @import 'pages/index/tariffs';
@@ -24,7 +28,16 @@
 @import 'pages/blog/related-articles';
 
 @import 'pages/about-us/hero';
+@import 'pages/about-us/about-statistic';
+@import 'pages/about-us/content-section';
 
-//@import 'pages';
+@import 'pages/login/login';
+@import 'pages/login/create-avatar';
+
+@import 'pages/student-profile/student-profile';
+@import 'pages/student-profile/change-student-avatar';
+@import 'pages/student-profile/student-awards';
+@import 'pages/student-profile/student-course-block';
+@import 'pages/student-profile/join-to-lesson';
 
 @import 'components/footer';

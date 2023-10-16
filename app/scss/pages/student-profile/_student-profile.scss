@@ -1,0 +1,585 @@
+.student-profile {
+
+	// .student-profile__hero
+
+	&__hero {
+		padding-top: 30px;
+
+		display: grid;
+		grid-template-columns: 100%;
+		@media (min-width: #{$containerLarge}px) {
+			grid-template-columns: 327px auto;
+		}
+		@media (min-width: 1650px) {
+			grid-template-columns: 227px 2fr 1fr;
+		}
+		gap: 20px;
+	}
+
+	// .student-profile__avatar
+
+	&__avatar {
+
+		position: relative;
+
+		display: grid;
+		grid-template-columns: 80px auto;
+		gap: 0 11px;
+
+		padding-right: 74px;
+
+		@include _768 {
+			display: block;
+			padding-right: 0;
+		}
+
+		// .student-profile__avatar--edit
+
+		&--edit {
+			position: absolute;
+			right: 20px; top: 20px;
+			@include _768 {
+				right: 10px; top: 10px;
+			}
+		}
+
+		// .student-profile__avatar--image
+
+		&--image {
+			grid-column: 1; grid-row: 1/3;
+
+			@include _768 {
+				margin-top: 20px;
+				width: 160px; height: 160px;
+			}
+
+			margin-left: auto; margin-right: auto;
+			
+			@media (min-width: 1650px) {
+				margin-left: 0; margin-right: 0;
+			}
+
+			width: 69px; height: 69px;
+			border: 1px solid var(--primary);
+			border-radius: 10px;
+
+			position: relative;
+			z-index: 2;
+
+			overflow: hidden;
+
+			img {
+				position: absolute;
+				left: 8px; top: 8px;
+				width: calc(100% - 16px); height: calc(100% - 16px);
+				object-fit: contain;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0; top: 0;
+				width: 75%; height: 75%;
+				border-radius: 50%;
+				background: #F1F1F1;
+				z-index: -1;
+				transform: translate(15%,-20%);
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 9px; bottom: 15%;
+				width: 45%; height: 45%;
+				border-radius: 50%;
+				background: var(--primary);
+				z-index: -1;
+				//transform: translate(15%,-20%);
+			}
+		}
+
+		// .student-profile__avatar--name
+
+		&--name {
+			@include _768 {
+				margin-top: 14px;
+				font-size: 1.125rem;
+			}
+
+			align-self: self-end;
+
+			font-size: 1rem;
+			line-height: normal;
+			font-weight: 600;
+		}
+
+		// .student-profile__avatar--status
+
+		&--status {
+			color: #534D4D;
+			@include _768 {
+				font-size: 0.9375rem;
+			}
+			font-size: 0.875rem;
+			line-height: 160%;
+
+			display: block;
+			margin-bottom: -10px;
+		}
+	}
+
+	// .student-profile__statistic
+
+	&__statistic {
+
+		// .student-profile__statistic--title
+
+		&--title {
+		}
+
+		// .student-profile__statistic--text
+
+		&--text {
+			font-size: 0.875rem;
+			
+			@include _768 {
+				font-size: 1rem;	
+			}
+		}
+
+		// .student-profile__statistic--list
+
+		&--list {
+			padding-top: 12px;
+
+			display: grid;
+			grid-template-columns: 100%;
+			@include _550 {
+				grid-template-columns: repeat(2,1fr);
+			}
+			@include _768 {
+				grid-template-columns: repeat(3,1fr);
+			}
+			gap: 13px;
+			
+		}
+
+		// .student-profile__statistic--card
+
+		&--card {
+			border: 1px solid #EBEBEB;
+			background: var(--white);
+			border-radius: 10px;
+			overflow: hidden;
+
+			padding: 16px 5px 11px 11px;
+
+			> h3 {
+				padding-top: 11px;
+
+				font-size: 1rem;
+				font-weight: 600;
+			}
+
+			> p {
+				font-size: 0.75rem;
+				line-height: 150%;
+			}
+
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0; top: 0;
+				transform: translate(25%,-25%);
+				width: 112px; height: 112px;
+				border-radius: 50%;
+				background: var(--theme);
+				border-radius: 50%;
+				opacity: .05;
+			}
+		}
+
+		// .student-profile__statistic--value
+
+		&--value {
+			width: 77px; height: 77px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%; top: 50%;
+				transform: translate(-50%,calc(-50% + 1px));
+				width: calc(100% + 10px); height: calc(100% + 10px);
+				border-radius: 50%;
+				background: var(--theme);
+				border-radius: 50%;
+				opacity: .05;
+			}
+
+			b {
+				position: absolute;
+				left: 50%; top: 50%;
+				transform: translate(-50%,-30%);
+
+				font-size: 1.0625rem;
+				line-height: 94.118%;
+				color: #282828;
+			}
+
+			svg {
+				width: 77px; height: 77px;
+
+				transform: scaleY(-1);
+
+				circle {
+					width: 100%; height: 100%;
+					fill: none;
+					stroke: #FFF;
+					stroke-width: 2;
+					stroke-linecap: round;
+				}
+
+				circle:last-of-type {
+					stroke-width: 4;
+					stroke-dasharray: 220px;
+					stroke-dashoffset: calc(220px - (220px * var(--percent)) / 100);
+					stroke: var(--theme); 
+				  }
+			}
+		}
+	}
+
+	// .student-profile__progress
+
+	&__progress {
+
+		// .student-profile__progress--title
+
+		&--title {
+		}
+
+		// .student-profile__progress--list
+
+		&--list {
+			margin-top: 9px;
+
+			display: flex;
+			flex-direction: column;
+
+			padding: 16px 20px;
+
+			background: var(--white);
+			border: 1px solid #EBEBEB;
+			border-radius: 10px;
+
+			li:not(:first-child) {
+				margin-top: 13px;
+			}
+
+			h3 {
+				font-size: 0.875rem;
+				
+				@include _992 {
+					font-size: 1rem;
+				}
+			}
+
+			span {
+				font-size: 0.75rem;
+				@include _768 {
+					font-size: 0.9375rem;
+				}
+			}
+		}
+
+		// .student-profile__progress--line
+
+		&--line {
+			margin-top: 7px; margin-bottom: 7px;
+		}
+	}
+
+	// .student-profile__info
+
+	&__info {
+
+		margin-top: 28px;
+
+		// .student-profile__info--header
+
+		&--header {
+			display: flex;
+			justify-content: space-between;
+
+		}
+
+		// .student-profile__info--title
+
+		&--title {
+		}
+
+		// .student-profile__info--edit
+
+		&--edit {
+
+			flex: 0 0 44px;
+		}
+
+		// .student-profile__info--form
+
+		&--form {
+			margin-top: 25px;
+
+			background: #F1F1F1;
+			border-radius: 15px;
+
+			padding: 25px 20px;
+
+			display: grid;
+			grid-template-columns: 100%;
+			gap: 20px 13px;
+			@include _768 {
+				padding: 27px 30px;
+				grid-template-columns: repeat(2,1fr);
+				gap: 44px;
+			}
+			@media (min-width: 1650px) {
+				grid-template-columns: repeat(3,1fr);
+			}
+
+			label {
+				display: flex;
+				flex-direction: column;
+
+				span {
+					&:nth-child(1) {
+						font-size: 0.9375rem;
+						
+						@include _768 {
+							font-size: 1rem;
+						}
+						
+						@include _992 {
+							font-size: 1.125rem;
+						}
+						line-height: 100%;
+						font-weight: 600;
+					}
+
+					&:nth-child(2) {
+						svg {
+							color: #DFDFDF;
+							align-self: center;
+							margin: 12px 0 12px 14px;
+							@include _768 {
+								margin: 14px 0 14px 14px;
+							}
+						}
+
+						cursor: text;
+
+						display: flex;
+						margin-top: 8px;
+						@include _768 {
+							margin-top: 14px;
+						}
+
+						background: var(--white);
+						border-radius: 7px;
+
+						border: 1px solid #DEDEDE;
+
+						input {
+							background: transparent;
+							width: 100%;
+
+							font-size: 0.8125rem;
+							@include _768 {
+								font-size: 1rem;
+								padding: 22px 20px 19px 12px;
+							}
+							padding: 14px 20px 14px 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// .student-profile__courses-taken
+
+	&__courses-taken {
+
+		padding-top: 50px;
+
+		// .student-profile__courses-taken--title
+
+		&--title {
+		}
+
+		// .student-profile__courses-taken--list
+
+		&--list {
+			padding-top: 41px;
+
+			display: grid;
+			grid-template-columns: 100%;
+			@include _768 {
+				grid-template-columns: repeat(2,1fr);
+			}
+			gap: 20px;
+			@include _992 {
+				gap: 24px;
+			}
+			@media (min-width: 1650px) {
+				grid-template-columns: repeat(3,1fr);
+			}
+			
+		}
+
+		// .student-profile__courses-taken--card
+
+		&--card {
+			padding: 14px 17px;
+			@include _550 {
+				padding: 20px 23px;
+			}
+			border: 2px solid var(--primary);
+			border-radius: 20px;
+
+			position: relative;
+
+			overflow: hidden;
+
+			display: flex;
+			flex-direction: column;
+		}
+
+		&--card-decor {
+			position: absolute;
+			right: 0; top: 0;
+			width: 116px; height: auto;
+			@include _550 {
+				width: 150px; height: auto;
+			}
+			transform: translate(30%,-15%) scaleX(-1);
+			z-index: -1;
+		}
+
+		// .student-profile__courses-taken--card-title
+
+		&--card-title {
+			color: var(--text-color-2);
+			font-size: 1.125rem;
+			
+			@include _768 {
+				font-size: 1.25rem;
+			}
+			
+			@include _992 {
+				font-size: 1.5rem;
+			}
+			font-weight: 700;
+			line-height: 108.333%;
+			
+			padding-right: 70px;
+		}
+
+		// .student-profile__courses-taken--card-text
+
+		&--card-text {
+			padding-top: 7px;
+
+			flex: 1 1 auto;
+
+			color: #534D4D;
+			font-size: 0.75rem;
+			min-height: 70px;
+			
+			@include _768 {
+				font-size: 0.9375rem;	
+			}
+			line-height: 160%;
+
+			padding-right: 75px;
+
+			p {
+				display: -webkit-box;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+				line-clamp: 4;
+				box-orient: vertical;
+			}
+		}
+
+		// .student-profile__courses-taken--progress
+
+		&--progress {
+			margin-top: 10px;
+
+			min-height: 44px;
+			@include _550 {
+				min-height: 53px;
+			}
+			text-align: center;
+
+			display: flex;
+			justify-content: center;
+
+			background: #F1F1F1;
+			border-radius: 100px 0 100px 0;
+			color: var(--text-color-2);
+
+			&.is-active {
+				color: var(--white);
+				background: transparent;
+			}
+
+			span {
+				position: relative;
+				z-index: 2;
+
+				min-height: 100%;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				@include _550 {
+					font-size: 1.125rem;
+				}
+				font-size: 1rem;
+				line-height: 177.77%;
+				font-weight: 600;
+			}
+
+			&.is-active {
+				position: relative;
+				&::before, &::after {
+					content: '';
+					position: absolute;
+					left: 0; top: 0;
+					width: 0; height: 100%;
+					border-radius: 100px 0 100px 0;
+				}
+
+				&::before {
+					background: var(--primary);
+					width: 100%;
+				}
+
+				&::after {
+					background: var(--accent);
+					right: 0; left: auto;
+					width: calc(100% - var(--value,100%));
+				}
+			}
+		}
+	}
+}
+
+

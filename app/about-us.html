@@ -1,0 +1,168 @@
+@@include("html/_header.html")
+
+	<main class="main">
+		<div class="breadcrumbs-wrapper container">
+			<div class="breadcrumbs">
+				<a href="#" class="breadcrumbs__link">
+					Главная
+				</a>
+				<span class="breadcrumbs__separator"></span>
+				<span class="breadcrumbs__current">О нас</span>
+			</div>
+		</div>
+		<section class="about-us-hero container">
+			<div class="about-us-hero__header visible-on-desktop">
+				<h1 class="about-us-hero__title section-title">
+					О нас
+				</h1>
+			</div>
+			<div class="about-us-hero__content">
+				<div class="about-us-hero__background" aria-hidden="true">
+					<img src="img/index/about-us/about-us-hero-decor.svg" alt="" width="0" height="0" loading="lazy">
+					<div class="about-us-hero__background--block">
+						<div class="about-us-hero__background--eye eye">
+							<div class="eye-area">
+								<div class="eye-element"></div>
+							</div>
+						</div>
+						<div class="about-us-hero__background--eye eye">
+							<div class="eye-area">
+								<div class="eye-element"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h2 class="about-us-hero__title section-title">
+					О нас
+				</h2>
+				<div class="about-us-hero__text">
+					<p>
+						Направленных на развитие эмоционального интеллекта, командного духа и здоровой уверенности в себе. Мы обучаем наших студентов по коммуникативной методике - все, что изучают студенты, сразу же применяется в разговорной речи, ведь студенты изучают слова и фразы, которые понадобятся им в реальной жизни.
+					</p>
+					<p>
+						Мы являемся официальными партнерами всемирно известного издательства Cambridge (английские учебники) и Hueber (книги по изучению немецкого языка). Преподаватели Oratorica повышают квалификацию, участвуя в тематических семинарах и тренингах, сдают экзамены и часто сами изучают дополнительный иностранный язык.
+					</p>
+				</div>
+			</div>
+			<ul class="about-us-hero__grid">
+				@@loop("html/_about-us-hero-grid-item.html", [
+					{
+						"image": '1',
+					},
+					{
+						"image": '2',
+					},
+					{
+						"image": '3',
+					},
+					{
+						"image": '4',
+					},
+				])
+			</ul>
+		</section>
+		<section class="about-statistic container">
+			<h2 class="about-statistic__title visually-hidden">Статистика</h2>
+			<ul class="about-statistic__list">
+				<li class="about-statistic__item">
+					<div class="about-statistic__item--background" aria-hidden="true">
+						<img src="img/index/hero/index-hero-decor-1.svg" loading="lazy" width="0" height="0" alt="">
+					</div>
+					<strong>10 000</strong>
+					<span>Довольных учеников</span>
+				</li>
+				<li class="about-statistic__item">
+					<div class="about-statistic__item--background" aria-hidden="true">
+						<img src="img/index/hero/index-hero-decor-1.svg" loading="lazy" width="0" height="0" alt="">
+					</div>
+					<strong>> 1 000</strong>
+					<span>Написанных уроков</span>
+				</li>
+				<li class="about-statistic__item">
+					<div class="about-statistic__item--background" aria-hidden="true">
+						<img src="img/index/hero/index-hero-decor-1.svg" loading="lazy" width="0" height="0" alt="">
+					</div>
+					<strong>10 000</strong>
+					<span>Довольных учеников</span>
+				</li>
+			</ul>
+		</section>
+		<section class="content-section container">
+			<div class="content-section__images">
+				<div class="content-section__images--item">
+					<div>
+						<picture>
+							<source srcset="img/about-us/articles/about-us-article-image-1.avif" type="image/avif">
+							<source srcset="img/about-us/articles/about-us-article-image-1.webp" type="image/webp">
+							<img src="img/about-us/articles/about-us-article-image-1.jpg" alt="" width="278" height="472" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="content-section__images--item">
+					<div>
+						<picture>
+							<source srcset="img/about-us/articles/about-us-article-image-1.avif" type="image/avif">
+							<source srcset="img/about-us/articles/about-us-article-image-1.webp" type="image/webp">
+							<img src="img/about-us/articles/about-us-article-image-1.jpg" alt="" width="278" height="472" loading="lazy">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="content-section__text">
+				<h2>Наша миссия</h2>
+				<ol>
+					<li>
+						Направленных на развитие эмоционального интеллекта, командного духа и здоровой уверенности в себе.
+					</li>
+					<li>
+						Мы обучаем наших студентов по коммуникативной методике - все, что изучают студенты, сразу же применяется в разговорной речи, ведь студенты изучают слова и фразы, которые понадобятся им в реальной жизни. 
+					</li>
+					<li>
+						Мы являемся официальными партнерами всемирно известного издательства Cambridge (английские учебники) 7и Hueber (книги по изучению немецкого языка). 
+					</li>
+				</ol>
+			</div>
+		</section>
+		<section class="content-section container _reverse">
+			<div class="content-section__images">
+				<div class="content-section__images--item _full">
+					<div>
+						<picture>
+							<source srcset="img/about-us/articles/about-us-article-image-3.avif" type="image/avif">
+							<source srcset="img/about-us/articles/about-us-article-image-3.webp" type="image/webp">
+							<img src="img/about-us/articles/about-us-article-image-3.jpg" alt="" width="278" height="472" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="content-section__images--item _min">
+					<div>
+						<picture>
+							<source srcset="img/about-us/articles/about-us-article-image-4.avif" type="image/avif">
+							<source srcset="img/about-us/articles/about-us-article-image-4.webp" type="image/webp">
+							<img src="img/about-us/articles/about-us-article-image-4.jpg" alt="" width="278" height="472" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="content-section__images--item _min">
+					<div>
+						<picture>
+							<source srcset="img/about-us/articles/about-us-article-image-5.avif" type="image/avif">
+							<source srcset="img/about-us/articles/about-us-article-image-5.webp" type="image/webp">
+							<img src="img/about-us/articles/about-us-article-image-5.jpg" alt="" width="278" height="472" loading="lazy">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="content-section__text">
+				<h2>Инновационный подход</h2>
+				<p>Направленных на развитие эмоционального интеллекта, командного духа и здоровой уверенности в себе.</p>
+				<p>Мы обучаем наших студентов по коммуникативной методике - все, что изучают студенты, сразу же применяется в разговорной речи, ведь студенты изучают слова и фразы, которые понадобятся им в реальной жизни. </p>
+				<p>Мы являемся официальными партнерами всемирно известного издательства Cambridge (английские учебники) и Hueber <br> (книги по изучению немецкого языка).</p>
+				<p>Мы обучаем наших студентов по коммуникативной методике - все, что изучают студенты, сразу же применяется в разговорной речи, ведь студенты изучают слова и фразы, которые понадобятся им в реальной жизни. </p>
+			</div>
+		</section>
+		@@include("html/_our-teachers.html")
+		@@include("html/_reviews.html")
+	</main>
+
+@@include("html/_footer.html")

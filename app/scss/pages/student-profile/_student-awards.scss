@@ -1,0 +1,245 @@
+.student-awards {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	padding-top: 40px;
+
+	// .student-awards__stickers-length
+
+	&__stickers-length {
+		flex: 1 1 100%;
+	}
+
+	// .student-awards__text
+
+	&__text {
+		flex: 1 1 100%;
+
+		margin-top: 20px;
+		@include _992 {
+			margin-top: 30px;
+			padding: 23px 29px;
+
+			font-size: 1rem;
+		}
+
+		font-size: 0.9375rem;
+		padding: 19px;
+		background: #FAFAFA;
+		border-radius: 20px;
+
+		p {
+			max-width: 720px;
+		}
+	}
+
+	// .student-awards__slider
+
+	&__slider {
+
+		margin-top: 40px;
+
+		background: var(--white);
+		@include _992 {
+			padding: 20px 30px;
+			border: 1px solid #ECECEC;
+			border-radius: 30px;
+		}
+
+		&-block {
+			width: 100%; flex: 0 0 100%;
+			@include _container {
+				width: calc(50% - 21px); flex: 0 0 calc(50% - 21px);
+			}
+		}
+
+		&._alt & {
+			&--image-product {
+				padding: 0;
+				border: 0;
+
+				img {
+					width: 78px; height: 98px;
+					@include _550 {
+						width: 103px; height: 130px;
+					}
+				}
+			}
+		}
+
+		// .student-awards__slider--header
+
+		&--header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			padding-bottom: 15px;
+		}
+
+		// .student-awards__slider--title
+
+		&--title {
+			font-size: 1.125rem;
+			line-height: 177.777778%;
+			
+			@include _992 {
+				font-size: 1.25rem;
+				font-weight: 600;
+			}
+		}
+
+		// .student-awards__slider--controls
+
+		&--controls {
+			display: flex;
+		}
+
+		// .student-awards__slider--arrow
+
+		&--arrow {
+			position: static;
+			transform: none;
+			&.splide__arrow--prev {
+				margin-right: 15px;
+			}
+		}
+
+		// .student-awards__slider--track-body
+
+		&--track-body {
+			padding: 20px;
+			border-radius: 30px;
+			border: 1px solid #ECECEC;
+			@include _992 {
+				padding: 0;
+				border: 0;
+				border-radius: 0;
+			}
+		}
+
+		// .student-awards__slider--track
+
+		&--track {
+			
+		}
+
+		// .student-awards__slider--list
+
+		&--list {
+		}
+
+		// .student-awards__slider--slide
+
+		&--slide {
+			display: inline-block;
+
+			border: 1px solid #F2F2F2;
+			border-radius: 10px;
+
+			padding: 5px;
+		}
+
+		// .student-awards__slider--slide
+
+		&--slide-body {
+			position: relative;
+			display: block;
+
+			color: var(--text-color-2);
+
+			&::before {
+				content: attr(data-buy-text);
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%; height: 100%;
+				border-radius: 10px;
+				background: rgba(0, 0, 0, 0.7);
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+
+				font-size: 0.875rem;
+				line-height: 100%;
+				color: var(--white);
+				font-weight: 600;
+
+				opacity: 0; visibility: hidden;
+				transition: opacity .3s ease, visibility .3s ease;
+			}
+
+			@media (any-hover: hover) {
+				&:hover::before {
+					opacity: 1; visibility: visible;
+				}
+			}
+		}
+
+		// .student-awards__slider--image-product
+
+		&--image-product {
+			border: 1px solid #F2F2F2;
+			border-radius: 10px;
+			padding: 5px;
+			@include _550 {
+				padding: 8px 6px;
+			}
+			text-align: center;
+
+			img {
+				width: 44px; height: 44px;
+				@include _550 {
+					width: 68px; height: 68px;
+				}
+
+				object-fit: cover;
+			}
+		}
+
+		// .student-awards__slider--price
+
+		&--price {
+			margin-top: 5px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			padding: 4px;
+			background: rgba(220, 220, 220, 0.15);
+			border-radius: 5px;
+
+			text-align: center;
+
+			font-size: 0.75rem;
+			line-height: 100%;
+
+			@include _550 {
+				font-size: 1rem;
+			}
+
+			svg {
+				color: var(--primary);
+				margin-right: 2px;
+				flex: 0 0 13px;
+				margin-bottom: 2px;
+			}
+
+			span {
+				font-size: 0.875rem;
+				font-weight: 600;
+			}
+		}
+	}
+
+	// .student-awards__title-block
+
+	&__title-block {
+		flex: 1 1 100%;
+		margin-top: 40px;
+	}
+}

@@ -1,0 +1,118 @@
+<div class="student-profile__hero">
+	<div class="student-profile__avatar account-block">
+		<a href="#" class="student-profile__avatar--edit account-block__edit-btn _min">
+			<svg width="22" height="22" viewBox="0 0 22 22">
+				<use xlink:href="img/sprites.svg#edit"></use>
+			</svg>
+		</a>
+		<div class="student-profile__avatar--image">
+			<picture>
+				<source srcset="img/student-account/student-account-avatar.avif" type="image/avif">
+				<source srcset="img/student-account/student-account-avatar.webp" type="image/webp">
+				<img src="img/student-account/student-account-avatar.png" alt="" width="142" height="139" loading="lazy">
+			</picture>
+		</div>
+		<h2 class="student-profile__avatar--name">
+			Ирина Винченко
+		</h2>
+		<span class="student-profile__avatar--status">
+			Ученик
+		</span>
+	</div>
+	<div class="student-profile__statistic account-block is-accordion">
+		<button class="account-block__accordion-target" type="button">
+			<h2 class="student-profile__statistic--title account-block__title">
+				Показатели рейтинга
+			</h2>
+			<svg width="7" height="5" viewBox="0 0 7 5" class="visible-on-mob">
+				<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+			</svg>
+		</button>
+		<div class="account-block__accordion-wrapper">
+			<div>
+				<span class="student-profile__statistic--text">
+					За текущий месяц
+				</span>
+				<ul class="student-profile__statistic--list">
+					<li class="student-profile__statistic--card" style="--theme: #F08B2E;">
+						<div class="student-profile__statistic--value">
+							<svg>
+								<circle cx="38.5" cy="36.5" r="33.5"></circle>
+								<circle cx="38.5" cy="36.5" r="34" style="--percent: 75"></circle>
+							</svg>
+							<b>
+								75%
+							</b>
+						</div>
+						<h3>
+							34 из 40
+						</h3>
+						<p>
+							Выполнено домашних заданий
+						</p>
+					</li>
+					<li class="student-profile__statistic--card" style="--theme: #4FCAF2;">
+						<div class="student-profile__statistic--value">
+							<svg>
+								<circle cx="38.5" cy="36.5" r="33.5"></circle>
+								<circle cx="38.5" cy="36.5" r="34" style="--percent: 75"></circle>
+							</svg>
+							<b>
+								75%
+							</b>
+						</div>
+						<h3>
+							34 из 40
+						</h3>
+						<p>
+							Выполнено домашних заданий
+						</p>
+					</li>
+					<li class="student-profile__statistic--card" style="--theme: #9446DE;">
+						<div class="student-profile__statistic--value">
+							<svg>
+								<circle cx="38.5" cy="36.5" r="33.5"></circle>
+								<circle cx="38.5" cy="36.5" r="34" style="--percent: 75"></circle>
+							</svg>
+							<b>
+								75%
+							</b>
+						</div>
+						<h3>
+							34 из 40
+						</h3>
+						<p>
+							Выполнено домашних заданий
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="student-profile__progress account-block is-accordion">
+		<button class="account-block__accordion-target" type="button">
+			<h2 class="student-profile__progress--title account-block__title">
+				Мой прогресс
+			</h2>
+			<svg width="7" height="5" viewBox="0 0 7 5" class="visible-on-mob">
+				<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+			</svg>
+		</button>
+		<div class="account-block__accordion-wrapper">
+			<div>
+				<ul class="student-profile__progress--list">
+					<li>
+						<h3>Рейтинг ученика за месяц</h3>
+						<div class="student-profile__progress--line account-block__progress" style="--value: 75%"></div>
+						<span>86 из 100</span>
+					</li>
+					<li>
+						<h3>Рейтинг ученика за год</h3>
+						<div class="student-profile__progress--line account-block__progress" style="--value: 75%"></div>
+						<span>86 из 100</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
