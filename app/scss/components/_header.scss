@@ -253,6 +253,12 @@
 
 				transition: transform .3s ease;
 				transform: translate3d(0,100%,0.001px);
+
+				display: none;
+
+				@include _992 {
+					display: block;
+				}
 			}
 
 			@include _992 {

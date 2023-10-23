@@ -93,7 +93,7 @@ function images() {
 function scriptsLib() {
 	return src([
 		'node_modules/@splidejs/splide/dist/js/splide.min.js', // Слайдер | npm i @splidejs/splide --save-dev | https://splidejs.com/guides/getting-started/
-		//'node_modules/@splidejs/splide-extension-grid/dist/js/splide-extension-grid.min.js', // Сетка для слайдера | npm install @splidejs/splide-extension-grid --save-dev | https://splidejs.com/guides/getting-started/
+		'node_modules/@splidejs/splide-extension-grid/dist/js/splide-extension-grid.min.js', // Сетка для слайдера | npm install @splidejs/splide-extension-grid --save-dev | https://splidejs.com/guides/getting-started/
 		//'node_modules/vanilla-lazyload/dist/lazyload.min.js', // Lazyload img | npm i vanilla-lazyload --save-dev | https://www.npmjs.com/package/vanilla-lazyload
 		//'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll() | npm i smoothscroll-polyfill --save-dev
 		'node_modules/clipboard/dist/clipboard.min.js', // Копирование в буфер обмена | npm i clipboard --save-dev | https://www.npmjs.com/package/clipboard
@@ -103,7 +103,11 @@ function scriptsLib() {
 		//'node_modules/split-type/umd/index.min.js', // split text | npm i split-type --save-dev | https://www.npmjs.com/package/split-type
 		//'app/js/ScrollSmoother.min.js', // GSAP
 		'node_modules/slim-select/dist/slimselect.min.js', // Select | npm i slim-select --save-dev | https://www.npmjs.com/package/slim-select
-		'node_modules/simplebar/dist/simplebar.min.js'
+		'node_modules/simplebar/dist/simplebar.min.js',
+
+		//'node_modules/mediaelement/build/lang/uk.js', // Media element
+		'node_modules/mediaelement/build/mediaelement-and-player.min.js', // Media element
+		
 		//'node_modules/sticky-js/dist/sticky.min.js' // Sticky | npm i sticky-js --save-dev | https://www.npmjs.com/package/sticky-js
 		//'node_modules/nouislider/dist/nouislider.min.js', // Кастомный input[range] | npm i nouislider --save-dev | https://www.npmjs.com/package/nouislider
 		//'node_modules/fslightbox/index.js', // Галерея | npm i fslightbox --save-dev | https://www.npmjs.com/package/fslightbox
@@ -186,6 +190,7 @@ function stylesLib() {
 		//'node_modules/swiper/swiper-bundle.min.css', // Слайдер
 		'node_modules/slim-select/dist/slimselect.css', // Select
 		'node_modules/simplebar/dist/simplebar.min.css',
+		'node_modules/mediaelement/build/mediaelementplayer.min.css', // Media element
 		//'node_modules/aos/dist/aos.css', // Анимация
 		//'node_modules/nouislider/dist/nouislider.css', // Кастомный input[range]
 	])

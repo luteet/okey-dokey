@@ -1,0 +1,299 @@
+@@include("html/_header-teacher.html")
+
+	<main class="main">
+		<section class="teacher-profile">
+			<h1 class="teacher-profile__title visible-on-mob section-title">
+				Главная
+			</h1>
+			<div class="teacher-profile__main">
+				<div class="teacher-profile__info teacher-info account-block">
+					<div class="teacher-info__upload">
+						<a href="#" class="teacher-info__upload--target">
+							Загрузить фото
+						</a>
+					</div>
+					<div class="teacher-info__avatar">
+						<picture>
+							<source srcset="img/teacher-account/teacher-avatar.avif" type="image/avif">
+							<source srcset="img/teacher-account/teacher-avatar.webp" type="image/webp">
+							<img src="img/teacher-account/teacher-avatar.jpg" alt="" width="115" height="115" loading="lazy">
+						</picture>
+					</div>
+					<h2 class="teacher-info__name">
+						Павлов <br>
+						Александр Юрьевич
+					</h2>
+					<span class="teacher-info__about">Преподаватель по чтению</span>
+				</div>
+				<div class="teacher-profile__plan teacher-plan account-block is-accordion">
+					<button type="button" class="teacher-plan__header account-block__accordion-target">
+						<h2 class="teacher-plan__title account-block__title">
+							План на текущий месяц
+						</h2>
+						<svg width="8" height="8" viewBox="0 0 8 8" class="teacher-plan__arrow visible-on-mob">
+							<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+						</svg>
+					</button>
+					<div class="account-block__accordion-wrapper">
+						<div>
+							<div class="teacher-plan__text">
+								<p>
+									Запись 18 лекций
+								</p>
+							</div>
+							<div class="teacher-plan__block" style="--theme: #F08B2E;">
+								<div class="teacher-plan__block--circle-progress circle-progress">
+									<svg>
+										<circle cx="38.5" cy="36.5" r="33.5"></circle>
+										<circle cx="38.5" cy="36.5" r="34" style="--percent: 75"></circle>
+									</svg>
+									<span class="teacher-plan__block--value">10 из 18</span>
+								</div>
+								<span class="teacher-plan__block--text">
+									Записано лекций
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="teacher-profile__rating teacher-students-rating account-block is-accordion">
+					<button type="button" class="teacher-students-rating__header account-block__accordion-target">
+						<h2 class="teacher-students-rating__title account-block__title">
+							Рейтинг группы
+						</h2>
+						<svg class="teacher-students-rating__arrow visible-on-mob" width="8" height="8" viewBox="0 0 8 8">
+							<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+						</svg>
+					</button>
+					<div class="account-block__accordion-wrapper">
+						<div>
+							<div class="teacher-students-rating__date">
+								<button class="teacher-students-rating__date--arrow is-prev" type="button">
+									<svg width="9" height="9" viewBox="0 0 8 8">
+										<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+									</svg>
+								</button>
+								<span class="teacher-students-rating__date--current">Сентябрь 2023</span>
+								<button class="teacher-students-rating__date--arrow is-next" type="button">
+									<svg width="9" height="9" viewBox="0 0 8 8">
+										<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="teacher-students-rating__block">
+								<div class="teacher-students-rating__block--header">
+									<span>Студент</span>
+									<span>Рейтинг</span>
+								</div>
+								<div class="teacher-students-rating__block--wrapper" data-simplebar>
+									<ul class="teacher-students-rating__list">
+										@@loop("html/account/_teacher-students-rating-item.html", [
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+										])
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="teacher-profile__choose-group teacher-choose-group account-block">
+					<h2 class="teacher-choose-group__title account-block__title">
+						Выбор группы
+					</h2>
+					<div class="teacher-choose-group__slider" data-simplebar data-simplebar-auto-hide="false">
+						<ul class="teacher-choose-group__slider--list">
+							@@loop("html/account/_teacher-choose-group-card.html", [
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+							])
+						</ul>
+					</div>
+					<div class="teacher-choose-group__footer">
+						<a href="#" class="teacher-choose-group__btn btn _min-2">
+							Все группы
+						</a>
+					</div>
+				</div>
+				<div class="teacher-profile__lectures teacher-lectures">
+					<div class="teacher-lectures__body splide">
+						<div class="teacher-lectures__header">
+							<h2 class="teacher-lectures__title account-block__decor-title">
+								<span>Название курса</span>
+							</h2>
+							<div class="teacher-lectures__controls splide__arrows">
+								<button class="teacher-lectures__arrow splide__arrow splide__arrow--prev arrow-btn" type="button">
+									<svg width="19" height="19" viewBox="0 0 19 19">
+										<use xlink:href="img/sprites.svg#arrow-prev"></use>
+									</svg>
+								</button>
+								<button class="teacher-lectures__arrow splide__arrow splide__arrow--next arrow-btn" type="button">
+									<svg width="19" height="19" viewBox="0 0 19 19">
+										<use xlink:href="img/sprites.svg#arrow-next"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="teacher-lectures__track splide__track">
+							<ul class="teacher-lectures__list splide__list">
+								<li class="teacher-lectures__card splide__slide">
+									<h3 class="teacher-lectures__card--title">
+										Название лекции
+									</h3>
+									<div class="teacher-lectures__card--text">
+										<p>
+											Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
+										</p>
+									</div>
+									<div class="teacher-lectures__card--date">
+										Курс создан: 10.10.2023
+									</div>
+									<div class="teacher-lectures__card--edit">
+										<a href="#" class="teacher-lectures__card--start btn _min">
+											Начать лекцию
+										</a>
+									</div>
+									<a href="#" class="teacher-lectures__card--edit-btn">
+										Редактировать расписание
+									</a>
+									<a href="#" class="teacher-lectures__card--close">
+										Завершить курс
+									</a>
+								</li>
+								@@loop("html/account/_teacher-lectures-card.html", [
+
+									{},
+									{},
+
+									{},
+									{},
+									{},
+
+									{},
+									{},
+
+								])
+							</ul>
+						</div>
+						<div class="teacher-lectures__footer">
+							<a href="#" class="teacher-lectures__btn btn _min">
+								Все лекции
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="teacher-profile__students-group teacher-students-group account-block is-accordion">
+					<form class="teacher-students-group__sort visible-on-desktop">
+						<select name="sort" class="teacher-students-group__sort--select custom-select is-min">
+							<option value="За рейтингом">За рейтингом</option>
+							<option value="За рейтингом">За рейтингом</option>
+							<option value="За рейтингом">За рейтингом</option>
+						</select>
+					</form>
+					<button type="button" class="teacher-students-group__header account-block__accordion-target">
+						<h2 class="teacher-students-group__title account-block__title">
+							Название группы
+						</h2>
+						<svg width="8" height="8" viewBox="0 0 8 8" class="teacher-students-group__arrow account-block__accordion-arrow">
+							<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+						</svg>
+					</button>
+					<div class="account-block__accordion-wrapper">
+						<div>
+							<form class="teacher-students-group__sort visible-on-mob">
+								<select name="sort" class="teacher-students-group__sort--select custom-select is-min">
+									<option value="За рейтингом">За рейтингом</option>
+									<option value="За рейтингом">За рейтингом</option>
+									<option value="За рейтингом">За рейтингом</option>
+								</select>
+							</form>
+							<div class="teacher-students-group__table">
+								<div class="teacher-students-group__table--head">
+									<span>Студент</span>
+									<span>Колличество стикеров</span>
+									<span>Дата последнего посещения</span>
+								</div>
+								<div class="teacher-students-group__table--wrapper" data-simplebar>
+									<ul class="teacher-students-group__table--list">
+										@@loop("html/account/_teacher-students-group-table-item.html", [
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+											{},
+										])
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="teacher-profile__aside">
+				<div class="teacher-profile__rating teacher-students-rating account-block">
+					<div class="teacher-students-rating__header">
+						<h2 class="teacher-students-rating__title account-block__title">
+							Рейтинг группы
+						</h2>
+						<div class="teacher-students-rating__date">
+							<button class="teacher-students-rating__date--arrow is-prev" type="button">
+								<svg width="9" height="9" viewBox="0 0 8 8">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</button>
+							<span class="teacher-students-rating__date--current">Сентябрь 2023</span>
+							<button class="teacher-students-rating__date--arrow is-next" type="button">
+								<svg width="9" height="9" viewBox="0 0 8 8">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="teacher-students-rating__block">
+						<div class="teacher-students-rating__block--header">
+							<span>Студент</span>
+							<span>Рейтинг</span>
+						</div>
+						<div class="teacher-students-rating__block--wrapper" data-simplebar>
+							<ul class="teacher-students-rating__list">
+								@@loop("html/account/_teacher-students-group-item.html", [
+									{},
+									{},
+									{},
+									{},
+									{},
+									{},
+									{},
+									{},
+									{},
+								])
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer-account.html")

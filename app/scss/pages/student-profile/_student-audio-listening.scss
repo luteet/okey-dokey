@@ -1,0 +1,505 @@
+.student-audio-listening {
+
+	padding: 16px; margin-top: 30px;
+	@include _768 {
+		padding: 30px;
+	}
+	border-radius: 15px;
+	background: var(--light);
+
+	// .student-audio-listening__list
+
+	&__list {
+		counter-reset: list_number;
+	}
+
+	// .student-audio-listening__item
+
+	&__item {
+		&:not(:first-child) {
+			margin-top: 16px;
+			@include _768 {
+				margin-top: 20px;
+			}
+		}
+		
+		background: var(--white);
+		border-radius: 15px;
+
+		&.is-disabled {
+			background: rgba(255, 255, 255, 0.4);
+			pointer-events: none;
+		}
+	}
+
+	// .student-audio-listening__target
+
+	&__target {
+		width: 100%; padding: 15px;
+		@include _768 {
+			padding: 30px;
+			flex-wrap: nowrap;
+			
+		}
+		background: transparent;
+
+		display: flex;
+		text-align: start;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		color: #000;
+
+	}
+
+	&__item.is-disabled & {
+		&__target {
+			flex-wrap: wrap;
+			@include _768 {
+				flex-wrap: nowrap;
+			}
+		}
+	}
+
+	&__target.is-active & {
+		&__arrow {
+			svg {
+				transform: scaleY(-1);
+			}
+		}
+	}
+
+	&__target.is-active + &__block {
+		grid-template-rows: 1fr;
+		padding: 0px 16px 16px;
+		@include _768 {
+			padding: 0px 30px 30px;
+		}
+	}
+
+	// .student-audio-listening__number
+
+	&__number {
+		order: 1;
+		@include _768 {
+			order: 1;
+			width: 24px; height: 24px; flex: 0 0 24px;
+		}
+
+		width: 20px; height: 20px; flex: 0 0 20px;
+		margin-right: 10px;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		background: #EBEBEB;
+		border-radius: 3px;
+		
+		&::before {
+			counter-increment: list_number;
+			content: counter(list_number);
+			
+			@include _768 {
+				font-size: 0.875rem;
+			}
+			font-size: 0.75rem;
+			line-height: 100%;
+			font-weight: 600;
+		}
+		
+	}
+
+	// .student-audio-listening__topic
+
+	&__topic {
+		flex: 1 1 100%;
+		order: 3;
+		padding-top: 8px;
+		@include _768 {
+			flex: 1 1 auto;
+			padding-top: 0;
+			order: 2;
+		}
+		
+		span {
+			color: #534D4D;
+			font-size: 0.875rem;
+			line-height: 133%;
+			@include _550 {
+				font-size: 1rem;
+			}
+		}
+
+		h2 {
+			padding-top: 5px;
+
+			font-size: 0.875rem;
+			@include _550 {
+				font-size: 1rem;
+			}
+			font-weight: 600;
+			line-height: 135%;
+		}
+	}
+
+	// .student-audio-listening__arrow
+
+	&__arrow {
+		order: 2;
+		@include _768 {
+			order: 3;
+		}
+
+		display: flex;
+		align-items: center;
+
+		span {
+			padding-right: 7px;
+			line-height: 125%;
+			text-align: end;
+
+			font-size: 0.75rem;
+
+			@include _550 {
+				font-size: 0.875rem;
+				padding-right: 15px;
+			}
+
+			@media (min-width: 1200px) {
+				font-size: 1rem;
+			}
+		}
+
+		svg {
+			flex: 0 0 10px;
+			transition: transform .3s ease;
+		}
+	}
+
+	// .student-audio-listening__block
+
+	&__block {
+	
+		padding: 0px 16px 0px;
+		@include _768 {
+			padding: 0px 30px 0px;
+		}
+
+		display: grid;
+		grid-template-rows: 0fr;
+
+		transition: grid-template-rows .4s ease, padding .3s ease;
+
+		> div {
+			overflow: hidden;
+		}
+	}
+
+	// .student-audio-listening__player
+
+	&__player {
+		max-width: 611px;
+
+		.mejs__button.mejs__playpause-button.mejs__play {
+			display: none;
+		}
+
+		.mejs__button.mejs__volume-button.mejs__mute {
+			display: none;
+		}
+
+		.mejs__horizontal-volume-slider {
+			display: none;
+		}
+
+		.mejs__container {
+			height: 69px !important; width: 100% !important;
+			background: transparent;
+			border: 1px solid #EBEBEB;
+			border-radius: 10px;
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.mejs__controls {
+			//padding: 15px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			max-width: 611px; height: auto;
+			padding: 15px;
+			background: transparent;
+		}
+
+		.mejs__time-total.mejs__time-slider {
+			margin: 0;
+			border-radius: 30px;
+			overflow: hidden;
+		}
+
+		.mejs__time-total.mejs__time-slider[aria-valuetext="00:00"] .mejs__time-handle .mejs__time-handle-content {
+			transform: scale(0);
+			opacity: 0;
+		}
+
+		.mejs__time-handle {
+			opacity: 1;
+			.mejs__time-handle-content {
+				border: 1px solid var(--primary);
+				transform: scale(1);
+				background: var(--white);
+			}
+		}
+
+		.mejs__time-rail {
+			flex: 1 1 100%;
+			order: 3;
+			margin: 6px 0 0;
+
+			height: 10px;
+			padding: 0;
+			background: #F8F8F8;
+			border-radius: 19px;
+		}
+
+		.mejs__time-float {
+			background: var(--white);
+			border-color: #EBEBEB
+
+		}
+
+		.mejs__time.mejs__currenttime-container {
+			order: 1;
+		}
+
+		.mejs__time.mejs__duration-container {
+			order: 2;
+		}
+
+		.mejs__button.mejs__playpause-button {
+			display: none;
+		}
+
+		.mejs__time {
+			color: #262626;
+			line-height: 150%;
+			padding: 0;
+			font-size: 0.875rem;
+			@include _550 {
+				font-size: 1rem;
+			}
+			font-family: var(--main-font);
+			font-weight: 400;
+		}
+
+		.mejs__button.mejs__playpause-button.mejs__pause {
+			display: none;
+		}
+
+		.mejs__time-current {
+			background: var(--primary);
+		}
+
+		// .student-audio-listening__player--controls
+	
+		&--controls {
+			margin-top: 20px;
+
+			display: flex;
+			justify-content: center;
+		}
+
+		// .student-audio-listening__player--seek
+
+		&--seek {
+			margin: 0 2.5px;
+			@include _550 {
+				margin: 0 10px;
+			}
+
+			display: flex;
+			align-items: center;
+
+			> span {
+				padding: 0 8px;
+				font-size: 0.75rem;
+				line-height: 150%;
+				@include _550 {
+					font-size: 1rem;
+				}
+			}
+		}
+
+		// .student-audio-listening__player--seek-arrow
+
+		&--seek-arrow {
+			width: 30px; height: 30px; flex: 0 0 30px;
+			@media (min-width: 360px) {
+				width: 44px; height: 44px; flex: 0 0 44px;
+			}
+			@include _550 {
+				width: 50px; height: 50px; flex: 0 0 50px;
+			}
+
+			svg {
+				width: 55%; height: auto;
+			}
+
+			border: 1px solid var(--primary);
+			border-radius: 50%;
+			color: var(--primary);
+
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			background: transparent;
+
+			@media (any-hover: hover) {
+				transition: background .3s ease, color .3s ease;
+				&:hover {
+					background: var(--primary);
+					color: var(--white);
+				}
+				
+				&:active {
+					background: var(--primary);
+					color: var(--white);
+				}
+			}
+		}
+
+		// .student-audio-listening__player--play-pause
+
+		&--play-pause {
+			margin: 0 2.5px;
+			width: 30px; height: 30px; flex: 0 0 30px;
+			@media (min-width: 360px) {
+				width: 44px; height: 44px; flex: 0 0 44px;
+			}
+			@include _550 {
+				margin: 0 10px;
+				width: 50px; height: 50px; flex: 0 0 50px;
+			}
+			border: 1px solid var(--primary);
+			border-radius: 50%;
+			color: var(--primary);
+
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			background: transparent;
+
+			&.is-playing {
+				background: var(--primary);
+				svg {
+					opacity: 0;
+				}
+
+				&::before, &::after {
+					opacity: 1;
+				}
+			}
+
+			position: relative;
+
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				left: 50%; top: 50%;
+				width: 10%; height: 35%;
+				background: var(--white);
+				border-radius: 1px;
+				opacity: 0;
+
+				transition: opacity .3s ease, background .3s ease;
+			}
+
+			&::before {
+				transform: translate(-150%,-50%);
+			}
+
+			&::after {
+				transform: translate(50%,-50%);
+			}
+
+			svg {
+				width: 60%; height: auto;
+				transition: opacity .3s ease;
+			}
+
+			transition: background .3s ease, color .3s ease;
+
+			@media (any-hover: hover) {
+				
+				&:hover {
+					background: var(--primary);
+					color: var(--white);
+					&::before, &::after {
+						background: var(--white);
+					}
+				}
+				
+				&:active {
+					background: var(--primary-active);
+					color: var(--white);
+					&::before, &::after {
+						background: var(--white);
+					}
+				}
+			}
+
+		}
+	}
+
+	// .student-audio-listening__lock
+
+	&__lock {
+		order: 2;
+		
+		@include _768 {
+			order: 3;
+		}
+		align-self: center;
+
+		display: flex;
+		align-items: center;
+
+		span {
+			padding-right: 14px;
+			font-weight: 500;
+			text-align: end;
+
+			font-size: 0.75rem;
+
+			@include _768 {
+				font-size: 0.875rem;
+			}
+
+			@media (min-width: 1200px) {
+				font-size: 1rem;
+			}
+		}
+
+		i {
+			flex: 0 0 20px; width: 20px; height: 20px;
+			@include _768 {
+				flex: 0 0 40px; width: 40px; height: 40px;
+			}
+			border-radius: 6px;
+			background: var(--primary);
+
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--white);
+
+			svg {
+				width: 50%; height: auto;
+			}
+
+		}
+	}
+}

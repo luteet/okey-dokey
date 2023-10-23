@@ -1,0 +1,171 @@
+.teacher-choose-group {
+
+	// .teacher-choose-group__title
+
+	&__title {
+	}
+
+	// .teacher-choose-group__slider
+
+	&__slider {
+
+		scroll-snap-type: x proximity;
+		.simplebar-content-wrapper {
+			scroll-snap-type: x proximity;
+		}
+
+		// .teacher-choose-group__slider--list
+
+		&--list {
+			margin-top: 15px;
+			padding-bottom: 30px;
+
+			display: flex;
+		}
+
+		// .teacher-choose-group__slider--card
+
+		&--card {
+			&:not(:last-child) {
+				margin-right: 36px;
+			}
+		}
+	}
+
+	// .teacher-choose-group__card
+
+	&__card {
+
+		border-radius: 20px;
+		background: var(--white);
+		padding: 12px 10px 15px;
+		@include _992 {
+			padding: 12px 15px 15px;
+		}
+
+		/* width: 50vw;
+
+		@include _992 {
+			width: 189px;
+		} */
+
+		scroll-snap-align: start;
+
+		// .teacher-choose-group__card--name
+
+		&--name {
+			color: #000;
+			font-size: 0.9375rem;
+			font-weight: 600;
+			line-height: normal;
+		}
+
+		// .teacher-choose-group__card--name-group
+
+		&--name-group {
+			margin-top: 5px;
+			display: block;
+			color: #534D4D;
+			font-size: 0.75rem;
+			font-weight: 400;
+			line-height: 150%
+		}
+
+		// .teacher-choose-group__card--info
+
+		&--info {
+			padding-top: 10px;
+			min-width: calc(100vw - 30px - 30px - var(--container-padding) - var(--container-padding));
+			@include _550 {
+				min-width: calc(50vw - 30px - 30px);
+			}
+			@include _992 {
+				min-width: 180px;
+			}
+
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 15px;
+		}
+
+		// .teacher-choose-group__card--info-item
+
+		&--info-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		// .teacher-choose-group__card--circle-progress
+
+		&--circle-progress {
+			display: grid;
+			> * {
+				grid-area: 1/1;
+			}
+		}
+
+		// .teacher-choose-group__card--value
+
+		&--value {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				color: var(--primary);
+				margin-bottom: 4px;
+			}
+
+			color: #282828;
+			font-size: 0.75rem;
+			font-weight: 600;
+			line-height: 133.33%;
+		}
+
+		// .teacher-choose-group__card--info-item-name
+
+		&--info-item-name {
+			display: block;
+			margin-top: 15px;
+			text-align: center;
+
+			color: #534D4D;
+			font-size: 0.75rem;
+			line-height: 133.333%
+		}
+
+		// .teacher-choose-group__card--footer
+
+		&--footer {
+			margin-top: 9px;
+		}
+
+		// .teacher-choose-group__card--btn
+
+		&--btn {
+			min-height: 50px; width: 100%;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+		}
+	}
+
+	// .teacher-choose-group__footer
+
+	&__footer {
+		margin-top: 24px;
+		width: 100%;
+
+		display: flex;
+		justify-content: center;
+	}
+
+	// .teacher-choose-group__btn
+
+	&__btn {
+	}
+}

@@ -1,0 +1,93 @@
+.teacher-plan {
+
+	// .teacher-plan__header
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		background: transparent;
+		text-align: start;
+		width: 100%;
+	}
+
+	// .teacher-plan__title
+
+	&__title {
+	}
+
+	// .teacher-plan__arrow
+
+	&__arrow {
+	}
+
+	// .teacher-plan__text
+
+	&__text {
+		color: #534D4D;
+		line-height: 150%;
+		
+	}
+
+	// .teacher-plan__block
+
+	&__block {
+
+		margin-top: 7px;
+
+		border-radius: 10px;
+		background: var(--white);
+		border: 1px solid #EBEBEB;
+
+		padding: 10px;
+
+		display: flex;
+		align-items: center;
+
+		overflow: hidden;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			right: 0; top: 0;
+			width: 112px; height: 112px;
+			background: var(--theme);
+			opacity: .05;
+			border-radius: 50%;
+			transform: translate(20%,-40%);
+		}
+
+		// .teacher-plan__block--circle-progress
+
+		&--circle-progress {
+			margin-right: 15px;
+			flex: 0 0 70px;
+			display: grid;
+			> * {
+				grid-area: 1/1;
+			}
+		}
+
+		// .teacher-plan__block--value
+
+		&--value {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			font-size: 0.75rem;
+			color: #282828;
+			line-height: 133%;
+			padding-top: 10px;
+		}
+
+		// .teacher-plan__block--text
+
+		&--text {
+			display: block;
+			padding-top: 7px;
+		}
+	}
+}

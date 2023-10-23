@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+	<svg class="visually-hidden">
+		<clipPath id="round-triangle" clipPathUnits="objectBoundingBox">
+			<path d="M0.68,1 L0.56,1 L0,1 L0.212,1 C0.27,0.968,0.322,0.813,0.355,0.581 V0.581 C0.438,0,0.615,0.008,0.698,0.589 V0.589 C0.731,0.816,0.781,0.971,0.837,1 L1,1 L0.68,1"></path>
+		</clipPath>
+		<clipPath id="round-triangle-2" clipPathUnits="objectBoundingBox">
+			<path d="M0,0.881 C0,0.792,0.024,0.72,0.053,0.72 H0.172 C0.209,0.72,0.244,0.673,0.269,0.591 L0.395,0.172 C0.447,-0.001,0.537,-0.001,0.589,0.172 L0.715,0.591 C0.74,0.673,0.775,0.72,0.812,0.72 H0.947 C0.976,0.72,1,0.792,1,0.881 V0.881 C1,0.97,0.976,1,0.947,1 H0.053 C0.024,1,0,0.97,0,0.881 V0.881"></path>
+		</clipPath>
+	</svg>
+
+	<div class="wrapper account-wrapper">
+		<aside class="aside">
+			<div class="aside__background aside__close visible-on-mob"></div>
+			<div class="aside__body">
+				<div class="aside__logo">
+					<img src="img/logo.svg" width="150" height="150" loading="lazy" alt="">
+				</div>
+				<button class="aside__close-btn aside__close visible-on-mob" type="button">
+					<svg width="15" height="15" viewBox="0 0 15 15">
+						<use xlink:href="img/sprites.svg#close-2"></use>
+					</svg>
+				</button>
+				<nav class="aside__nav">
+					<ul>
+						<li>
+							<a href="#" class="is-current">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#home"></use>
+									</svg>
+								</i>
+								<span>
+									Главная
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#account-student"></use>
+									</svg>
+								</i>
+								<span>
+									Профиль ученика
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#join-to-lesson"></use>
+									</svg>
+								</i>
+								<span>
+									Присоедениться к уроку
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#messages"></use>
+									</svg>
+								</i>
+								<span>
+									Сообщения
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#visits"></use>
+									</svg>
+								</i>
+								<span>
+									Посещения
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#calendar-3"></use>
+									</svg>
+								</i>
+								<span>
+									Расписание занятий
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#my-diary"></use>
+									</svg>
+								</i>
+								<span>
+									Мой дневник
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#my-awards"></use>
+									</svg>
+								</i>
+								<span>
+									Мои награды
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#audiofiles"></use>
+									</svg>
+								</i>
+								<span>
+									Аудиофайлы
+								</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<div class="header-account">
+			<div class="header-account__body">
+				<div class="header-account__col">
+					<a href="#" class="header-account__settings">
+						<svg width="26" height="26" viewBox="0 0 26 26">
+							<use xlink:href="img/sprites.svg#settings"></use>
+						</svg>
+					</a>
+					<div class="header-account__lang">
+						<button class="header-account__lang--target" type="button">
+							<span>
+								Рус
+							</span>
+							<span>
+								<svg width="7" height="5" viewBox="0 0 7 5">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</span>
+						</button>
+						<ul class="header-account__lang--list">
+							<li>
+								<a href="#">
+									Eng
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="header-account__col">
+					<a href="#" class="header-account__stickers visible-on-desktop">
+						<i>
+							<svg width="23" height="23" viewBox="0 0 23 23">
+								<use xlink:href="img/sprites.svg#stickers"></use>
+							</svg>
+						</i>
+						<b>
+							80
+						</b>
+						<span>
+							стикеров
+						</span>
+					</a>
+					<div class="header-account__notification">
+						<button class="header-account__notification--target" type="button" data-length="1" title="Увидомления">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="img/sprites.svg#notification"></use>
+							</svg>
+						</button>
+						<div class="header-account__notification--block">
+							<div class="header-account__notification--block-wrapper" data-simplebar>
+								<ul class="header-account__notification--list">
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="12" height="20" viewBox="0 0 20 20">
+												<use xlink:href="img/sprites.svg#audiofiles"></use>
+											</svg>
+										</i>
+										<p>
+											Добавлен аудиофайл по теме “Местоимения в английском языке”
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="11" height="11" viewBox="0 0 11 11">
+												<use xlink:href="img/sprites.svg#chat"></use>
+											</svg>
+										</i>
+										<p>
+											Учитель Павлова Валерия оставила комментарий в расписании занятий
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="12" height="20" viewBox="0 0 20 20">
+												<use xlink:href="img/sprites.svg#audiofiles"></use>
+											</svg>
+										</i>
+										<p>
+											Добавлен аудиофайл по теме “Местоимения в английском языке”
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="11" height="11" viewBox="0 0 11 11">
+												<use xlink:href="img/sprites.svg#chat"></use>
+											</svg>
+										</i>
+										<p>
+											Учитель Павлова Валерия оставила комментарий в расписании занятий
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="12" height="20" viewBox="0 0 20 20">
+												<use xlink:href="img/sprites.svg#audiofiles"></use>
+											</svg>
+										</i>
+										<p>
+											Добавлен аудиофайл по теме “Местоимения в английском языке”
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="11" height="11" viewBox="0 0 11 11">
+												<use xlink:href="img/sprites.svg#chat"></use>
+											</svg>
+										</i>
+										<p>
+											Учитель Павлова Валерия оставила комментарий в расписании занятий
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="header-account__profile">
+						<button class="header-account__profile--target" type="button" title="Профиль">
+							<picture>
+								<source srcset="img/student-account/student-account-avatar.avif" type="image/avif">
+								<source srcset="img/student-account/student-account-avatar.webp" type="image/webp">
+								<img src="img/student-account/student-account-avatar.png" alt="" width="44" height="44" loading="lazy">
+							</picture>
+						</button>
+						<ul class="header-account__profile--list">
+							<li>
+								<a href="#">
+									Главная страница
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Личный кабинет
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Сообщения
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Дневник
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Выход
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-account__open-aside">
+				<button class="header-account__open-aside--btn btn visible-on-mob" type="button">
+					Меню
+				</button>
+			</div>
+		</div>
+
+		<main class="main">
+			<div class="student-table">
+				<div class="student-table__header">
+					<a href="#" class="student-table__prev-date">
+						<i>
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</i>
+						<span>
+							Сентябрь 2023
+						</span>
+					</a>
+					<a href="#" class="student-table__next-date">
+						<span>
+							Ноябрю 2023
+						</span>
+						<i>
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</i>
+					</a>
+					<div class="student-table__current-date visible-on-desktop">
+						<div class="student-table__current-date--body">
+							<i>
+								<svg width="19" height="19" viewBox="0 0 19 19">
+									<use xlink:href="img/sprites.svg#calendar-3"></use>
+								</svg>
+							</i>
+							<b>
+								Октябрь 2023
+							</b>
+							<span>
+								01.10 - 31.10
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="student-table__current-date visible-on-mob">
+					<div class="student-table__current-date--body">
+						<i>
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#calendar-3"></use>
+							</svg>
+						</i>
+						<b>
+							Октябрь 2023
+						</b>
+						<span>
+							01.10 - 31.10
+						</span>
+					</div>
+				</div>
+				<div class="account-table-wrapper">
+					<div class="account-table-controls">
+						<button class="account-table-controls__arrow is-prev arrow-btn _min" type="button">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</button>
+						<button class="account-table-controls__arrow is-next arrow-btn _min" type="button">
+							<svg width="19" height="19" viewBox="0 0 19 19">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="account-table-container">
+						<table class="student-table__table account-table">
+							<colgroup>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Понедельник
+											</b>
+											<span>
+												01.10.2023
+											</span>
+										</span>
+									</th>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Вторник
+											</b>
+											<span>
+												02.10.2023
+											</span>
+										</span>
+									</th>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Среда
+											</b>
+											<span>
+												03.10.2023
+											</span>
+										</span>
+									</th>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Четверг
+											</b>
+											<span>
+												04.10.2023
+											</span>
+										</span>
+									</th>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Пятница
+											</b>
+											<span>
+												05.10.2023
+											</span>
+										</span>
+									</th>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Суббота
+											</b>
+											<span>
+												06.10.2023
+											</span>
+										</span>
+									</th>
+									<th>
+										<span class="account-table__date">
+											<i>
+												<svg width="19" height="19" viewBox="0 0 19 19">
+													<use xlink:href="img/sprites.svg#calendar-3"></use>
+												</svg>
+											</i>
+											<b>
+												Воскресенье
+											</b>
+											<span>
+												07.10.2023
+											</span>
+										</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status is-error">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+												<span>
+													Отсутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status is-error">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+												<span>
+													Отсутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status is-error">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+												<span>
+													Отсутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status is-error">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+												<span>
+													Отсутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status is-error">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+												<span>
+													Отсутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status is-error">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+												<span>
+													Отсутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+									<td>
+
+									</td>
+									<td>
+										<div class="account-table__event">
+											<span class="account-table__status">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#check-2"></use>
+												</svg>
+												<span>
+													Присутствовал
+												</span>
+											</span>
+											<span class="account-table__name">
+												Название занятия
+											</span>
+											<span class="account-table__time">
+												<svg width="12" height="12" viewBox="0 0 12 12">
+													<use xlink:href="img/sprites.svg#time"></use>
+												</svg>
+												08:00
+											</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__body">
+				<div class="footer__container">
+					<a href="index.html" class="footer__logo">
+						<img src="img/logo.svg" width="90" height="90" loading="lazy" alt="Logo" class="footer__logo--img">
+					</a>
+					<nav class="footer__nav">
+						<ul>
+							<li>
+								<a href="#">
+									Контакты
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Копирайтинг
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Договор оферты
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Патент
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="footer__contacts">
+						<li>
+							<a href="tel:+380671232323">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 13 13">
+										<use xlink:href="img/sprites.svg#tel"></use>
+									</svg>
+								</i>
+								<span>
+									+38 (067) - 123 - 23 - 23
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="tel:+380681232323">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 13 13">
+										<use xlink:href="img/sprites.svg#tel"></use>
+									</svg>
+								</i>
+								<span>
+									+38 (068) - 123 - 23 - 23
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="15" height="15" viewBox="0 0 15 15">
+										<use xlink:href="img/sprites.svg#map-point"></use>
+									</svg>
+								</i>
+								<span>
+									г.Днепр, ул.Глаголева 21
+								</span>
+							</a>
+						</li>
+					</ul>
+					<form method="post" class="footer__feedback">
+						<h3>
+							Учителям
+						</h3>
+						<p>
+							Если хотите стать частью нашей дружной команды заполните анкету
+						</p>
+						<label>
+							<input type="tel" name="tel" placeholder="Номер телефона" required>
+						</label>
+						<button class="btn _min-2" type="submit">
+							Связаться
+						</button>
+					</form>
+					<div class="footer__add">
+						<div class="footer__add--block">
+							<h3>Способы оплаты:</h3>
+							<ul>
+								<li>
+									<picture>
+										<source srcset="img/footer/visa.avif" type="image/avif">
+										<source srcset="img/footer/visa.webp" type="image/webp">
+										<img src="img/footer/visa.png" alt="" width="32" height="10" loading="lazy">
+									</picture>
+								</li>
+								<li>
+									<picture>
+										<source srcset="img/footer/mastercard.avif" type="image/avif">
+										<source srcset="img/footer/mastercard.webp" type="image/webp">
+										<img src="img/footer/mastercard.png" alt="" width="32" height="20" loading="lazy">
+									</picture>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__add--block">
+							<h3>Мы в социальных сетях:</h3>
+							<ul>
+								<li>
+									<a href="#" title="Instagram">
+										<img src="img/social/instagram.svg" alt="" width="18" height="18" loading="lazy">
+									</a>
+								</li>
+								<li>
+									<a href="#" title="Facebook">
+										<img src="img/social/facebook.svg" alt="" width="18" height="18" loading="lazy">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer__privacy">
+					<ul>
+						<li>
+							<a href="#">
+								Политика конфиденциальности
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="delivery-product popup" id="delivery-product-popup" style="display: none;">
+		<div class="delivery-product__wrapper popup-wrapper">
+			<div class="delivery-product__bg popup-bg popup-close"></div>
+			<div class="delivery-product__body popup-body">
+				<div class="delivery-product__background" aria-hidden="true">
+					<div class="delivery-product__background--item">
+						<img src="img/decor-item-3.svg" alt="" width="0" height="0" loading="lazy">
+					</div>
+					<div class="delivery-product__background--item">
+						<img src="img/decor-item-2.svg" alt="" width="0" height="0" loading="lazy">
+					</div>
+				</div>
+				<button type="button" class="delivery-product__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="15" height="15" viewBox="0 0 15 15">
+						<use xlink:href="img/sprites.svg#close-2"></use>
+					</svg>
+				</button>
+				<div class="delivery-product__container">
+					<h2 class="delivery-product__title">
+						Доставка
+					</h2>
+					<div class="delivery-product__selected">
+						<b>Вы выбрали:</b>
+						<div class="delivery-product__selected--list">
+							<div class="delivery-product__selected--product">
+								<div class="delivery-product__selected--image">
+									<picture>
+										<source srcset="img/student-account/student-design-clothes.avif" type="image/avif">
+										<source srcset="img/student-account/student-design-clothes.webp" type="image/webp">
+										<img src="img/student-account/student-design-clothes.png" alt="" width="55" height="70" loading="lazy">
+									</picture>
+									<button class="delivery-product__selected--close popup-close" type="button" title="Удалить товар">
+										<svg width="9" height="9" viewBox="0 0 15 15">
+											<use xlink:href="img/sprites.svg#close-2"></use>
+										</svg>
+									</button>
+								</div>
+								<span>Футболка</span>
+								<b>
+									<svg width="12" height="12" viewBox="0 0 12 12">
+										<use xlink:href="img/sprites.svg#emoji"></use>
+									</svg>
+									100
+								</b>
+							</div>
+						</div>
+					</div>
+					<form method="post" class="delivery-product__form">
+						<h3>Укажите Ваши данные для доставки</h3>
+						<label>
+							<span>ФИО</span>
+							<input type="text" name="name" required placeholder="ФИО">
+						</label>
+						<label>
+							<span>Введите ваш телефон</span>
+							<input type="text" name="name" required placeholder="+38 (___) ___-__-__">
+						</label>
+						<label>
+							<span>Город</span>
+							<input type="text" name="name" required placeholder="Город">
+						</label>
+						<label>
+							<span>Отделение почты</span>
+							<input type="text" name="name" required placeholder="Отделение почты">
+						</label>
+						<button class="btn _alt" type="submit">
+							Подтвердить
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="final-test popup" id="final-test-popup" style="display: none;">
+		<div class="final-test__wrapper popup-wrapper">
+			<div class="final-test__bg popup-bg popup-close"></div>
+			<div class="final-test__body popup-body">
+				<button type="button" class="final-test__close-btn popup-close-btn popup-close close-btn" title="Закрыть">
+					<svg width="15" height="15" viewBox="0 0 15 15">
+						<use xlink:href="img/sprites.svg#close-2"></use>
+					</svg>
+				</button>
+				<div class="final-test__logo">
+					<img src="img/logo.svg" width="90" height="90" loading="lazy" alt="">
+				</div>
+				<div class="final-test__background" aria-hidden="true">
+					<div class="final-test__background--item">
+						<picture>
+							<source srcset="img/student-account/final-test-decor.avif" type="image/avif">
+							<source srcset="img/student-account/final-test-decor.webp" type="image/webp">
+							<img src="img/student-account/final-test-decor.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<div class="final-test__background--item">
+						<img src="img/decor-item-2.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+				</div>
+				<div class="final-test__container">
+					<h2 class="final-test__title">
+						Поздравляем!
+					</h2>
+					<div class="final-test__text">
+						<p>
+							Вы успешно прошли курс <br>
+							<b>“I can sing English”</b>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+.teacher-info {
+
+	display: grid;
+	grid-template-columns: 115px auto;
+	gap: 0 22px;
+
+	// .teacher-info__upload
+
+	&__upload {
+
+		grid-column: 2 span;
+		text-align: end;
+
+		margin-bottom: -5px;
+
+		// .teacher-info__upload--target
+
+		&--target {
+			font-size: 0.875rem;
+			line-height: 133%;
+			color: var(--primary);
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+	}
+
+	// .teacher-info__avatar
+
+	&__avatar {
+		grid-row: 2 span;
+		img {
+			border-radius: 10px;
+			border: 2px solid var(--primary);
+		}
+	}
+
+	// .teacher-info__name
+
+	&__name {
+		align-self: self-end;
+
+		font-size: 1.125rem;
+		line-height: 125%;
+		font-weight: 600;
+	}
+
+	// .teacher-info__about
+
+	&__about {
+		display: block;
+		padding-top: 2px;
+
+		color: #534D4D;
+		font-size: 0.875rem;
+		line-height: 171.429%;
+	}
+}

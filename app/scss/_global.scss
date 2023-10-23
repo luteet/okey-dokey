@@ -8,6 +8,7 @@
 	--accent-hover: #f61d3a;
 	--accent-active: #D4112A;
 	--primary: #213A8F;
+	--primary-active: #152C79;
 
 	--light: #F1F1F1;
 	--light-2: #D9D9D9;
@@ -43,8 +44,6 @@ body {
 	font-family: var(--main-font);
 	font-weight: 400;
 	line-height: 150%;
-
-	//padding-right: var(--popup-padding);
 
 	&._mob-menu-active {
 		overflow: hidden;
@@ -100,6 +99,9 @@ section {
 }
 
 @keyframes fadeOut2 {
+	from {
+		opacity: 1; visibility: visible;
+	}
 	to {
 		opacity: 0; visibility: hidden;
 	}
@@ -237,6 +239,10 @@ section {
 		width: 70px; height: 70px;
 	}
 
+	&._super-min {
+		width: 34px; height: 34px;
+	}
+
 	&._min {
 		width: 44px; height: 44px;
 	}
@@ -266,7 +272,9 @@ section {
 
 .btn {
 	cursor: pointer;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 	
 	padding: 13.5px 16px;
@@ -474,4 +482,66 @@ section {
 	transform: none;
 }
 
+.circle-progress {
+	width: 77px; height: 77px;
+	&.is-min {
+		width: 60px; height: 60px;
 
+		> svg {
+			width: 60px; height: 60px;
+
+			circle:last-of-type {
+				stroke-width: 3;
+				stroke-dasharray: 170px;
+				stroke-dashoffset: calc(170px - (170px * var(--percent)) / 100);
+				stroke: var(--theme); 
+			}
+		}
+	}
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 50%; top: 50%;
+		transform: translate(-50%,calc(-50% + 1px));
+		width: calc(100% + 10px); height: calc(100% + 10px);
+		border-radius: 50%;
+		background: var(--theme);
+		border-radius: 50%;
+		opacity: .05;
+	}
+
+	> svg {
+		width: 77px; height: 77px;
+
+		transform: scaleY(-1);
+
+		circle {
+			width: 100%; height: 100%;
+			fill: none;
+			stroke: #FFF;
+			stroke-width: 2;
+			stroke-linecap: round;
+		}
+
+		circle:last-of-type {
+			stroke-width: 4;
+			stroke-dasharray: 220px;
+			stroke-dashoffset: calc(220px - (220px * var(--percent)) / 100);
+			stroke: var(--theme); 
+		}
+	}
+}
+
+.simplebar-track {
+	background: var(--white);
+}
+
+.simplebar-scrollbar::before {
+	bottom: 0; right: 0;
+}
+
+.simplebar-track.simplebar-horizontal {
+	height: 7px;
+}

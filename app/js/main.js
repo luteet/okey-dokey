@@ -229,6 +229,27 @@ imageAspectRatio.forEach(imageAspectRatio => {
 const accountChatMain = document.querySelector('.account-chat__main'),
 accountChatAside = document.querySelector('.account-chat__aside');
 
+function scrollHorizontally(container, scrollValue) {
+	var startTime = null;
+	var duration = 400;
+	var startScrollLeft = container.scrollLeft;
+	var targetScrollLeft = scrollValue;
+  
+	function animateScroll(time) {
+	  if (!startTime) startTime = time;
+	  var progress = (time - startTime) / duration;
+	  var easeInOutCubic = progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
+	  container.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * easeInOutCubic;
+  
+	  if (progress < 1) {
+		requestAnimationFrame(animateScroll);
+	  }
+	}
+  
+	requestAnimationFrame(animateScroll);
+  }
+  
+
 body.addEventListener('click', function (event) {
 
 	function $(elem) {
@@ -450,6 +471,11 @@ body.addEventListener('click', function (event) {
 		} else {
 			accountChatAside.classList.add('is-loading');
 			setTimeout(() => {
+				accountChatAside.classList.add('fade-out');
+				setTimeout(() => {
+					accountChatAside.style.display = 'none';
+					accountChatAside.classList.remove('fade-out');
+				},300)
 				accountChatMain.classList.remove('fade-out');
 				accountChatMain.classList.add('fade-in');
 				accountChatAside.classList.remove('is-loading');
@@ -473,18 +499,143 @@ body.addEventListener('click', function (event) {
 		const activeItem = document.querySelector('.account-chat__aside-item.is-active');
 		if(activeItem) activeItem.classList.remove('is-active');
 		
-		accountChatMain.classList.remove('fade-in');
 		accountChatMain.classList.add('fade-out');
-
-		window.scrollTo({
-			left: 0,
-			top: getCoords(accountChatAside).top - 30,
-			behavior: "smooth",
-		})
+		accountChatMain.classList.remove('fade-in');
+		
+		setTimeout(() => {
+			accountChatAside.style.removeProperty('display');
+			accountChatAside.classList.add('fade-in');
+		},300)
 
 	}
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </account-chat-aside-item> -=-=-=-=-=-=-=-=-=-=-=-=
+
+	const accountTableControlsArrow = $(".account-table-controls__arrow")
+	if (accountTableControlsArrow) {
+
+		if(!accountTableControlsArrow.classList.contains('is-active')) {
+	
+			accountTableControlsArrow.classList.add('is-active');
+
+			const tableWrapper = accountTableControlsArrow.closest('.account-table-wrapper'),
+			container = tableWrapper.querySelector('.account-table-container'),
+			td = tableWrapper.querySelector('tbody tr').querySelectorAll('td');
+
+			let scrollNextCheck = false, scrollPrevCheck = false;
+			if (accountTableControlsArrow.classList.contains('is-next')) {
+				td.forEach((td, index) => {
+					
+					if (getCoords(td).left - getCoords(tableWrapper).left-1 > 1 && !scrollNextCheck) {	
+
+						scrollNextCheck = true;
+						container.classList.add('disable-snap');
+						setTimeout(() => {
+							scrollHorizontally(container, getCoords(td).left - getCoords(tableWrapper).left + container.scrollLeft)
+						},0)
+						setTimeout(() => {
+							container.classList.remove('disable-snap');
+						},400)
+					}
+				})
+			} else if (accountTableControlsArrow.classList.contains('is-prev')) {
+				Array.from(td).reverse().forEach((td, index) => {
+					
+					if (getCoords(td).left - getCoords(tableWrapper).left-2 <= -10 && !scrollPrevCheck) {
+						scrollPrevCheck = true;
+
+						container.classList.add('disable-snap');
+						
+						setTimeout(() => {
+							scrollHorizontally(container, getCoords(td).left - getCoords(tableWrapper).left + container.scrollLeft)
+						},0)
+						
+						setTimeout(() => {
+							container.classList.remove('disable-snap');
+						},400)
+					}
+				})
+			}
+
+			setTimeout(() => {
+				accountTableControlsArrow.classList.remove('is-active');
+			},400)
+
+		}
+
+	}
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <account-chat-group-members> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const accountChatGroupMembersLink = $(".account-chat__group-members--link")
+	if(accountChatGroupMembersLink) {
+	
+		const popup = accountChatGroupMembersLink.closest('.account-chat__group-members').querySelector('.account-chat__group-popup');
+		console.log(accountChatGroupMembersLink.closest('.account-chat__group-members').querySelector('.account-chat__group-popup'))
+		if(popup) {
+			popup.classList.remove('fade-out');
+			popup.classList.add('is-active');
+			popup.classList.add('fade-in');
+		}
+	
+	}
+
+	const accountChatGroupPopupClose = $(".account-chat__group-popup--close")
+	if(accountChatGroupPopupClose) {
+
+		const popup = accountChatGroupPopupClose.closest('.account-chat__group-popup');
+		popup.classList.remove('fade-in');
+		popup.classList.add('fade-out');
+		setTimeout(() => {
+			popup.classList.remove('is-active');
+		},300)
+
+	} else if(!$('.account-chat__group-popup') && !accountChatGroupMembersLink) {
+		document.querySelectorAll('.account-chat__group-popup').forEach(popup => {
+			popup.classList.remove('fade-in');
+			popup.classList.add('fade-out');
+			setTimeout(() => {
+				popup.classList.remove('is-active');
+			},300)
+		})
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </account-chat-group-members> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <account-tooltip> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	if(!$('.account-table__tip--content') && !$('.account-table__tip--icon')) {
+	
+		document.querySelectorAll('.account-table__tip--content.is-active').forEach(content => {
+			content.classList.remove('is-visible');
+			setTimeout(() => {
+				content.classList.remove('is-active');
+			},300)
+		})
+
+		document.querySelectorAll('.account-table__tip--icon.is-active').forEach(icon => {
+			icon.classList.remove('is-active');
+		})
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </account-tooltip> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <student-audio-listenin-drop-down> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const studentAudioListeningTarget = $(".student-audio-listening__target")
+	if(studentAudioListeningTarget) {
+	
+		studentAudioListeningTarget.classList.toggle('is-active');
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </student-audio-listenin-drop-down> -=-=-=-=-=-=-=-=-=-=-=-=
 
 })
 
@@ -530,6 +681,86 @@ window.addEventListener("mousemove", (e) => {
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
 let windowSize = 0;
+const accountTableTips = document.querySelectorAll('.account-table__tip'),
+accountTableTipsArray = [];
+accountTableTips.forEach((tip, index) => {
+	const content = tip.querySelector('.account-table__tip--content'),
+	target = tip.querySelector('.account-table__tip--icon');
+
+	body.append(content);
+
+	target.addEventListener('pointerenter', function (event) {
+		if(getDeviceType() == "desktop") {
+			target.classList.add('is-active');
+			content.classList.add('is-active');
+			setTimeout(() => {
+				content.classList.add('is-visible');
+			},0)
+		}
+	})
+
+	target.addEventListener('click', function (event) {
+		if(getDeviceType() != "desktop") {
+			document.querySelectorAll('.account-table__tip--content.is-active').forEach(content => {
+				content.classList.remove('is-visible');
+				setTimeout(() => {
+					content.classList.remove('is-active');
+				},300)
+			})
+	
+			document.querySelectorAll('.account-table__tip--icon.is-active').forEach(icon => {
+				icon.classList.remove('is-active');
+			})
+
+			target.classList.add('is-active');
+			content.classList.add('is-active');
+			setTimeout(() => {
+				content.classList.add('is-visible');
+			},0)
+		}
+	})
+
+	content.addEventListener('pointerleave', function (event) {
+		if(getDeviceType() == "desktop") {
+			target.classList.remove('is-active');
+			content.classList.remove('is-visible');
+			setTimeout(() => {
+				content.classList.remove('is-active');
+			},300)
+		}
+	})
+
+	accountTableTipsArray[index] = {
+		target: tip.querySelector('.account-table__tip--icon'),
+		content: content,
+	}
+})
+
+if(document.querySelector('.account-table__tip')) {
+	setInterval(() => {
+		Array.from(accountTableTipsArray).forEach(tip => {
+			let x = tip['target'].getBoundingClientRect().x + tip['target'].offsetWidth;
+	
+			if(windowSize >= 550) {
+				if(x > windowSize - 250) {
+					tip['content'].classList.add('on-left');
+				} else {
+					tip['content'].classList.remove('on-left');
+				}
+			} else {
+				if(x > windowSize - 150) {
+					tip['content'].classList.add('on-left');
+				} else {
+					tip['content'].classList.remove('on-left');
+				}
+			}
+			
+			
+			tip['content'].style.setProperty('--x', tip['target'].getBoundingClientRect().x + tip['target'].offsetWidth + 'px')
+			tip['content'].style.setProperty('--y', tip['target'].getBoundingClientRect().y + 'px')
+		})
+	},100)
+}
 
 function resize() {
 
@@ -607,16 +838,6 @@ if(document.querySelector('.reviews__slider')) {
 		arrows: true,
 		pagination: false,
 
-		breakpoints: {
-			992: {
-				// params
-			},
-
-			550: {
-				// params
-			}
-		}
-
 	});
 
 	slider.on('inactive', function (slide) {
@@ -642,16 +863,6 @@ if(document.querySelector('.reviews__slider-mob')) {
 		arrows: false,
 		pagination: false,
 		gap: 20,
-
-		breakpoints: {
-			992: {
-				// params
-			},
-
-			550: {
-				// params
-			}
-		}
 
 	});
 
@@ -709,6 +920,93 @@ if(document.querySelector('.student-awards__slider')) {
 	})
 
 }
+
+document.querySelectorAll('.account-chat__group-popup--slider').forEach(sliderElement => {
+
+	const slider = new Splide(sliderElement, {
+
+		autoWidth: true,
+		pagination: false,
+		speed: 500,
+		easing: "ease",
+		perMove: 1,
+		gap: 15,
+
+		breakpoints: {
+			768: {
+				gap: 11,
+			}
+		}
+
+	});
+
+	slider.mount();
+
+})
+
+document.querySelectorAll('.teacher-lectures__body').forEach(sliderElement => {
+
+	const slider = new Splide(sliderElement, {
+
+		perPage: 1,
+		gap: 15,
+		pagination: false,
+		speed: 700,
+		perMove: 1,
+		easing: "ease",
+		grid: {
+			rows: 2,
+			cols: 3,
+			gap : {
+				row: '30px',
+				col: '15px',
+			},
+	  	},
+
+		breakpoints: {
+			1850: {
+				grid: {
+					rows: 2,
+					cols: 2,
+					gap : {
+						row: '30px',
+						col: '15px',
+					},
+				},
+			},
+
+			1600: {
+				grid: {
+					rows: 2,
+					cols: 1,
+					gap : {
+						row: '30px',
+						col: '15px',
+					},
+				},
+			},
+			
+			1420: {
+				grid: {
+					rows: 2,
+					cols: 2,
+					gap : {
+						row: '30px',
+						col: '15px',
+					},
+				},
+			},
+
+			992: {
+				destroy: true,
+			}
+		}
+
+	});
+
+	slider.mount(window.splide.Extensions);
+
+})
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -770,3 +1068,75 @@ document.querySelectorAll('.account-chat__file').forEach(file => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </input-file> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <audio-player> -=-=-=-=-=-=-=-=-=-=-=-=
+
+const players = document.querySelectorAll('.student-audio-listening__player audio');
+players.forEach(audio => {
+
+	let player = new MediaElementPlayer(audio, {
+		hideVolumeOnTouchDevices: false,
+		startVolume: 1,
+	});
+
+	const playBtn = audio.closest('.student-audio-listening__player').querySelector('.student-audio-listening__player--play-pause'),
+	seekPrevBtn = audio.closest('.student-audio-listening__player').querySelector('.student-audio-listening__player--seek.is-prev .student-audio-listening__player--seek-arrow'),
+	seekNextBtn = audio.closest('.student-audio-listening__player').querySelector('.student-audio-listening__player--seek.is-next .student-audio-listening__player--seek-arrow');
+
+	if(seekPrevBtn) {
+		seekPrevBtn.addEventListener('click', function (event) {
+			player.setCurrentTime(player.getCurrentTime()-10)
+		})
+	}
+
+	if(seekNextBtn) {
+		seekNextBtn.addEventListener('click', function (event) {
+			player.setCurrentTime(player.getCurrentTime()+10)
+		})
+	}
+
+	if(playBtn) {
+		playBtn.addEventListener('click', function (event) {
+			if(!playBtn.classList.contains('is-playing')) {
+				player.play();
+			} else {
+				player.pause();
+			}
+		})
+	
+		player.domNode.addEventListener('play', function () {
+			playBtn.classList.add('is-playing');
+		})
+
+		player.domNode.addEventListener('pause', function () {
+			playBtn.classList.remove('is-playing');
+		})
+	}
+
+	
+
+})
+
+
+
+/* if(player.created) {
+	const audio = document.querySelectorAll('audio');
+
+	players.forEach(audio => {
+		const audioBlock = audio.closest('.mejs__audio'),
+		buttons = audioBlock.querySelectorAll('.mejs__button')
+
+		buttons.forEach(button => {
+			if(button.querySelector('svg')) {
+				const icons = button.querySelectorAll('use');
+				icons.forEach(icon => {
+					icon.setAttribute('xlink:href', audio.dataset.base + icon.getAttribute('xlink:href'));
+				})
+			}
+		})
+	})
+
+} */
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </audio-player> -=-=-=-=-=-=-=-=-=-=-=-=

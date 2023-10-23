@@ -21,7 +21,11 @@ input, textarea {
 	--ss-main-height: 44px;
 	@include _992 {
 		--ss-main-height: 60px;
-		--ss-spacing-s: 10px;
+		--ss-spacing-s: 5px;
+		&.is-min {
+			--ss-spacing-s: 10px;
+			--ss-main-height: 50px;
+		}
 	}
 	--ss-spacing-s: 7px;
 	--ss-border-radius: 7px;
@@ -41,8 +45,10 @@ input, textarea {
 	--ss-spacing-l: 19px;
 	--ss-spacing-m: 0;
 	--ss-border-color: var(--light-3);
-
-
+	&.is-min {
+		--ss-spacing-l: 19px;
+		--ss-spacing-m: 10px;
+	}
 }
 
 .custom-select.ss-content .ss-list .ss-option.ss-highlighted, .custom-select.ss-content .ss-list .ss-option:hover, .custom-select.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {

@@ -1,0 +1,106 @@
+.teacher-profile {
+
+	padding-top: 30px;
+
+	gap: 50px;
+
+	@include _992 {
+		gap: 30px;
+	}
+
+	display: grid;
+	grid-template-columns: 100%;
+	@media (min-width: 1420px) {
+		grid-template-columns: calc(100% - 330px) 330px;
+	}
+
+	@media (min-width: 1600px) {
+		grid-template-columns: calc(100% - 426px) 396px;
+	}
+	
+	align-items: flex-start;
+
+	// .teacher-profile__title
+
+	&__title {
+	}
+
+	// .teacher-profile__main
+
+	&__main {
+		display: grid;
+		grid-template-columns: 100%;
+
+		.teacher-profile__rating {
+			display: block;
+			@media (min-width: 1420px) {
+				display: none;
+			}
+		}
+		
+
+		@media (min-width: 1750px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		gap: 30px 20px;
+
+	}
+
+	// .teacher-profile__info
+
+	&__info {
+		
+	}
+
+	// .teacher-profile__plan
+
+	&__plan {
+	}
+
+	// .teacher-profile__rating
+
+	&__rating {
+		
+	}
+
+	// .teacher-profile__choose-group
+
+	&__choose-group {
+		@media (min-width: 1750px) {
+			grid-column: 2 span;
+		}
+	}
+
+	// .teacher-profile__lectures
+
+	&__lectures {
+		@media (min-width: 1750px) {
+			grid-column: 2 span;
+		}
+	}
+
+	// .teacher-profile__students-group
+
+	&__students-group {
+		@media (min-width: 1750px) {
+			grid-column: 2 span;
+		}
+	}
+
+	// .teacher-profile__aside
+
+	&__aside {
+		display: none;
+		@media (min-width: 1420px) {
+			display: block;
+		}
+	}
+}
+
+@import "about-teacher";
+@import "plan";
+@import "students-rating";
+@import "choose-group";
+@import "lectures";
+@import "students-group";

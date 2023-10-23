@@ -1,0 +1,174 @@
+.teacher-students-rating {
+
+	// .teacher-students-rating__header
+
+	&__header {
+		width: 100%;
+		background: transparent;
+		text-align: start;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .teacher-students-rating__title
+
+	&__title {
+		padding: 5px 5px 5px 0;
+	}
+
+	// .teacher-students-rating__arrow
+
+	&__arrow {
+	}
+
+	// .teacher-students-rating__date
+
+	&__date {
+
+		background: var(--white);
+		border: 1px solid #D6D6D6;
+		border-radius: 5px;
+
+		display: inline-flex;
+		align-items: center;
+
+		min-width: 165px; min-height: 39px;
+
+		// .teacher-students-rating__date--arrow
+
+		&--arrow {
+			flex: 0 0 25px;
+			background: transparent;
+			align-self: stretch;
+
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			color: var(--black);
+
+			&.is-prev {
+				svg {
+					transform: rotate(90deg);
+				}
+			}
+
+			&.is-next {
+				svg {
+					transform: rotate(-90deg);
+				}
+			}
+			
+		}
+
+		// .teacher-students-rating__date--current
+
+		&--current {
+			flex: 1 1 auto;
+			text-align: center;
+			white-space: nowrap;
+			font-size: 0.75rem;
+			line-height: 150%;
+			color: #636363;
+		}
+	}
+
+	// .teacher-students-rating__block
+
+	&__block {
+
+		margin-top: 20px;
+
+		background: var(--white);
+		border: 1px solid #EBEBEB;
+		border-radius: 10px;
+
+		// .teacher-students-rating__block--header
+
+		&--header {
+			padding: 15px 21px;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			color: #534D4D;
+			font-size: 0.9375rem;
+			font-weight: 400;
+			line-height: 160%;
+
+			span:last-child {
+				text-align: end;
+			}
+		}
+
+		&--wrapper {
+			max-height: 440px; overflow-y: auto;
+			margin: 0 5px 20px;
+		}
+	}
+
+	
+
+	// .teacher-students-rating__list
+
+	&__list {
+		padding: 0 16px;
+		
+	}
+
+	// .teacher-students-rating__item
+
+	&__item {
+
+		padding: 20px 0;
+		&:first-child {
+			padding: 0 0 20px;
+		}
+		&:last-child {
+			padding: 20px 0 5px;
+			border-bottom: 0;
+		}
+
+		border-bottom: 1px solid #F9F9F9;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		// .teacher-students-rating__item--avatar
+
+		&--avatar {
+			flex: 0 0 35px; width: 35px; height: 35px;
+			margin-right: 10px;
+			border: 1px solid #D9D9D9;
+			border-radius: 10px;
+			img {
+				border-radius: 10px;
+				object-fit: cover;
+			}
+		}
+
+		// .teacher-students-rating__item--name
+
+		&--name {
+			flex: 1 1 auto;
+
+			font-size: 0.8125rem;
+			line-height: 150%;
+		}
+
+		// .teacher-students-rating__item--value
+
+		&--value {
+			font-size: 0.8125rem;
+			color: #262626;
+			b {
+				color: var(--primary);
+			}
+			text-align: end;
+		}
+	}
+}

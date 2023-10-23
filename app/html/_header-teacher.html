@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+	<svg class="visually-hidden">
+		<clipPath id="round-triangle" clipPathUnits="objectBoundingBox"><path d="M0.68,1 L0.56,1 L0,1 L0.212,1 C0.27,0.968,0.322,0.813,0.355,0.581 V0.581 C0.438,0,0.615,0.008,0.698,0.589 V0.589 C0.731,0.816,0.781,0.971,0.837,1 L1,1 L0.68,1"></path></clipPath>
+		<clipPath id="round-triangle-2" clipPathUnits="objectBoundingBox"><path d="M0,0.881 C0,0.792,0.024,0.72,0.053,0.72 H0.172 C0.209,0.72,0.244,0.673,0.269,0.591 L0.395,0.172 C0.447,-0.001,0.537,-0.001,0.589,0.172 L0.715,0.591 C0.74,0.673,0.775,0.72,0.812,0.72 H0.947 C0.976,0.72,1,0.792,1,0.881 V0.881 C1,0.97,0.976,1,0.947,1 H0.053 C0.024,1,0,0.97,0,0.881 V0.881"></path></clipPath>
+	</svg>
+
+	<div class="wrapper account-wrapper">
+		<aside class="aside">
+			<div class="aside__background aside__close visible-on-mob"></div>
+			<div class="aside__body">
+				<div class="aside__logo">
+					<img src="img/logo.svg" width="150" height="150" loading="lazy" alt="">
+				</div>
+				<button class="aside__close-btn aside__close visible-on-mob" type="button">
+					<svg width="15" height="15" viewBox="0 0 15 15">
+						<use xlink:href="img/sprites.svg#close-2"></use>
+					</svg>
+				</button>
+				<nav class="aside__nav">
+					<ul>
+						<li>
+							<a href="#" class="is-current">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#home"></use>
+									</svg>
+								</i>
+								<span>
+									Главная
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#join-to-lesson"></use>
+									</svg>
+								</i>
+								<span>
+									Начать урок
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="22" height="22" viewBox="0 0 22 22">
+										<use xlink:href="img/sprites.svg#student-ranking"></use>
+									</svg>
+								</i>
+								<span>
+									Рейтинг учащихся
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#messages"></use>
+									</svg>
+								</i>
+								<span>
+									Сообщения
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#calendar-3"></use>
+									</svg>
+								</i>
+								<span>
+									Расписание учащихся
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 12 12">
+										<use xlink:href="img/sprites.svg#emoji"></use>
+									</svg>
+								</i>
+								<span>
+									Выдать стикер
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i>
+									<svg width="20" height="20" viewBox="0 0 20 20">
+										<use xlink:href="img/sprites.svg#download-audio"></use>
+									</svg>
+								</i>
+								<span>
+									Загрузка удиофайла
+								</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<div class="header-account">
+			<div class="header-account__body">
+				<div class="header-account__col">
+					<a href="#" class="header-account__settings">
+						<svg width="26" height="26" viewBox="0 0 26 26">
+							<use xlink:href="img/sprites.svg#settings"></use>
+						</svg>
+					</a>
+					<div class="header-account__lang">
+						<button class="header-account__lang--target" type="button">
+							<span>
+								Рус
+							</span>
+							<span>
+								<svg width="7" height="5" viewBox="0 0 7 5">
+									<use xlink:href="img/sprites.svg#drop-down-arrow"></use>
+								</svg>
+							</span>
+						</button>
+						<ul class="header-account__lang--list">
+							<li>
+								<a href="#">
+									Eng
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="header-account__col">
+					<a href="#" class="header-account__stickers visible-on-desktop">
+						<i>
+							<svg width="23" height="23" viewBox="0 0 23 23">
+								<use xlink:href="img/sprites.svg#stickers"></use>
+							</svg>
+						</i>
+						<b>
+							80
+						</b>
+						<span>
+							стикеров
+						</span>
+					</a>
+					<div class="header-account__notification">
+						<button class="header-account__notification--target" type="button" data-length="1" title="Увидомления">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="img/sprites.svg#notification"></use>
+							</svg>
+						</button>
+						<div class="header-account__notification--block">
+							<div class="header-account__notification--block-wrapper" data-simplebar>
+								<ul class="header-account__notification--list">
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="12" height="20" viewBox="0 0 20 20">
+												<use xlink:href="img/sprites.svg#audiofiles"></use>
+											</svg>
+										</i>
+										<p>
+											Добавлен аудиофайл по теме “Местоимения в английском языке”
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="11" height="11" viewBox="0 0 11 11">
+												<use xlink:href="img/sprites.svg#chat"></use>
+											</svg>
+										</i>
+										<p>
+											Учитель Павлова Валерия оставила комментарий в расписании занятий
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="12" height="20" viewBox="0 0 20 20">
+												<use xlink:href="img/sprites.svg#audiofiles"></use>
+											</svg>
+										</i>
+										<p>
+											Добавлен аудиофайл по теме “Местоимения в английском языке”
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="11" height="11" viewBox="0 0 11 11">
+												<use xlink:href="img/sprites.svg#chat"></use>
+											</svg>
+										</i>
+										<p>
+											Учитель Павлова Валерия оставила комментарий в расписании занятий
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="12" height="20" viewBox="0 0 20 20">
+												<use xlink:href="img/sprites.svg#audiofiles"></use>
+											</svg>
+										</i>
+										<p>
+											Добавлен аудиофайл по теме “Местоимения в английском языке”
+										</p>
+									</li>
+									<li class="header-account__notification--item">
+										<i class="header-account__notification--icon">
+											<svg width="11" height="11" viewBox="0 0 11 11">
+												<use xlink:href="img/sprites.svg#chat"></use>
+											</svg>
+										</i>
+										<p>
+											Учитель Павлова Валерия оставила комментарий в расписании занятий
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="header-account__profile">
+						<button class="header-account__profile--target" type="button" title="Профиль">
+							<picture>
+								<source srcset="img/student-account/student-account-avatar.avif" type="image/avif">
+								<source srcset="img/student-account/student-account-avatar.webp" type="image/webp">
+								<img src="img/student-account/student-account-avatar.png" alt="" width="44" height="44" loading="lazy">
+							</picture>
+						</button>
+						<ul class="header-account__profile--list">
+							<li>
+								<a href="#">
+									Главная страница
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Личный кабинет
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Сообщения
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Дневник
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Выход
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-account__open-aside">
+				<button class="header-account__open-aside--btn btn visible-on-mob" type="button">
+					Меню
+				</button>
+			</div>
+		</div>
