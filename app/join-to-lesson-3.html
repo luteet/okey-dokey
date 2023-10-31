@@ -26,6 +26,44 @@
 				</div>
 			</div>
 		</section>
+		<div class="final-test popup" id="final-test-popup" style="display: none;">
+			<div class="final-test__wrapper popup-wrapper">
+				<div class="final-test__bg popup-bg popup-close"></div>
+				<div class="final-test__body popup-body">
+					<button type="button" class="final-test__close-btn popup-close-btn popup-close close-btn" title="Закрыть">
+						<svg width="15" height="15" viewBox="0 0 15 15">
+							<use xlink:href="img/sprites.svg#close-2"></use>
+						</svg>
+					</button>
+					<div class="final-test__logo">
+						<img src="img/logo.svg" width="90" height="90" loading="lazy" alt="">
+					</div>
+					<div class="final-test__background" aria-hidden="true">
+						<div class="final-test__background--item">
+							<picture>
+								<source srcset="img/student-account/final-test-decor.avif" type="image/avif">
+								<source srcset="img/student-account/final-test-decor.webp" type="image/webp">
+								<img src="img/student-account/final-test-decor.png" alt="" width="0" height="0" loading="lazy">
+							</picture>
+						</div>
+						<div class="final-test__background--item">
+							<img src="img/decor-item-2.svg" width="0" height="0" loading="lazy" alt="">
+						</div>
+					</div>
+					<div class="final-test__container">
+						<h2 class="final-test__title">
+							Поздравляем!
+						</h2>
+						<div class="final-test__text">
+							<p>
+								Вы успешно прошли курс <br>
+								<b>“I can sing English”</b>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 @@include("html/_footer-account.html")

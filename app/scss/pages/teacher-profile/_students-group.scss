@@ -4,10 +4,14 @@
 	@include _992 {
 		margin-top: 10px;
 	}
-	
+
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	.simplebar-track.simplebar-vertical {
+		background: #F8F8F8;
+	}
 
 	.account-block__accordion-wrapper {
 		width: 100%;
@@ -66,6 +70,7 @@
 		margin-top: 16px;
 		@include _992 {
 			margin-top: 20px;
+			
 		}
 
 		// .teacher-students-group__table--head
@@ -97,6 +102,7 @@
 			@include _992 {
 				max-width: 100%;
 				margin: 0 20px 0 0;
+				//padding-bottom: 20px;
 			}
 		}
 
@@ -104,6 +110,7 @@
 
 		&--list {
 			padding: 0 19px;
+			//margin-bottom: 20px;
 		}
 
 		// .teacher-students-group__table--item

@@ -2,10 +2,6 @@
     box-sizing: content-box
 }
 
-.fancybox__container::backdrop,a {
-    background-color: rgba(0,0,0,0)
-}
-
 button,hr,html.with-fancybox,input {
     overflow: visible
 }
@@ -41,6 +37,10 @@ hr {
 code,kbd,pre,samp {
     font-family: monospace,monospace;
     font-size: 1em
+}
+
+a {
+    background-color: rgba(0,0,0,0)
 }
 
 abbr[title] {
@@ -347,6 +347,14 @@ summary {
     right: 1em
 }
 
+.fancybox__backdrop,.fancybox__container {
+    right: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0
+}
+
 .splide.is-focus-in .splide__arrow:focus {
     outline: #0bf solid 3px;
     outline-offset: 3px
@@ -397,6 +405,10 @@ summary {
 .splide__progress__bar {
     background: #ccc;
     height: 3px
+}
+
+.f-button,.fancybox__infobar:not(:first-child):not(:last-child) {
+    background: var(--f-button-bg)
 }
 
 .splide__slide:focus {
@@ -554,18 +566,9 @@ summary {
     height: var(--f-spinner-height)
 }
 
-.f-button,.fancybox__container {
-    margin: 0;
-    padding: 0;
-    display: flex
-}
-
-.f-spinner svg,.fancybox__slide,.fancybox__viewport {
-    width: 100%;
-    height: 100%
-}
-
 .f-spinner svg {
+    width: 100%;
+    height: 100%;
     vertical-align: top;
     -webkit-animation: f-spinner-rotate 2s linear infinite;
     animation: f-spinner-rotate 2s linear infinite
@@ -1115,15 +1118,17 @@ summary {
 }
 
 .f-button {
+    display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin: 0;
+    padding: 0;
     width: var(--f-button-width);
     height: var(--f-button-height);
     border: var(--f-button-border);
     border-radius: var(--f-button-border-radius);
     color: var(--f-button-color);
-    background: var(--f-button-bg);
     box-shadow: var(--f-button-shadow);
     pointer-events: all;
     cursor: pointer;
@@ -1225,6 +1230,10 @@ html.with-fancybox body {
     touch-action: none
 }
 
+.f-thumbs__slide__button,a,button {
+    touch-action: manipulation
+}
+
 html.with-fancybox body.hide-scrollbar {
     width: auto;
     margin-right: calc(var(--fancybox-body-margin,0px) + var(--fancybox-scrollbar-compensate,0px));
@@ -1242,14 +1251,12 @@ html.with-fancybox body.hide-scrollbar {
     --f-spinner-color-1: rgba(255, 255, 255, 0.1);
     --f-spinner-color-2: #bbb;
     --f-spinner-stroke: 3.65;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     direction: ltr;
+    display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     color: #f8f8f8;
     overflow: visible;
     z-index: var(--fancybox-zIndex,1050);
@@ -1271,12 +1278,11 @@ html.with-fancybox body.hide-scrollbar {
     background-color: rgba(0,0,0,0)
 }
 
+.fancybox__container::backdrop {
+    background-color: rgba(0,0,0,0)
+}
+
 .fancybox__backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     z-index: -1;
     background: var(--fancybox-bg);
     opacity: var(--fancybox-opacity,1);
@@ -1291,6 +1297,11 @@ html.with-fancybox body.hide-scrollbar {
     z-index: 10;
     overflow-y: visible;
     overflow-x: clip
+}
+
+.fancybox__viewport {
+    width: 100%;
+    height: 100%
 }
 
 .fancybox__viewport.is-draggable {
@@ -1317,6 +1328,8 @@ html.with-fancybox body.hide-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
     margin: 0 var(--fancybox-slide-gap) 0 0;
     padding: 4px;
     overflow: auto;
@@ -1408,11 +1421,6 @@ html.with-fancybox body.hide-scrollbar {
     backface-visibility: hidden
 }
 
-.fancybox-ghost,.fancybox-image {
-    min-height: 0;
-    -o-object-fit: contain
-}
-
 .fancybox__slide.has-image>.fancybox__content>picture>img {
     width: 100%;
     height: auto;
@@ -1433,6 +1441,8 @@ html.with-fancybox body.hide-scrollbar {
 .fancybox-image {
     margin: auto;
     display: block;
+    min-height: 0;
+    -o-object-fit: contain;
     object-fit: contain;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -1605,13 +1615,15 @@ html.with-fancybox body.hide-scrollbar {
 }
 
 .fancybox-ghost {
+    min-height: 0;
+    -o-object-fit: contain;
     object-fit: contain;
     user-select: none;
     pointer-events: none
 }
 
 .f-progress,.f-thumbs,.fancybox__infobar {
-    -webkit-user-select: none
+    -ms-user-select: none
 }
 
 .fancybox-focus-guard {
@@ -1728,7 +1740,7 @@ html.with-fancybox body.hide-scrollbar {
     flex: 0 0 auto;
     margin: 0;
     overflow: hidden;
-    -ms-user-select: none;
+    -webkit-user-select: none;
     user-select: none;
     -webkit-perspective: 1000px;
     perspective: 1000px;
@@ -1846,9 +1858,12 @@ html.with-fancybox body.hide-scrollbar {
     outline: 0;
     cursor: pointer;
     pointer-events: auto;
-    touch-action: manipulation;
     opacity: var(--f-thumb-opacity);
     transition: opacity .2s ease
+}
+
+.fancybox__thumbs.is-classic .f-spinner,.fancybox__thumbs.is-modern .f-spinner {
+    background-image: linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.05))
 }
 
 .f-thumbs__slide__button:hover {
@@ -1930,20 +1945,12 @@ html.with-fancybox body.hide-scrollbar {
     --f-thumb-hover-opacity: 1
 }
 
-.fancybox__thumbs.is-classic .f-spinner {
-    background-image: linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.05))
-}
-
 .fancybox__thumbs.is-modern {
     --f-thumb-gap: 4px;
     --f-thumb-extra-gap: 20px;
     --f-thumb-clip-width: 46px;
     --f-thumb-opacity: 1;
     --f-thumb-hover-opacity: 1
-}
-
-.fancybox__thumbs.is-modern .f-spinner {
-    background-image: linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.05))
 }
 
 .fancybox__thumbs.is-horizontal {
@@ -2040,16 +2047,16 @@ html.with-fancybox body.hide-scrollbar {
     font-variant-numeric: tabular-nums;
     -webkit-font-smoothing: subpixel-antialiased;
     cursor: default;
-    -ms-user-select: none;
+    -webkit-user-select: none;
     user-select: none
+}
+
+.f-progress,.ss-main,.ss-main .ss-values .ss-max {
+    -webkit-user-select: none
 }
 
 .fancybox__infobar span {
     padding: 0 5px
-}
-
-.fancybox__infobar:not(:first-child):not(:last-child) {
-    background: var(--f-button-bg)
 }
 
 [data-fancybox-toggle-slideshow] {
@@ -2117,20 +2124,8 @@ html.with-fancybox body.hide-scrollbar {
     transition-timing-function: linear;
     background: var(--f-progress-color,var(--f-carousel-theme-color,#0091ff));
     z-index: 30;
-    -ms-user-select: none;
     user-select: none;
     pointer-events: none
-}
-
-.ss-content,.ss-content .ss-search input,.ss-main {
-    border: 1px solid var(--ss-border-color);
-    background-color: var(--ss-bg-color);
-    box-sizing: border-box
-}
-
-.ss-main,.ss-main .ss-values .ss-max {
-    -webkit-user-select: none;
-    -ms-user-select: none
 }
 
 @-webkit-keyframes ss-valueIn {
@@ -2197,14 +2192,18 @@ html.with-fancybox body.hide-scrollbar {
     display: flex;
     flex-direction: row;
     position: relative;
+    -ms-user-select: none;
     user-select: none;
     color: var(--ss-font-color);
     min-height: var(--ss-main-height);
     width: 100%;
     padding: var(--ss-spacing-s);
     cursor: pointer;
+    border: 1px solid var(--ss-border-color);
     border-radius: var(--ss-border-radius);
+    background-color: var(--ss-bg-color);
     outline: 0;
+    box-sizing: border-box;
     transition: background-color var(--ss-animation-timing);
     overflow: hidden
 }
@@ -2230,6 +2229,11 @@ html.with-fancybox body.hide-scrollbar {
 .ss-main.ss-open-below {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0
+}
+
+.ss-main .ss-values .ss-max,.ss-main .ss-values .ss-value {
+    background-color: var(--ss-primary-color);
+    border-radius: var(--ss-border-radius)
 }
 
 .ss-main .ss-values {
@@ -2261,13 +2265,12 @@ html.with-fancybox body.hide-scrollbar {
 
 .ss-main .ss-values .ss-max {
     display: flex;
+    -ms-user-select: none;
     user-select: none;
     align-items: center;
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content;
-    background-color: var(--ss-primary-color);
-    border-radius: var(--ss-border-radius)
+    width: fit-content
 }
 
 .ss-main .ss-values .ss-single {
@@ -2284,8 +2287,6 @@ html.with-fancybox body.hide-scrollbar {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    background-color: var(--ss-primary-color);
-    border-radius: var(--ss-border-radius);
     -webkit-animation-name: ss-valueIn;
     animation-name: ss-valueIn;
     -webkit-animation-duration: var(--ss-animation-timing);
@@ -2317,6 +2318,12 @@ html.with-fancybox body.hide-scrollbar {
     cursor: pointer;
     border-left: solid 1px var(--ss-bg-color);
     box-sizing: content-box
+}
+
+.ss-content,.ss-content .ss-search input {
+    border: 1px solid var(--ss-border-color);
+    background-color: var(--ss-bg-color);
+    box-sizing: border-box
 }
 
 .ss-main .ss-values .ss-value .ss-value-delete svg path {
@@ -2620,6 +2627,11 @@ html.with-fancybox body.hide-scrollbar {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none
+}
+
+.checkbox__text,.hero__content--decor:nth-child(1),[aria-hidden=true] {
+    -webkit-user-select: none;
+    -ms-user-select: none
 }
 
 .ss-content .ss-list .ss-option.ss-highlighted,.ss-content .ss-list .ss-option:hover,.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
@@ -3573,10 +3585,6 @@ aside,footer,header,nav {
     display: block
 }
 
-a,button {
-    touch-action: manipulation
-}
-
 button,input,textarea {
     font-family: inherit;
     border-radius: 0
@@ -3633,14 +3641,15 @@ body,html {
     min-width: 320px
 }
 
-.btn,.btn._min,.btn._min-2 {
-    font-size: .9375rem
-}
-
 body {
     font-family: var(--main-font);
     font-weight: 400;
     line-height: 150%
+}
+
+.btn,.circle-btn {
+    font-weight: 700;
+    text-align: center
 }
 
 body._mob-menu-active,body._popup-active {
@@ -3648,8 +3657,6 @@ body._mob-menu-active,body._popup-active {
 }
 
 [aria-hidden=true] {
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     pointer-events: none
 }
@@ -3845,11 +3852,6 @@ body._mob-menu-active,body._popup-active {
     transition: background .3s ease,opacity .3s ease,box-shadow .3s ease
 }
 
-.btn,.circle-btn {
-    display: inline-flex;
-    align-items: center
-}
-
 .arrow-btn._super-min {
     width: 34px;
     height: 34px
@@ -3867,11 +3869,12 @@ body._mob-menu-active,body._popup-active {
 
 .btn {
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 13.5px 16px;
     line-height: 116.667%;
-    font-weight: 700;
+    font-size: .9375rem;
     border-radius: 35px;
     transition: background .3s ease,color .3s ease,box-shadow .3s ease
 }
@@ -3888,10 +3891,12 @@ body._mob-menu-active,body._popup-active {
 }
 
 .btn._min {
+    font-size: .9375rem;
     padding: 13.5px 26.4px
 }
 
 .btn._min-2 {
+    font-size: .9375rem;
     padding: 13.5px 30px
 }
 
@@ -3908,7 +3913,7 @@ body._mob-menu-active,body._popup-active {
     background: var(--accent)
 }
 
-.checkbox__element,.circle-btn,.copy-btn::before,.simplebar-track {
+.circle-btn,.copy-btn::before,.simplebar-track {
     background: var(--white)
 }
 
@@ -3946,11 +3951,6 @@ body._mob-menu-active,body._popup-active {
     content: ""
 }
 
-.circle-btn,.delivery-product__title,.feedback-popup__title {
-    font-weight: 700;
-    text-align: center
-}
-
 .copy-btn.is-copied::before {
     opacity: 1;
     -webkit-animation: fadeOut 1s ease 1s 1 normal forwards;
@@ -3958,6 +3958,8 @@ body._mob-menu-active,body._popup-active {
 }
 
 .circle-btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
     padding: 12px 7px 7px;
     aspect-ratio: 1/1;
@@ -4267,6 +4269,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     height: 30px;
     flex: 0 0 30px;
     margin-right: 11px;
+    background: var(--white);
     color: var(--primary);
     border-radius: 7px
 }
@@ -4278,15 +4281,13 @@ input:focus::placeholder,textarea:focus::placeholder {
     opacity: 0
 }
 
-.delivery-product__background,.popup,.popup-bg {
+.popup,.popup-bg {
     height: 100%;
-    left: 0;
-    width: 100%
+    width: 100%;
+    left: 0
 }
 
 .checkbox__text {
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     color: var(--white);
     font-size: 1rem
@@ -4386,7 +4387,8 @@ body {
 }
 
 .popup-close-btn svg {
-    width: 50%
+    width: 50%;
+    height: auto
 }
 
 .feedback-popup {
@@ -4422,7 +4424,9 @@ body {
 .feedback-popup__title {
     padding-top: 65px;
     font-size: 1rem;
-    line-height: 140%
+    font-weight: 700;
+    line-height: 140%;
+    text-align: center
 }
 
 .feedback-popup__form {
@@ -4474,7 +4478,10 @@ body {
 
 .delivery-product__background {
     position: absolute;
+    left: 0;
     top: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 30px;
     z-index: -1;
     overflow: hidden
@@ -4508,17 +4515,6 @@ body {
     height: auto
 }
 
-.delivery-product__close-btn {
-    width: 44px;
-    height: 44px;
-    border: 1px solid #dedede;
-    border-radius: 7px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary)
-}
-
 .delivery-product__container {
     overflow-y: auto;
     max-height: calc(var(--svh,1vh) - 90px);
@@ -4530,7 +4526,9 @@ body {
 .delivery-product__title {
     padding-top: 50px;
     color: #232323;
+    text-align: center;
     font-size: 1.875rem;
+    font-weight: 700;
     line-height: 106.667%
 }
 
@@ -4807,6 +4805,10 @@ body {
     overflow-y: auto;
     max-height: calc(var(--svh,1vh) - 30px);
     max-height: calc(100svh - 30px)
+}
+
+.students-attendance__container .simplebar-track.simplebar-vertical {
+    background: #f8f8f8
 }
 
 .students-attendance__title {
@@ -8433,8 +8435,6 @@ body {
     opacity: 1;
     color: var(--white);
     overflow: hidden;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     pointer-events: none
 }
@@ -12247,7 +12247,7 @@ body {
     }
 }
 
-.student-profile__courses-taken {
+.payment,.student-profile__courses-taken {
     padding-top: 50px
 }
 
@@ -13946,10 +13946,6 @@ body {
     height: auto
 }
 
-.payment {
-    padding-top: 50px
-}
-
 .payment__title {
     text-align: center;
     color: #000;
@@ -14251,6 +14247,10 @@ body {
     border-radius: 50%;
     -webkit-transform: translate(20%,-40%);
     transform: translate(20%,-40%)
+}
+
+.teacher-rating__table--tbody .simplebar-track,.teacher-students-group .simplebar-track.simplebar-vertical,.teacher-students-rating .simplebar-track.simplebar-vertical {
+    background: #f8f8f8
 }
 
 .teacher-plan__block--circle-progress {
@@ -15767,10 +15767,6 @@ body {
     }
 }
 
-.teacher-rating__table--tbody .simplebar-track {
-    background: #f8f8f8
-}
-
 .teacher-rating__table--tbody .simplebar-track.simplebar-vertical {
     width: 5px
 }
@@ -16550,11 +16546,6 @@ body {
         right: 29px
     }
 
-    .delivery-product__close-btn,.final-test__close-btn {
-        top: 30px;
-        right: 30px
-    }
-
     .delivery-product__body {
         padding: 30px
     }
@@ -16606,6 +16597,11 @@ body {
 
     .final-test__body {
         padding: 30px
+    }
+
+    .final-test__close-btn {
+        top: 30px;
+        right: 30px
     }
 
     .final-test__title {

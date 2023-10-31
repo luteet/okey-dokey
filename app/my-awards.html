@@ -1,7 +1,7 @@
 @@include("html/_header-student.html")
 
 	<main class="main _none-padding">
-		<div class="student-awards account-section">
+		<section class="student-awards account-section">
 			<div class="student-awards__stickers-length">
 				<h2 class="account-block__decor-title _alt">
 					<span>Доступно: <mark>80 стикеров</mark></span>
@@ -163,6 +163,79 @@
 								])
 							</ul>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="delivery-product popup" id="delivery-product-popup" style="display: none;">
+			<div class="delivery-product__wrapper popup-wrapper">
+				<div class="delivery-product__bg popup-bg popup-close"></div>
+				<div class="delivery-product__body popup-body">
+					<div class="delivery-product__background" aria-hidden="true">
+						<div class="delivery-product__background--item">
+							<img src="img/decor-item-3.svg" alt="" width="0" height="0" loading="lazy">
+						</div>
+						<div class="delivery-product__background--item">
+							<img src="img/decor-item-2.svg" alt="" width="0" height="0" loading="lazy">
+						</div>
+					</div>
+					<button type="button" class="delivery-product__close-btn popup-close-btn popup-close close-btn" title="Закрыть">
+						<svg width="15" height="15" viewBox="0 0 15 15">
+							<use xlink:href="img/sprites.svg#close-2"></use>
+						</svg>
+					</button>
+					<div class="delivery-product__container">
+						<h2 class="delivery-product__title">
+							Доставка
+						</h2>
+						<div class="delivery-product__selected">
+							<b>Вы выбрали:</b>
+							<div class="delivery-product__selected--list">
+								<div class="delivery-product__selected--product">
+									<div class="delivery-product__selected--image">
+										<picture>
+											<source srcset="img/student-account/student-design-clothes.avif" type="image/avif">
+											<source srcset="img/student-account/student-design-clothes.webp" type="image/webp">
+											<img src="img/student-account/student-design-clothes.png" alt="" width="55" height="70" loading="lazy">
+										</picture>
+										<button class="delivery-product__selected--close popup-close" type="button" title="Удалить товар">
+											<svg width="9" height="9" viewBox="0 0 15 15">
+												<use xlink:href="img/sprites.svg#close-2"></use>
+											</svg>
+										</button>
+									</div>
+									<span>Футболка</span>
+									<b>
+										<svg width="12" height="12" viewBox="0 0 12 12">
+											<use xlink:href="img/sprites.svg#emoji"></use>
+										</svg>
+										100
+									</b>
+								</div>
+							</div>
+						</div>
+						<form method="post" class="delivery-product__form">
+							<h3>Укажите Ваши данные для доставки</h3>
+							<label>
+								<span>ФИО</span>
+								<input type="text" name="name" required placeholder="ФИО">
+							</label>
+							<label>
+								<span>Введите ваш телефон</span>
+								<input type="text" name="name" required placeholder="+38 (___) ___-__-__">
+							</label>
+							<label>
+								<span>Город</span>
+								<input type="text" name="name" required placeholder="Город">
+							</label>
+							<label>
+								<span>Отделение почты</span>
+								<input type="text" name="name" required placeholder="Отделение почты">
+							</label>
+							<button class="btn _alt" type="submit">
+								Подтвердить
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>
