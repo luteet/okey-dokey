@@ -1,0 +1,244 @@
+@@include("html/_header-teacher.html")
+
+<main class="main _none-padding">
+	<section class="teacher-audiofiles account-section">
+		<h1 class="teacher-audiofiles__title account-title section-title _min">
+			Загрузка аудиофайла
+		</h1>
+		<div class="teacher-audiofiles__header account-block">
+			<div class="teacher-audiofiles__group">
+				<h2 class="teacher-audiofiles__group--title account-block__title _min">
+					Группа
+				</h2>
+				<select name="group" class="teacher-audiofiles__group--select custom-select is-min">
+					<option value="Название группы">Название группы</option>
+					<option value="Название группы 1">Название группы 1</option>
+					<option value="Название группы 2">Название группы 2</option>
+				</select>
+			</div>
+			<a href="#upload-audiofiles-popup" class="teacher-audiofiles__upload btn _transparent _alt open-popup">
+				Загрузить новый файл
+			</a>
+		</div>
+		<div class="teacher-audiofiles__block">
+			<h2 class="teacher-audiofiles__block--title account-block__title">
+				Выберите аудиофайл который хотите загрузить
+			</h2>
+			<ul class="teacher-audiofiles__block--list account-block">
+				@@loop("html/account/_teacher-audiofiles-block-item.html", [
+				{},
+				{},
+				{},
+				{},
+				])
+			</ul>
+		</div>
+	</section>
+	<div class="upload-audiofiles popup" id="upload-audiofiles-popup" style="display: none;">
+		<div class="upload-audiofiles__wrapper popup-wrapper">
+			<div class="upload-audiofiles__bg popup-bg popup-close"></div>
+			<button type="button" class="upload-audiofiles__close-btn popup-close-btn popup-close" title="Закрыть">
+				<svg width="15" height="15" viewBox="0 0 15 15">
+					<use xlink:href="img/sprites.svg#close-2"></use>
+				</svg>
+			</button>
+			<div class="upload-audiofiles__body popup-body">
+				<form class="upload-audiofiles__place">
+					<div class="upload-audiofiles__place--body" ondragover="handleDragOver(event)"
+						ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+						<label class="upload-audiofiles__place--btn btn _alt">
+							<input type="file" name="audiofiles" id="audiofiles"
+								accept="audio/mp3, audio/wav, audio/acc, audio/mpeg">
+							<span>
+								Загрузите файл
+							</span>
+						</label>
+						<div class="upload-audiofiles__place--note">
+							<b>Либо перетащите файлы сюда</b>
+							<span>Тип файлов: МР3, WAV, АСС</span>
+						</div>
+					</div>
+					<div class="upload-audiofiles__block" style="display: none;">
+						<h2 class="upload-audiofiles__block--title account-block__title _min">
+							Загружено 3 файла
+						</h2>
+						<div class="upload-audiofiles__block--wrapper" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)"
+						ondrop="handleDrop(event)">
+							<ul class="upload-audiofiles__block--list upload-audiofiles__list">
+							</ul>
+							<div class="upload-audiofiles__block--footer">
+								<label for="audiofiles" class="upload-audiofiles__block--upload-btn btn _alt">
+									<span>
+										Загрузите файл
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+
+		let acceptFormats = ['audio/mp3', 'audio/wav', 'audio/acc', 'audio/mpeg']
+
+		function handleDragOver(event) {
+			event.preventDefault();
+			event.target.classList.add('is-over');
+		}
+
+		function handleDragLeave(event) {
+			event.preventDefault();
+			event.target.classList.remove('is-over');
+		}
+
+		function getNoun(number, one, two, five) {
+			let n = Math.abs(number);
+
+			n %= 100;
+
+			if (n >= 5 && n <= 20) {
+				return five;
+			}
+
+			n %= 10;
+
+			if (n === 1) {
+				return one;
+			}
+
+			if (n >= 2 && n <= 4) {
+				return two;
+			}
+
+			return five;
+		}
+
+		function checkFormat(value) {
+			let result = false;
+			Array.from(acceptFormats).forEach(format => {
+				if (format == value) result = true;
+			})
+
+			return result;
+		}
+
+		function filesDrop(filesList) {
+			let files = filesList, filteredFiles = [];
+
+			for (let index = 0; index < files.length; index++) {
+				if (checkFormat(files[index].type)) {
+					filteredFiles.push(files[index]);
+				}
+			}
+
+			if (filteredFiles.length > 0) {
+
+				document.querySelector('.upload-audiofiles__place--body').style.display = 'none';
+				const block = document.querySelector('.upload-audiofiles__block'),
+					title = block.querySelector('.upload-audiofiles__block--title'),
+					items = block.querySelectorAll('.upload-audiofiles__item');
+
+				block.style.removeProperty('display');
+
+				let itemsLength = items.length + filteredFiles.length;
+				document.querySelector('.upload-audiofiles__block--title').textContent = getNoun(itemsLength, `Загружен ${itemsLength} файл`, `Загружено ${itemsLength} файла`, `Загружено ${itemsLength} файлов`)
+
+				for (let index = 0; index < files.length; index++) {
+
+					let icon = '';
+					if (files[index].type == 'audio/mpeg' || files[index].type == 'audio/mp3') {
+						icon = "mp3-format";
+					} else if (files[index].type == 'audio/wav') {
+						icon = "wav-format";
+					} else if (files[index].type == 'audio/aac') {
+						icon = "acc-format";
+					}
+
+					document.querySelector('.upload-audiofiles__list').insertAdjacentHTML("beforeend",
+						`
+						<li class="upload-audiofiles__item">
+							<div class="upload-audiofiles__item--icon">
+								<svg width="21" height="21" viewBox="0 0 21 21">
+									<use xlink:href="img/sprites.svg#${icon}"></use>
+								</svg>
+							</div>
+							<h3 class="upload-audiofiles__item--name" contenteditable="true">
+								${files[index].name}
+							</h3>
+							<div class="upload-audiofiles__item--change-date teacher-audiofiles__change-date">
+								<button type="button" class="teacher-audiofiles__change-date--target teacher-audiofiles__item--btn">
+									<svg width="19" height="19" viewBox="0 0 19 19">
+										<use xlink:href="img/sprites.svg#calendar-4"></use>
+									</svg>
+								</button>
+								<div class="teacher-audiofiles__change-date--block">
+									<div class="teacher-audiofiles__change-date--item">
+										<b>Дата открытия</b>
+										<select name="date-open" class="custom-select is-min">
+											<option value="14.10.2023">14.10.2023</option>
+											<option value="14.10.2023">15.10.2023</option>
+											<option value="14.10.2023">16.10.2023</option>
+										</select>
+									</div>
+									<div class="teacher-audiofiles__change-date--item">
+										<b>Время открытия</b>
+										<select name="date-open" class="custom-select is-min">
+											<option value="12:20">12:20</option>
+											<option value="12:30">12:30</option>
+											<option value="12:40">12:40</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<button type="button" class="upload-audiofiles__item--remove teacher-audiofiles__item--btn">
+								<svg width="19" height="19" viewBox="0 0 20 20">
+									<use xlink:href="img/sprites.svg#trash"></use>
+								</svg>
+							</button>
+						</li>
+					`);
+
+					changeDate();
+					customSelect();
+
+				}
+			}
+
+		}
+
+		function handleDrop(event) {
+			event.preventDefault();
+			event.target.classList.remove('is-over');
+
+			filesDrop(event.dataTransfer.files)
+		}
+
+		document.querySelector('#audiofiles').addEventListener('change', function (event) {
+			filesDrop(event.target.files)
+		})
+
+		document.querySelector('body').addEventListener('click', function (event) {
+			if(event.target.closest('.upload-audiofiles__item--remove')) {
+				const item = event.target.closest('.upload-audiofiles__item--remove').closest('.upload-audiofiles__item');
+				if(!item.classList.contains('is-removing')) {
+					item.classList.add('is-removing');
+					setTimeout(() => {
+						item.remove();
+						if(!document.querySelector('.upload-audiofiles__item')) {
+							document.querySelector('.upload-audiofiles__place--body').style.removeProperty('display');
+							document.querySelector('.upload-audiofiles__block').style.display = 'none';
+						} else {
+							let itemsLength = document.querySelectorAll('.upload-audiofiles__item').length;
+							document.querySelector('.upload-audiofiles__block--title').textContent = getNoun(itemsLength, `Загружен ${itemsLength} файл`, `Загружено ${itemsLength} файла`, `Загружено ${itemsLength} файлов`)
+						}
+					},300)
+				}
+			}
+		})
+
+	</script>
+</main>
+
+@@include("html/_footer-account.html")

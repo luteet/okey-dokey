@@ -1,3 +1,7 @@
+.account-section {
+	margin-top: 30px;
+}
+
 .account-block {
 
 	background: #F9F9F9;
@@ -8,6 +12,18 @@
 
 	@media (min-width: 1600px) {
 		padding: 21px 29px;
+	}
+
+	&.is-min {
+		padding: 10px 15px;
+
+		@include _992 {
+			padding: 20px 16px;
+		}
+
+		@media (min-width: 1600px) {
+			padding: 20px 16px;
+		}
 	}
 
 	border-radius: 20px;
@@ -27,16 +43,28 @@
 
 	&__title {
 		font-size: 1rem;
+		line-height: 133.333%;
+		&._min {
+			font-size: 0.9375rem;
+		}
 		
 		@include _768 {
 			font-size: 1.125rem;
+			&._min {
+				font-size: 1rem;
+			}
+			line-height: 160%;
 		}
 		
 		@include _992 {
 			font-size: 1.25rem;
+			&._min {
+				font-size: 1.125rem;
+			}
 		}
+
 		font-weight: 600;
-		line-height: 160%;
+		
 	}
 
 	// .account-block__accordion-target
@@ -210,24 +238,13 @@
 
 .account-chat {
 
-	margin-top: 30px;
+	//margin-top: 30px;
 
 	@include _992 {
 		margin-top: 0;
 	}
 
 	&__title {
-		@include _992 {
-			position: absolute;
-			width: 1px; height: 1px;
-			margin: -1px; padding: 0;
-			border: 0;
-			
-			white-space: nowrap;
-			clip-path: inset(100%);
-			clip: rect(0 0 0 0);
-			overflow: hidden;
-		}
 	}
 
 	display: grid;
@@ -241,8 +258,6 @@
 	@media (min-width: 1400px) {
 		grid-template-columns: 1.4fr 3fr;
 	}
-
-	
 
 	// .account-chat__header
 
@@ -259,11 +274,40 @@
 		}
 
 		display: flex;
-		align-items: center;
+		flex-wrap: wrap;
+		
 		justify-content: space-between;
+		flex-direction: column;
+
+		gap: 20px 10px;
+
+		@media (min-width: 1200px) {
+			flex-direction: row;
+			align-items: center;
+		}
 
 		background: var(--light);
 		border-radius: 15px;
+	}
+
+	&__select {
+		display: flex;
+		flex-direction: column;
+
+		@include _992 {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		b {
+			display: block;
+			font-weight: 600;
+			padding-right: 10px;
+			padding-bottom: 7px;
+			@include _992 {
+				padding-bottom: 0;
+			}
+		}
 	}
 
 	// .account-chat__search
@@ -1078,6 +1122,87 @@
 			min-width: 220px; min-height: 50px;
 		}
 	}
+
+	// .account-chat__alt-message
+
+	&__alt-message {
+		@include _768 {
+			padding: 20px;
+		}
+		padding: 5px;
+		background: var(--white);
+		border: 1px solid #D9D9D9;
+		border-radius: 20px;
+
+		textarea {
+			width: 100%;
+			padding: 16px 19px;
+
+			border-radius: 20px;
+			border: 1px solid #D9D9D9;
+			background: var(--white);
+			resize: none;
+
+			height: 119px;
+		}
+	}
+
+	// .account-chat__pin-message
+
+	&__pin-message {
+		margin-top: 11px;
+		@include _768 {
+			margin-top: 17px;
+			padding: 0;
+		}
+
+		padding: 0 10px;
+		text-align: start;
+
+		display: block;
+		background: transparent;
+
+		color: var(--primary);
+		text-decoration: underline;
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 133.333%;
+	}
+
+	// .account-chat__select-list
+
+	&__select-list {
+		margin-top: 11px;
+		@include _768 {
+			margin-top: 24px;
+			gap: 23px;
+			padding: 0;
+		}
+
+		padding: 0 10px 10px;
+
+		gap: 15px;
+
+		display: grid;
+		grid-template-columns: 100%;
+		@media (min-width: 1200px) {
+			grid-template-columns: repeat(2,1fr);
+		}
+
+		@media (min-width: 1600px) {
+			grid-template-columns: repeat(3,1fr);
+		}
+		
+
+		li {
+			b {
+				display: block;
+				margin-bottom: 9px;
+				font-weight: 600;
+				line-height: 125%;
+			}
+		}
+	}
 }
 
 .account-table-wrapper {
@@ -1412,6 +1537,27 @@
 			right: 20px; top: 20px;
 		}
 
+		&.is-comment & {
+			&--icon {
+				width: 22px; height: 22px;
+				background: #F3F4F8;
+				border-radius: 3px;
+
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+
+				padding-bottom: 2px; padding-right: 2px;
+
+				color: var(--accent);
+
+				&.is-active {
+					//background: var(--accent);
+					color: var(--accent);
+				}
+			}
+		}
+
 		// .account-table__tip--icon
 
 		&--icon {
@@ -1476,6 +1622,44 @@
 			font-weight: 500;
 			line-height: 133.333333%;
 
+			&.is-comment {
+				background: var(--white);
+
+				display: flex;
+				align-items: center;
+			}
+
+			&-textarea {
+				resize: none;
+				height: 38px;
+				flex: 1 1 auto;
+				padding: 13px 0;
+			}
+
+			&-submit {
+				flex: 0 0 38px; width: 38px; height: 38px;
+				border: 1px solid var(--accent);
+				border-radius: 10px;
+				color: var(--accent);
+				background: transparent;
+
+				transition: background .2s ease, color .2s ease;
+
+				@media (any-hover: hover) {
+					
+					&:hover {
+						background: var(--accent);
+						color: var(--white);
+					}
+						
+				}
+
+				&:active {
+					background: var(--accent-active);
+					color: var(--white);
+				}
+			}
+
 			a {
 				margin-top: 10px;
 				display: block;
@@ -1509,4 +1693,12 @@
 			padding: 10px 21px 0;
 		}
 	}
+}
+
+.account-title {
+	@include _992 {
+		display: none;
+	}
+
+	text-align: center;
 }

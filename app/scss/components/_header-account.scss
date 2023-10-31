@@ -1,6 +1,8 @@
 .header-account {
 
 	width: 100%;
+	z-index: 3;
+	position: relative;
 		
 	@include _992 {
 		width: auto;
@@ -309,6 +311,8 @@
 			opacity: 0; visibility: hidden;
 
 			border-radius: 15px;
+
+			z-index: 2;
 
 			&::after {
 				content: '';

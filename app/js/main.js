@@ -230,15 +230,15 @@ const accountChatMain = document.querySelector('.account-chat__main'),
 accountChatAside = document.querySelector('.account-chat__aside');
 
 function scrollHorizontally(container, scrollValue) {
-	var startTime = null;
-	var duration = 400;
-	var startScrollLeft = container.scrollLeft;
-	var targetScrollLeft = scrollValue;
+	let startTime = null,
+		duration = 400,
+		startScrollLeft = container.scrollLeft,
+		targetScrollLeft = scrollValue;
   
 	function animateScroll(time) {
 	  if (!startTime) startTime = time;
-	  var progress = (time - startTime) / duration;
-	  var easeInOutCubic = progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
+	  let progress = (time - startTime) / duration;
+	  let easeInOutCubic = progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
 	  container.scrollLeft = startScrollLeft + (targetScrollLeft - startScrollLeft) * easeInOutCubic;
   
 	  if (progress < 1) {
@@ -247,7 +247,7 @@ function scrollHorizontally(container, scrollValue) {
 	}
   
 	requestAnimationFrame(animateScroll);
-  }
+}
   
 
 body.addEventListener('click', function (event) {
@@ -637,9 +637,178 @@ body.addEventListener('click', function (event) {
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </student-audio-listenin-drop-down> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <teacher-rating-slider> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const teacherRatingGroupsArrow = $(".teacher-rating__groups--arrow")
+	if(teacherRatingGroupsArrow) {
+	
+
+		if(!teacherRatingGroupsArrow.classList.contains('is-active')) {
+
+			teacherRatingGroupsArrow.classList.add('is-active');
+		
+			const items = document.querySelectorAll('.teacher-rating__groups--item'),
+			track = teacherRatingGroupsArrow.closest('.teacher-rating__groups').querySelector('.teacher-rating__groups--track'),
+			trackWrapper = track.querySelector('.simplebar-content-wrapper');
+			
+			let scrollNext = true, scrollPrev = true;
+			if(teacherRatingGroupsArrow.classList.contains('is-next')) {
+
+				items.forEach((item, index) => {
+					
+					if((getCoords(item).left - getCoords(trackWrapper).left) >= 1 && scrollNext) {
+						
+						track.classList.add('disable-snap');
+						scrollNext = false;
+						setTimeout(() => {
+							scrollHorizontally(trackWrapper, getCoords(item).left - getCoords(track).left + trackWrapper.scrollLeft)
+							setTimeout(() => {
+								track.classList.remove('disable-snap');
+								teacherRatingGroupsArrow.classList.remove('is-active');
+							},400)
+						},50)
+						
+					}
+				})
+			}
+			else if (teacherRatingGroupsArrow.classList.contains('is-prev')) {
+				Array.from(items).reverse().forEach((item, index) => {
+					
+					if((getCoords(item).left - getCoords(trackWrapper).left) <= -1 && scrollPrev) {
+						
+						track.classList.add('disable-snap');
+						scrollPrev = false;
+						setTimeout(() => {
+							scrollHorizontally(trackWrapper, getCoords(item).left - getCoords(track).left + trackWrapper.scrollLeft)
+							setTimeout(() => {
+								track.classList.remove('disable-snap');
+								teacherRatingGroupsArrow.classList.remove('is-active');
+							},400)
+						},50)
+						
+					}
+				})
+			}
+	
+		}
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </teacher-rating-slider> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <teacher-issuing-sticker> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const teacherIssuingStickerLengthBlockBtn = $(".teacher-issuing-sticker__length--block button")
+	if(teacherIssuingStickerLengthBlockBtn) {
+
+		const input = teacherIssuingStickerLengthBlockBtn.parentElement.querySelector('input');
+	
+		if(teacherIssuingStickerLengthBlockBtn.classList.contains('is-minus')) {
+			input.value = Math.max(1,Number(input.value)-1);
+		} else if(teacherIssuingStickerLengthBlockBtn.classList.contains('is-plus')) {
+			input.value = Math.min(Number(input.getAttribute('max')),Number(input.value)+1);
+		}
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </teacher-issuing-sticker> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <teacher-audiofiles-change-date> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const teacherAudiofilesChangeDateTarget = $(".teacher-audiofiles__change-date--target")
+	if(teacherAudiofilesChangeDateTarget) {
+
+		if(teacherAudiofilesChangeDateTarget.classList.contains('is-active')) {
+			teacherAudiofilesChangeDateTarget.parentElement.classList.toggle('is-active')
+		} else {
+			document.querySelectorAll('.teacher-audiofiles__change-date.is-active').forEach(block => {
+				block.classList.remove('is-active')
+			})
+	
+			document.querySelectorAll('.teacher-audiofiles__change-date--block.is-active').forEach(block => {
+				block.classList.remove('is-active')
+			})
+
+			teacherAudiofilesChangeDateTarget.parentElement.classList.toggle('is-active')
+		}
+	
+	} else if(!$('.teacher-audiofiles__change-date') && !$('.teacher-audiofiles__change-date--block')) {
+		document.querySelectorAll('.teacher-audiofiles__change-date.is-active').forEach(block => {
+			block.classList.remove('is-active')
+		})
+
+		document.querySelectorAll('.teacher-audiofiles__change-date--block.is-active').forEach(block => {
+			block.classList.remove('is-active')
+		})
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </teacher-audiofiles-change-date> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <teacher-audiofiles-change-name> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const teacherAudiofilesItemEdit = $(".teacher-audiofiles__item--edit")
+	if(teacherAudiofilesItemEdit) {
+	
+		teacherAudiofilesItemEdit.classList.toggle('is-active');
+		const input = teacherAudiofilesItemEdit.closest('.teacher-audiofiles__item').querySelector('.teacher-audiofiles__item--name');
+
+		if(input) {
+			
+			input.setAttribute('contenteditable', true);
+			input.focus();
+
+			function blur() {
+				input.removeAttribute('contenteditable');
+				teacherAudiofilesItemEdit.classList.remove('is-active');
+				input.removeEventListener('blur', blur);
+			}
+
+			input.addEventListener('blur', blur)
+		}
+
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </teacher-audiofiles-change-name> -=-=-=-=-=-=-=-=-=-=-=-=
+
 })
 
 // =-=-=-=-=-=-=-=-=-=- </click events> -=-=-=-=-=-=-=-=-=-=-
+
+document.querySelectorAll('.teacher-issuing-sticker__length--block input').forEach(input => {
+	
+	input.addEventListener('input', function (event) {
+		
+		if(Number(input.value) < Number(input.min)) {
+			input.value = input.min;
+		} else if(Number(input.value) > Number(input.max)) {
+			input.value = input.max;
+		}
+	})
+})
+
+
+/* function changeDate() {
+	document.querySelectorAll('.teacher-audiofiles__change-date').forEach(changeDate => {
+		const 
+		target =changeDate.querySelector('.teacher-audiofiles__change-date--target'), 
+		block = changeDate.querySelector('.teacher-audiofiles__change-date--block');
+
+		target.addEventListener('click', function (event) {
+			block.classList.toggle('is-active');
+		})
+
+		window.addEventListener('resize', function () {
+
+		})
+		
+	})
+} */
 
 
 const pupils = document.querySelectorAll(".eye .eye-element");
@@ -681,7 +850,7 @@ window.addEventListener("mousemove", (e) => {
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
 let windowSize = 0;
-const accountTableTips = document.querySelectorAll('.account-table__tip'),
+let accountTableTips = document.querySelectorAll('.account-table__tip'),
 accountTableTipsArray = [];
 accountTableTips.forEach((tip, index) => {
 	const content = tip.querySelector('.account-table__tip--content'),
@@ -735,6 +904,60 @@ accountTableTips.forEach((tip, index) => {
 		content: content,
 	}
 })
+
+let teacherAudiofilesChangeDateArray = [];
+
+function addEvents() {
+	Array.from(teacherAudiofilesChangeDateArray).forEach(item => {
+		if(!item['target'].classList.contains('is-init')) {
+			item['target'].classList.add('is-init');
+			item['target'].addEventListener('click', function (event) {
+				setTimeout(() => {
+					console.log(item['target'].parentElement)
+					if(item['target'].parentElement.classList.contains('is-active')) {
+						item['block'].classList.add('is-active')
+					} else {
+						item['block'].classList.remove('is-active')
+					}
+				},0)
+				
+			})
+		}
+	})
+}
+
+function changeDate() {
+	document.querySelectorAll('.teacher-audiofiles__change-date').forEach(changeDate => {
+
+		if(changeDate.querySelector('.teacher-audiofiles__change-date--block')) {
+
+			teacherAudiofilesChangeDateArray.push({
+				target: changeDate.querySelector('.teacher-audiofiles__change-date--target'),
+				block: changeDate.querySelector('.teacher-audiofiles__change-date--block'),
+			});
+
+			body.append(changeDate.querySelector('.teacher-audiofiles__change-date--block'));
+		}
+		
+	})
+
+	addEvents();
+}
+
+changeDate();
+
+if(document.querySelector('.teacher-audiofiles')) {
+	setInterval(() => {
+		if(document.querySelector('.teacher-audiofiles__change-date')) {
+			Array.from(teacherAudiofilesChangeDateArray).forEach(item => {
+				let x = getCoords(item['target']).left;
+				
+				item['block'].style.setProperty('--x', x + item['target'].offsetWidth / 2 + 'px')
+				item['block'].style.setProperty('--y', getCoords(item['target']).top + 'px')
+			})
+		}
+	},100)
+}
 
 if(document.querySelector('.account-table__tip')) {
 	setInterval(() => {
@@ -1014,14 +1237,18 @@ document.querySelectorAll('.teacher-lectures__body').forEach(sliderElement => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <select> -=-=-=-=-=-=-=-=-=-=-=-=
 
-document.querySelectorAll('.custom-select').forEach(select => {
-	new SlimSelect({
-		select: select,
-		settings: {
-			showSearch: false,
-		  }
-	  })
-})
+function customSelect() {
+	document.querySelectorAll('.custom-select:not(.ss-main)').forEach(select => {
+		new SlimSelect({
+			select: select,
+			settings: {
+				showSearch: false,
+			  }
+		  })
+	})
+}
+
+customSelect();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </select> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -1058,7 +1285,6 @@ document.querySelectorAll('.account-chat__file').forEach(file => {
 				} else {
 					text = fileEl.name;
 				}
-				
 			})
 
 			file.querySelector('span').querySelector('span').textContent = text;
@@ -1068,6 +1294,18 @@ document.querySelectorAll('.account-chat__file').forEach(file => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </input-file> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+document.querySelectorAll('.students-attendance__check-all input').forEach(input => {
+	input.addEventListener('change', function (event) {
+		document.querySelectorAll('.students-attendance__item input').forEach(checkbox => {
+			if(input.checked) {
+				checkbox.checked = true;
+			} else {
+				checkbox.checked = false;
+			}
+		})
+	})
+})
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <audio-player> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -1119,7 +1357,9 @@ players.forEach(audio => {
 })
 
 
-
+Fancybox.bind("[data-fancybox]", {
+	// Your custom options
+});
 /* if(player.created) {
 	const audio = document.querySelectorAll('audio');
 

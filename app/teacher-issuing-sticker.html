@@ -1,0 +1,69 @@
+@@include("html/_header-teacher.html")
+
+	<main class="main _none-padding-on-mob">
+		<section class="teacher-issuing-sticker account-section">
+			<h1 class="teacher-issuing-sticker__title account-title section-title">
+				Рейтинг учащихся
+			</h1>
+			<div class="teacher-issuing-sticker__header">
+				<div class="teacher-issuing-sticker__group account-block is-min">
+					<h2 class="account-block__title">Группа</h2>
+					<select class="teacher-issuing-sticker__group--select custom-select is-min">
+						<option value="Название группы">Название группы</option>
+						<option value="Название группы 1">Название группы 1</option>
+						<option value="Название группы 2">Название группы 2</option>
+					</select>
+				</div>
+				<div class="teacher-issuing-sticker__length account-block is-min">
+					<h2 class="account-block__title">Выберите количество стикеров:</h2>
+					<div class="teacher-issuing-sticker__length--block">
+						<button class="is-minus" type="button"></button>
+						<input type="number" name="stickers-length" value="1" min="1" max="100" placeholder="0">
+						<button class="is-plus" type="button"></button>
+					</div>
+				</div>
+			</div>
+			<div class="teacher-issuing-sticker__block account-block">
+				<h2 class="account-block__title">
+					Выберите учеников которым хотите отправить ранее выбранное количество стикеров:
+				</h2>
+				<div class="teacher-issuing-sticker__list" data-simplebar data-simplebar-auto-hide="false">
+					@@loop("html/account/_teacher-issuing-sticker-item.html", [
+
+						{},
+						{},
+						{},
+						{},
+
+						{},
+						{},
+						{},
+						{},
+
+						{},
+						{},
+						{},
+						{},
+
+						{},
+						{},
+						{},
+						{},
+
+						{},
+						{},
+						{},
+						{},
+
+					])
+				</div>
+			</div>
+			<div class="teacher-issuing-sticker__footer">
+				<button class="teacher-issuing-sticker__submit btn _alt">
+					Отправить
+				</button>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer-account.html")

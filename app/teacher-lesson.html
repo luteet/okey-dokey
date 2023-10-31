@@ -1,0 +1,156 @@
+@@include("html/_header-teacher.html")
+
+	<main class="main _none-padding-on-mob">
+		<section class="teacher-lesson account-section">
+			<h1 class="teacher-lesson__title visible-on-mob section-title _min">
+				Начать урок
+			</h1>
+			<div class="teacher-lesson__header">
+				<div class="teacher-lesson__name">
+					<h2>Название курса</h2>
+					<span>№6 Название лекии</span>
+				</div>
+				<a href="#students-attendance-popup" class="teacher-lesson__attendance-open btn _min-2 open-popup visible-on-desktop">
+					Отметить учащихся
+				</a>
+				<div class="teacher-lesson__settings">
+					<div class="teacher-lesson__settings--col">
+						<div class="teacher-lesson__select">
+							<h3>Группа</h3>
+							<select name="" class="teacher-lesson__select--element custom-select is-min">
+								<option value="" disabled selected>Название группы</option>
+								<option value="Группа 1">Группа 1</option>
+								<option value="Группа 2">Группа 2</option>
+								<option value="Группа 3">Группа 3</option>
+							</select>
+						</div>
+						<div class="teacher-lesson__select">
+							<h3>Название курса</h3>
+							<select name="" class="teacher-lesson__select--element custom-select is-min">
+								<option value="" disabled selected>Название</option>
+								<option value="Название 1">Название 1</option>
+								<option value="Название 2">Название 2</option>
+								<option value="Название 3">Название 3</option>
+							</select>
+						</div>
+					</div>
+					<a href="#students-attendance-popup" class="teacher-lesson__attendance-open btn _min-2 open-popup visible-on-mob">
+						Отметить учащихся
+					</a>
+					<div class="teacher-lesson__settings--col">
+						<ul class="teacher-lesson__info">
+							<li>
+								<i>
+									<svg width="17" height="16" viewBox="0 0 17 16">
+										<use xlink:href="img/sprites.svg#group"></use>
+									</svg>
+								</i>
+								<span>
+									Учеников:
+									<b>10</b>
+								</span>
+							</li>
+							<li>
+								<i>
+									<svg width="17" height="17" viewBox="0 0 7 7">
+										<use xlink:href="img/sprites.svg#check"></use>
+									</svg>
+								</i>
+								<span>
+									Присутствует:
+									<b>5</b>
+								</span>
+							</li>
+							<li class="is-danger">
+								<i>
+									<svg width="13" height="13" viewBox="0 0 15 15">
+										<use xlink:href="img/sprites.svg#close-2"></use>
+									</svg>
+								</i>
+								<span>
+									Отсутствует:
+									<b>5</b>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="teacher-lesson__wrapper">
+					<div class="teacher-lesson__main">
+						<div class="teacher-lesson__main--block" style="aspect-ratio: 7/5;"></div>
+					</div>
+					<div class="teacher-lesson__aside" data-simplebar data-simplebar-auto-hide="false" data-large-scrollbar>
+						<div class="teacher-lesson__aside-games">
+							<ul class="teacher-lesson__aside-games--list">
+								@@loop("html/account/_teacher-lesson-game.html", [
+									{},
+									{},
+									{},
+									{},
+								])
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="students-attendance popup" id="students-attendance-popup" style="display: none;">
+			<div class="students-attendance__wrapper popup-wrapper">
+				<div class="students-attendance__bg popup-bg popup-close"></div>
+				<form class="students-attendance__body popup-body">
+					<button type="button" class="students-attendance__close-btn popup-close-btn popup-close close-btn" title="Закрыть">
+						<svg width="15" height="15" viewBox="0 0 15 15">
+							<use xlink:href="img/sprites.svg#close-2"></use>
+						</svg>
+					</button>
+					<div class="students-attendance__background" aria-hidden="true">
+						<img src="img/decor-item-2.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+					<div class="students-attendance__container">
+						<h1 class="students-attendance__title title _min-2">
+							Отметить присутствующих
+						</h1>
+						<label class="students-attendance__check-all checkbox _alt">
+							<input type="checkbox" name="check-all" class="checkbox__input">
+							<span class="checkbox__element">
+								<svg width="24" height="24" viewBox="0 0 7 7">
+									<use xlink:href="img/sprites.svg#check"></use>
+								</svg>
+							</span>
+							<span class="checkbox__text">
+								Все
+							</span>
+						</label>
+						<div class="students-attendance__list" data-simplebar data-simplebar-auto-hide="false">
+							@@loop("html/account/_account-students-attedance-item.html", [
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+							])
+						</div>
+						<div class="students-attendance__footer">
+							<button class="students-attendance__submit btn _alt" type="submit">
+								Отправить
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+
+@@include("html/_footer-account.html")

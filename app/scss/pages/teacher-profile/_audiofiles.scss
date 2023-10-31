@@ -1,0 +1,310 @@
+.teacher-audiofiles {
+
+	// .teacher-audiofiles__title
+
+	&__title {
+	}
+
+	// .teacher-audiofiles__header
+
+	&__header {
+		margin-top: 22px;
+
+		@include _992 {
+			margin-top: 0;
+		}
+
+		@include _768 {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px 15px;
+	}
+
+	// .teacher-audiofiles__group
+
+	&__group {
+
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		@include _768 {
+			align-items: center;
+			flex-direction: row;
+		}
+
+		// .teacher-audiofiles__group--title
+
+		&--title {
+		}
+
+		// .teacher-audiofiles__group--select
+
+		&--select {
+		}
+	}
+
+	// .teacher-audiofiles__upload
+
+	&__upload {
+		padding-left: 33px; padding-right: 33px;
+	}
+
+	// .teacher-audiofiles__block
+
+	&__block {
+
+		margin-top: 35px;
+
+		// .teacher-audiofiles__block--title
+
+		&--title {
+		}
+
+		// .teacher-audiofiles__block--list
+
+		&--list {
+			margin-top: 20px;
+		}
+
+		// .teacher-audiofiles__block--item
+
+		&--item {
+			&:not(:first-child) {
+				margin-top: 15px;
+				@media (min-width: 1200px) {
+					margin-top: 30px;
+				}
+			}
+		}
+	}
+
+	// .teacher-audiofiles__item
+
+	&__item {
+
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px 0;
+
+		@include _992 {
+			flex-wrap: nowrap;
+		}
+
+		padding: 15px;
+		@media (min-width: 1200px) {
+			padding: 30px;
+		}
+		background: var(--white);
+		border-radius: 15px;
+
+		// .teacher-audiofiles__item--checkbox
+
+		&--checkbox {
+			width: 44px; height: 44px; flex: 0 0 44px;
+			margin-right: 7px;
+			@include _992 {
+				width: 38px; height: 38px; flex: 0 0 38px;
+				margin-right: 20px;
+				order: 1;
+			}
+		}
+
+		// .teacher-audiofiles__item--checkbox-input
+
+		&--checkbox-input {
+			position: absolute;
+			width: 1px; height: 1px;
+			margin: -1px; padding: 0;
+			border: 0;
+			
+			white-space: nowrap;
+			clip-path: inset(100%);
+			clip: rect(0 0 0 0);
+			overflow: hidden;
+		}
+
+		&--checkbox-input:checked + &--checkbox-element {
+			color: var(--primary);
+			border-color: var(--primary);
+		}
+
+		// .teacher-audiofiles__item--checkbox-element
+
+		&--checkbox-element {
+			cursor: pointer;
+			width: 38px; height: 38px; flex: 0 0 38px;
+
+			border: 1px solid #F2F2F2;
+			border-radius: 6px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			color: transparent;
+			transition: color .2s ease, border-color .2s ease;
+		}
+
+		// .teacher-audiofiles__item--name
+
+		&--name {
+			color: #000;
+			font-size: 0.875rem;
+			font-weight: 600;
+			line-height: 125%;
+
+			min-width: 50px;
+
+			flex: 0 1 calc(100% - 52px);
+			@include _992 {
+				flex: 1 1 auto;
+				order: 2;
+				font-size: 1rem;
+			}
+			background: transparent;
+			padding-right: 10px;
+		}
+
+		// .teacher-audiofiles__item--date
+
+		&--date {
+			color: #000;
+			text-align: end;
+			font-weight: 500;
+			line-height: 125%;
+
+			font-size: 0.75rem;
+			
+			@include _768 {
+				font-size: 0.875rem;	
+			}
+
+			@include _992 {
+				order: 3;
+				padding-right: 19px;
+				font-size: 1rem;
+			}
+		}
+
+		// .teacher-audiofiles__item--change-date
+
+		&--change-date {
+			margin-right: 10px;
+
+			@include _992 {
+				order: 4;
+				margin-right: 15px;
+			}
+		}
+
+		// .teacher-audiofiles__item--btn
+
+		&--btn {
+			border-radius: 7px;
+			border: 1px solid var(--accent);
+			background: var(--white);
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 38px; height: 38px; flex: 0 0 38px;
+			color: var(--accent);
+
+			transition: background .2s ease, color .2s ease, border-color .2s ease;
+			&:active {
+				background: var(--accent);
+				color: var(--white);
+			}
+
+			svg {
+				width: 55%; height: auto;
+			}
+		}
+
+		// .teacher-audiofiles__item--edit
+
+		&--edit {
+			margin-right: 10px;
+			@include _992 {
+				order: 5;
+				margin-right: 0;
+			}
+			&.is-active {
+				background: var(--accent);
+				color: var(--white);
+			}
+		}
+	}
+
+	// .teacher-audiofiles__change-date
+
+	&__change-date {
+
+		position: relative;
+		&.is-active & {
+			&--target {
+				background: var(--accent);
+				color: var(--white);
+			}
+		}
+
+		// .teacher-audiofiles__change-date--target
+
+		&--target {
+		}
+
+		// .teacher-audiofiles__change-date--block
+
+		&--block {
+			position: absolute;
+			left: var(--x,0px); top: var(--y,0px);
+			transform: translate(0px,calc(-100% - 5px));
+			@include _992 {
+				left: var(--x,0px); top: var(--y,0px);
+				transform: translate(-100%,calc(-100% - 5px));
+				border-radius: 7px 7px 0 7px;
+			}
+			width: 244px; height: auto;
+			max-width: 70vw;
+
+			background: var(--white);
+			border: 1px solid #EBEBEB;
+			border-radius: 7px 7px 7px 0px;
+
+			padding: 12px 15px;
+
+			transition: opacity .2s ease, visibility .2s ease;
+			opacity: 0; visibility: hidden;
+
+			&.is-active {
+				opacity: 1; visibility: visible;
+			}
+		}
+
+		// .teacher-audiofiles__change-date--item
+
+		&--item {
+			&:not(:first-child) {
+				margin-top: 17px;
+			}
+			> b {
+				display: block;
+				color: #000;
+				font-size: 0.9375rem;
+				font-weight: 600;
+				line-height: 133.333%;
+
+				margin-bottom: 5px;
+			}
+			
+		}
+	}
+}

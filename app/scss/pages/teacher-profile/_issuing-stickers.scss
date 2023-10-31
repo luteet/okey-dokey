@@ -1,0 +1,307 @@
+.teacher-issuing-sticker {
+
+	// .teacher-issuing-sticker__title
+
+	&__title {
+	}
+
+	// .teacher-issuing-sticker__header
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		margin-top: 20px;
+		@include _992 {
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin-top: 0;
+		}
+	}
+
+	// .teacher-issuing-sticker__group
+
+	&__group {
+
+		display: flex;
+		flex-direction: column;
+
+		@include _992 {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		h2 {
+			padding-right: 15px;
+			padding-bottom: 5px;
+			@include _992 {
+				padding-bottom: 0;
+			}
+		}
+
+		// .teacher-issuing-sticker__group--select
+
+		&--select {
+			min-width: 291px;
+		}
+	}
+
+	// .teacher-issuing-sticker__length
+
+	&__length {
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+
+		@include _992 {
+			align-items: center;
+			flex-direction: row;
+		}
+
+		.account-block__title {
+			padding-right: 10px;
+		}
+
+		// .teacher-issuing-sticker__length--block
+
+		&--block {
+			padding: 5px;
+			background: var(--white);
+			border: 1px solid #DEDEDE;
+			border-radius: 7px;
+
+			display: flex;
+
+			button {
+				width: 40px; height: 40px;
+				flex: 0 0 40px;
+
+				border-radius: 5px;
+
+				position: relative;
+
+				&.is-minus {
+					border: 1px solid var(--accent);
+					background: var(--white);
+
+					@media (any-hover: hover) {
+						transition: background .2s ease, border-color .2s ease;
+						&:hover {
+							background: var(--accent-hover);
+							border-color: var(--accent-hover);
+							&::before {
+								background: var(--white);
+							}
+						}
+						
+						&:active {
+							background: var(--accent-active);
+							border-color: var(--accent-active);
+							&::before {
+								background: var(--white);
+							}
+						}
+					}
+
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%; top: 50%;
+						width: 45%; height: 2px;
+						background: var(--accent);
+						transform: translate(-50%,-50%);
+						transition: background .2s ease;
+					}
+				}
+
+				&.is-plus {
+					
+					background: var(--accent);
+					
+					@media (any-hover: hover) {
+						transition: background .2s ease;
+						&:hover {
+							background: var(--accent-hover);
+						}
+						
+						&:active {
+							background: var(--accent-active);
+						}
+					}
+
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%; top: 50%;
+						width: 45%; height: 2px;
+						background: var(--white);
+						transform: translate(-50%,-50%);
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						left: 50%; top: 50%;
+						width: 2px; height: 45%;
+						background: var(--white);
+						transform: translate(-50%,-50%);
+					}
+				}
+			}
+
+			input {
+				width: 40px;
+				text-align: center;
+				color: #232323;
+				font-weight: 600;
+				line-height: 111.111%;
+
+				font-size: 1.125rem;
+			}
+		}
+	}
+
+	// .teacher-issuing-sticker__block
+
+	&__block {
+		margin-top: 30px;
+	}
+
+	// .teacher-issuing-sticker__list
+
+	&__list {
+
+		margin: 7px 0 0;
+		max-height: 65vh; overflow-y: auto;
+		@include _992 {
+			max-height: 265px;
+			margin: 15px 0;
+		}
+		
+		&.simplebar-scrollable-y {
+			padding-right: 15px;
+		}
+
+		.simplebar-track.simplebar-vertical {
+			width: 7px;
+		}
+
+		.simplebar-content {
+			display: grid;
+			grid-template-columns: repeat(auto-fill,minmax(220px, auto));
+			gap: 15px 16px;
+
+			&::before, &::after {
+				display: none;
+			}
+		}
+	}
+
+	// .teacher-issuing-sticker__item
+
+	&__item {
+
+		background: var(--white);
+		border: 1px solid #EBEBEB;
+		padding: 12px;
+		@include _992 {
+			padding: 16px;
+		}
+		border-radius: 10px;
+
+		display: inline-flex;
+		align-items: center;
+
+		cursor: pointer;
+		user-select: none;
+
+		// .teacher-issuing-sticker__item--input
+
+		&--input {
+			position: absolute;
+			width: 1px; height: 1px;
+			margin: -1px; padding: 0;
+			border: 0;
+			
+			white-space: nowrap;
+			clip-path: inset(100%);
+			clip: rect(0 0 0 0);
+			overflow: hidden;
+		}
+
+		&--input:checked + &--element {
+			svg {
+				opacity: 1;
+			}
+		}
+
+		// .teacher-issuing-sticker__item--element
+
+		&--element {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 20px; height: 20px; flex: 0 0 20px;
+			margin-right: 12px;
+			border-radius: 3px;
+			background: #F1F1F1;
+
+			color: var(--primary);
+			svg {
+				width: 45%; height: auto;
+
+				transition: opacity .2s ease;
+				opacity: 0;
+			}
+		}
+
+		// .teacher-issuing-sticker__item--content
+
+		&--content {
+			display: flex;
+			align-items: center;
+
+			color: #262626;
+			font-size: 0.875rem;
+			line-height: 135.714%;
+		}
+
+		// .teacher-issuing-sticker__item--avatar
+
+		&--avatar {
+			width: 40px; height: 40px; flex: 0 0 40px;
+			@include _768 {
+				width: 45px; height: 45px; flex: 0 0 45px;
+			}
+			border-radius: 10px;
+			border: 1px solid #D9D9D9;
+			background: #FFF;
+
+			margin-right: 12px;
+
+			img {
+				width: 100%; height: 100%;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+		}
+	}
+
+	// .teacher-issuing-sticker__footer
+
+	&__footer {
+		margin-top: 24px;
+
+		display: flex;
+		justify-content: center;
+	}
+
+	// .teacher-issuing-sticker__submit
+
+	&__submit {
+	}
+}

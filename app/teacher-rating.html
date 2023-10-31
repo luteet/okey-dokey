@@ -1,0 +1,87 @@
+@@include("html/_header-teacher.html")
+
+	<main class="main _none-padding">
+		<section class="teacher-rating account-section">
+			<h1 class="teacher-rating__title account-title section-title">
+				Рейтинг учащихся
+			</h1>
+			<div class="teacher-rating__groups">
+				<div class="teacher-rating__groups--track" data-simplebar data-simplebar-auto-hide="false">
+					<ul class="teacher-rating__groups--list">
+						@@loop("html/account/_teacher-rating-group-item.html", [
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+						])
+					</ul>
+				</div>
+				<div class="teacher-rating__groups--controls">
+					<button class="teacher-rating__groups--arrow arrow-btn _super-min is-prev" type="button">
+						<svg width="13" height="13" viewBox="0 0 19 19">
+							<use xlink:href="img/sprites.svg#arrow-prev"></use>
+						</svg>
+					</button>
+					<button class="teacher-rating__groups--arrow arrow-btn _super-min is-next" type="button">
+						<svg width="13" height="13" viewBox="0 0 19 19">
+							<use xlink:href="img/sprites.svg#arrow-next"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+			<div class="teacher-rating__block">
+				<div class="teacher-rating__block--wrapper">
+					<div class="teacher-rating__block--header">
+						<h2 class="teacher-rating__block--title">Название группы</h2>
+						<form class="teacher-rating__block--search">
+							<label>
+								<input type="search" name="search" placeholder="Поиск" required class="input">
+							</label>
+							<button type="submit" title="Поиск">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use xlink:href="img/sprites.svg#search"></use>
+								</svg>
+							</button>
+						</form>
+					</div>
+					<div class="teacher-rating__block--table teacher-rating__table">
+						<div class="teacher-rating__table--thead visible-on-desktop">
+							<span>№</span>
+							<span>Студент</span>
+							<span>Колличество стикеров</span>
+							<span>Дата последнего посещения</span>
+						</div>
+						<div class="teacher-rating__table--tbody" data-simplebar data-simplebar-auto-hide="false">
+							@@loop("html/account/_teacher-rating-item.html", [
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+								{},
+							])
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer-account.html")

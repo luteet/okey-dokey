@@ -1,0 +1,210 @@
+.teacher-table {
+
+	margin-top: 30px;
+
+	// .teacher-table__title
+
+	&__title {
+	}
+
+	// .teacher-table__header
+
+	&__header {
+
+		display: flex;
+		flex-direction: column;
+		
+		gap: 20px 0;
+
+		padding: 10px 15px 20px;
+		margin-top: 20px;
+		@include _992 {
+			margin-top: 0;
+			padding: 20px;
+
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			flex-direction: row;
+
+			gap: 30px 0;
+		}
+
+		background: #F1F1F1;
+		border-radius: 15px;
+
+		// .teacher-table__header--col
+
+		&--col {
+			display: flex;
+			flex-direction: column;
+			@include _992 {
+				flex-wrap: wrap;
+				flex-direction: row;
+				gap: 30px 60px;
+			}
+			
+			gap: 20px;
+		}
+	}
+
+	// .teacher-table__select
+
+	&__select {
+		display: flex;
+		flex-direction: column;
+		@include _992 {
+			display: inline-flex;
+			align-items: center;
+			flex-direction: row;
+		}
+
+		> span {
+			display: block;
+			color: #000;
+			font-weight: 600;
+			line-height: 111.111%;
+			white-space: nowrap;
+
+			font-size: 0.9375rem;
+			margin-bottom: 5px;
+			
+			@include _992 {
+				padding-right: 15px;
+
+				font-size: 1.125rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// .teacher-table__date
+
+	&__date {
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+
+		@include _768 {
+			gap: 15px;
+		}
+
+		// .teacher-table__date--item
+
+		&--item {
+			flex: 0 1 calc(50% - 2px);
+			@include _768 {
+				flex: 0 1 auto;
+			}
+
+			border: 1px solid #EBEBEB;
+			border-radius: 15px;
+			background: var(--white);
+
+			padding: 1px;
+			@include _550 {
+				padding: 5px;
+			}
+
+			display: flex;
+			align-items: center;
+
+			span {
+				flex: 1 1 auto;
+				display: block;
+
+				color: #121212;
+				font-weight: 500;
+				line-height: 125%;
+
+				font-size: 0.75rem;
+				text-align: center;
+				
+				@include _768 {
+					font-size: 0.875rem;
+					flex: 0 1 auto;
+					text-align: start;
+				}
+				
+				@include _992 {
+					font-size: 1rem;
+				}
+			}
+
+			&:first-child span {
+				padding-left: 5px; padding-right: 5px;
+				@include _550 {
+					padding-left: 5px; padding-right: 15px;
+				}
+			}
+
+			&:last-child span {
+				@include _550 {
+					padding-right: 5px; padding-left: 15px;
+				}
+				padding-right: 5px; padding-left: 5px;
+			}
+		}
+
+		// .teacher-table__date--arrow
+
+		&--arrow {
+			min-height: 100%;
+			flex: 0 0 40px; width: 40px; height: 40px;
+			border-radius: 7px;
+
+			&.is-disabled {
+				background: #D9D9D9;
+				color: #9C9C9C;
+				pointer-events: none;
+			}
+
+			background: var(--accent);
+			color: var(--white);
+			transition: background .2s ease;
+			&:active {
+				background: var(--accent-active);
+			}
+		}
+	}
+
+	// .teacher-table__edit
+
+	&__edit {
+
+		display: inline-flex;
+		align-items: center;
+
+		span {
+			color: var(--primary);
+			font-weight: 600;
+			line-height: 111.111%;
+			text-decoration: underline;
+
+			font-size: 1rem;
+			
+			@include _992 {
+				font-size: 1.125rem;
+			}
+		}
+
+		i {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			flex: 0 0 38px; width: 38px; height: 38px;
+			margin-right: 10px;
+
+			background: var(--primary);
+			color: var(--white);
+			border-radius: 7px;
+		}
+	}
+
+	// .teacher-table__table
+
+	&__table {
+	}
+}

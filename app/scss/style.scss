@@ -31,6 +31,8 @@
 @import 'pages/about-us/about-statistic';
 @import 'pages/about-us/content-section';
 
+@import 'pages/404/main';
+
 @import 'pages/login/login';
 @import 'pages/login/create-avatar';
 
@@ -45,5 +47,10 @@
 @import 'pages/payment/main';
 
 @import 'pages/teacher-profile/main';
+@import 'pages/teacher-profile/lesson';
+@import 'pages/teacher-profile/table';
+@import 'pages/teacher-profile/rating';
+@import 'pages/teacher-profile/issuing-stickers';
+@import 'pages/teacher-profile/audiofiles';
 
 @import 'components/footer';

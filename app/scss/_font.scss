@@ -55,21 +55,36 @@
 	line-height: 120%;
 
 	font-size: 1.125rem; // 18px
+
 	&._min {
+		font-size: 1.125rem; // 18px
+	}
+
+	&._min-2 {
 		font-size: 1.125rem; // 18px
 	}
 
 	@include _550 {
 		font-size: 1.25rem; // 20px
+
 		&._min {
+			font-size: 1.25rem; // 20px
+		}
+
+		&._min-2 {
 			font-size: 1.25rem; // 20px
 		}
 	}
 
 	@include _768 {
 		font-size: 2rem; // 32px
+
 		&._min {
 			font-size: 1.375rem; // 22px
+		}
+
+		&._min-2 {
+			font-size: 1.5rem; // 24px
 		}
 	}
 
@@ -77,6 +92,10 @@
 		font-size: 2.5rem; // 40px
 		&._min {
 			font-size: 1.5rem; // 24px
+		}
+
+		&._min-2 {
+			font-size: 1.875rem; // 30px
 		}
 	}
 

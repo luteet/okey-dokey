@@ -80,6 +80,11 @@ input, textarea {
 }
 
 .ss-option {
+	font-size: 0.875rem;
+		
+	@include _992 {
+		font-size: 1rem;
+	}
 	transition: background .2s ease, color .2s ease;	
 }
 
@@ -89,6 +94,15 @@ input, textarea {
 	align-items: center;
 
 	cursor: pointer;
+	&._alt & {
+		&__element {
+			border: 1px solid #DEDEDE;
+		}
+		&__text {
+			padding-top: 3px;
+			color: #6C6C6C;
+		}
+	}
 
 	&__input {
 		position: absolute;
@@ -133,5 +147,28 @@ input, textarea {
 		@include _992 {
 			font-size: 1.125rem;
 		}
+	}
+}
+
+.input {
+	@include _768 {
+		padding: 13px 19px;
+	}
+	padding: 14px 15px;
+	border-radius: 7px;
+	border: 1px solid #DEDEDE;
+	background: #FFF;
+
+	font-weight: 400;
+	line-height: 144.444%;
+
+	font-size: 1rem;
+	
+	@include _992 {
+		font-size: 1.125rem;
+	}
+
+	&::placeholder {
+		color: #6C6C6C;
 	}
 }

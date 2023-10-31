@@ -104,7 +104,7 @@ function scriptsLib() {
 		//'app/js/ScrollSmoother.min.js', // GSAP
 		'node_modules/slim-select/dist/slimselect.min.js', // Select | npm i slim-select --save-dev | https://www.npmjs.com/package/slim-select
 		'node_modules/simplebar/dist/simplebar.min.js',
-
+		'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
 		//'node_modules/mediaelement/build/lang/uk.js', // Media element
 		'node_modules/mediaelement/build/mediaelement-and-player.min.js', // Media element
 		
@@ -186,6 +186,7 @@ function stylesLib() {
 	return src([
 		'node_modules/normalize.css/normalize.css',
 		'node_modules/@splidejs/splide/dist/css/splide.min.css', // Слайдер
+		'node_modules/@fancyapps/ui/dist/fancybox/fancybox.css',
 		//'node_modules/@splidejs/splide/dist/css/splide-core.min.css', // Слайдер
 		//'node_modules/swiper/swiper-bundle.min.css', // Слайдер
 		'node_modules/slim-select/dist/slimselect.css', // Select
